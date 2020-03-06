@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://entities/Character/Character.gd" type="Script" id=1]
+
+[node name="Character" type="KinematicBody2D"]
+script = ExtResource( 1 )
+move_speed = 300
+rotate_cooldown = 5.0
+rotate_speed = 5
+bullet_speed = 600
+hp = 100.0
+
+[node name="Rifle" type="Sprite" parent="."]
+
+[node name="Bullet_spawn" type="Node2D" parent="Rifle"]
+
+[node name="Body" type="Sprite" parent="."]
+
+[node name="StandingCircle" type="Area2D" parent="Body"]
+
+[node name="Shape2D" type="CollisionShape2D" parent="Body/StandingCircle"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="RotateCooldown" type="Timer" parent="."]
+wait_time = 10.0
+[connection signal="timeout" from="RotateCooldown" to="." method="RotateCooldown_timeout"]
