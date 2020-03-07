@@ -4,10 +4,8 @@ export (int) var move_speed
 export (String) var character_class
 export (float) var rotate_cooldown
 export (int) var rotate_speed
-export (int) var bullet_speed
-export (int) var bullet_damage
 
-var rotate_direction = 0  #0 - right, 1 - left
+var rotate_direction = -1  #1 = right, -1 = left
 var can_rotate = true
 var inside_standing_circle = false
 
@@ -15,11 +13,11 @@ var inside_standing_circle = false
 func _process(delta):
 	listen_inputs()
 	move(delta)
-	rotate_rifle(delta)
+	rotate_player(delta)
 	
 func listen_inputs():
 	if Input.is_action_just_pressed("switch_rotation") and can_rotate:
-		rotate_direction = !rotate_direction
+		rotate_direction = -rotate_direction
 		can_rotate = false
 		$RotateCooldown.start(rotate_cooldown)
 	
@@ -29,12 +27,9 @@ func move(delta):
 		var velocity_vector = direction.normalized() * move_speed * delta
 		move_and_collide(velocity_vector)
 
-func rotate_rifle(delta):
-	if rotate_direction:
-		$Rifle.rotate(rotate_speed * delta)
-	else:
-		$Rifle.rotate(-rotate_speed * delta)
-	
+func rotate_player(delta):
+	$Body.rotate(rotate_direction * rotate_speed * delta)
+
 
 func RotateCooldown_timeout():
 	can_rotate = true
