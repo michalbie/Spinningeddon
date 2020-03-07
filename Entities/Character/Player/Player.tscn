@@ -16,13 +16,12 @@ position = Vector2( 183.667, 210.985 )
 [node name="Body" parent="." index="0"]
 texture = ExtResource( 1 )
 
-[node name="Rifle" type="Sprite" parent="Body" index="0"]
-show_behind_parent = true
+[node name="Rifle" parent="Body" index="0"]
 scale = Vector2( 1, 1.5 )
 texture = ExtResource( 3 )
 
-[node name="Bullet_spawn" type="Node2D" parent="Body/Rifle" index="0"]
-position = Vector2( 0.902496, -55.7474 )
+[node name="Bullet_spawn" parent="Body/Rifle" index="0"]
+position = Vector2( 0, -66 )
 
 [node name="Shape2D" parent="Body/StandingCircle" index="0"]
 shape = SubResource( 1 )
