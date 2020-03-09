@@ -4,7 +4,7 @@
 
 [node name="PlayerLabel" type="Label"]
 size_flags_horizontal = 4
-text = "Default"
+text = "Unknown"
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
