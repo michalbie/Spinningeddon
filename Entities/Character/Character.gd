@@ -35,6 +35,9 @@ func handle_inputs():
 		shoot_pressed = false
 		shoot()
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 func move(delta):
 	if !inside_standing_circle:
@@ -48,6 +51,33 @@ func rotate_player(delta):
 	$Body.rotate(rotate_direction * rotate_speed * delta)
 	get_parent().players[id][rotation] = $Body.rotation
 	rset_id(id, "player_rotation", $Body.rotation)
+<<<<<<< Updated upstream
+=======
+	
+
+func shoot():
+	var bullet = Bullet.instance()
+	bullet.global_position = get_node("Body/Rifle/Bullet_spawn").global_position
+	bullet.init(bullet_speed, bullet_damage, Vector2(0, -1).rotated($Body.rotation),
+				$Body.rotation, self.get_name())
+	get_parent().add_child(bullet)
+	
+func send_dictionary():
+	var players_dict = get_parent().players
+	for player_id in players_dict:
+		if players_dict[player_id]["updated"] == false:
+			break
+		rset("players", players_dict)
+
+"""
+func got_shot(dmg):
+	if dmg >= hp:
+		hp = 0
+		queue_free()
+	else:
+		hp -= dmg
+"""
+>>>>>>> Stashed changes
 
 func RotateCooldown_timeout():
 	can_rotate = true
