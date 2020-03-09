@@ -73,6 +73,7 @@ margin_left = 72.0
 margin_right = 372.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 300, 0 )
+text = "127.0.0.1"
 
 [node name="JoinBtn" type="Button" parent="MarginContainer/CentreContainer/VBoxContainer"]
 margin_left = 161.0
