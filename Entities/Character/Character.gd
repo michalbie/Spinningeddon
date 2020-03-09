@@ -23,7 +23,7 @@ func _process(delta):
 	move(delta)
 	rotate_player(delta)
 	get_parent().players[id] = {"position": position, "rotation": $Body.rotation, "updated": true}
-	#send_dictionary()
+
 	
 func handle_inputs():
 	if switch_pressed:

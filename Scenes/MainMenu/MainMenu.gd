@@ -11,4 +11,3 @@ func _on_JoinGameBtn_pressed():
 func _on_CreateServerBtn_pressed():
 	LobbyManager.my_name = "Serwer"
 	emit_signal("create_server_pressed")
-	#get_tree().change_scene("res://Scenes/Lobby/Lobby.tscn")
