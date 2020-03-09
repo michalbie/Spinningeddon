@@ -12,6 +12,7 @@ radius = 37.0
 
 [node name="Player" instance=ExtResource( 2 )]
 position = Vector2( 183.667, 210.985 )
+rotate_cooldown = 1.0
 
 [node name="Body" parent="." index="0"]
 texture = ExtResource( 1 )
