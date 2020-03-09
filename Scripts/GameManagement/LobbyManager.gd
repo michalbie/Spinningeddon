@@ -19,30 +19,6 @@ func create_server():
 	peer.connect("peer_disconnected", self, "_on_peer_disconnected")
 	create_lobby()
 	
-func _on_peer_connected(id):
-	rpc_id(id, "register_player", my_name)
-	print("My name: " + str(my_name) + " sent by " + str(id))
-	
-func _on_peer_disconnected(id):
-	players.erase(id)
-	
-remote func register_player(new_player_name):
-	var id = get_tree().get_rpc_sender_id()
-	players[id] = new_player_name
-	lobby.add_item(new_player_name)
-
-func unregister_player(id):
-	players.erase(id)
-	
-func create_lobby():
-	var Lobby = load("res://Scenes/Lobby/Lobby.tscn")
-	lobby = Lobby.instance()
-	add_child(lobby)
-	get_tree().change_scene_to(lobby)
-	
-
-#Client code here v
-
 func create_client():
 	var peer = NetworkedMultiplayerENet.new()
 	peer.create_client(server_ip, PORT)
@@ -50,3 +26,30 @@ func create_client():
 	peer.connect("peer_connected", self, "_on_peer_connected")
 	peer.connect("peer_disconnected", self, "_on_peer_disconnected")
 	create_lobby()
+	
+func _on_peer_connected(id):
+	rpc_id(id, "register_player", my_name)
+	
+func _on_peer_disconnected(id):
+	unregister_player(players[id])
+	
+remote func register_player(new_player_name):
+	var id = get_tree().get_rpc_sender_id()
+	players[id] = new_player_name
+	lobby.add_item(new_player_name)
+
+func unregister_player(id):
+	lobby.remove_item(id)
+	players.erase(id)
+	
+func create_lobby():
+	var Lobby = load("res://Scenes/Lobby/Lobby.tscn")
+	lobby = Lobby.instance()
+	add_child(lobby)
+	get_tree().change_scene_to(lobby)
+	lobby.add_item(my_name)
+	
+
+#Client code here v
+
+

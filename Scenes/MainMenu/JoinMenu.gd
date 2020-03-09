@@ -11,6 +11,5 @@ func _on_Back_pressed():
 
 func _on_JoinBtn_pressed():
 	LobbyManager.my_name = find_node("PlayerName").text
-	print("In join name: ")
 	LobbyManager.server_ip = find_node("IpAddress").text
 	emit_signal("create_client_pressed")
