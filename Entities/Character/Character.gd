@@ -1,6 +1,5 @@
 extends KinematicBody2D
 
-var Bullet = preload("res://Entities/Bullet/Bullet.tscn")
 
 export (int) var move_speed
 export (String) var character_class
@@ -24,7 +23,7 @@ func _process(delta):
 	move(delta)
 	rotate_player(delta)
 	get_parent().players[id] = {"position": position, "rotation": $Body.rotation, "updated": true}
-	send_dictionary()
+	#send_dictionary()
 	
 func handle_inputs():
 	if switch_pressed:
@@ -35,7 +34,7 @@ func handle_inputs():
 		
 	if shoot_pressed:
 		shoot_pressed = false
-		shoot()
+		#shoot()
 
 func move(delta):
 	if !inside_standing_circle:
@@ -50,7 +49,7 @@ func rotate_player(delta):
 	get_parent().players[id][rotation] = $Body.rotation
 	rset_id(id, "player_rotation", $Body.rotation)
 	
-
+"""
 func shoot():
 	var bullet = Bullet.instance()
 	bullet.global_position = get_node("Body/Rifle/Bullet_spawn").global_position
@@ -65,14 +64,14 @@ func send_dictionary():
 			break
 		rset("players", players_dict)
 
-"""
+
 func got_shot(dmg):
 	if dmg >= hp:
 		hp = 0
 		queue_free()
 	else:
 		hp -= dmg
-"""
+
 
 func RotateCooldown_timeout():
 	can_rotate = true
@@ -82,5 +81,4 @@ func StandingCircle_mouse_entered():
 	inside_standing_circle = true
 
 func StandingCircle_mouse_exited():
-	inside_standing_circle = false
-
+	inside_standing_circle = false"""
