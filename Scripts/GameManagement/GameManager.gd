@@ -21,7 +21,6 @@ remotesync func initialize_players():
 	for p in LobbyManager.players:
 		var player = Player.instance()
 		player.set_name(str(p))
-		print(p)
 		player.global_position = Vector2(randi()%int(get_viewport().size.x), randi()%int(get_viewport().size.y))
 		world.add_child(player)
 		players_info[p] = {"position": player.global_position}
@@ -41,6 +40,7 @@ func update(id, mouse_pos, delta):
 	var direction = mouse_pos - players_info[id]['position']
 	player.move_and_collide(direction.normalized() * player.move_speed * delta)
 	var player_info = {"position": player.global_position}
+	print("Update method " + str(player_info))
 	rpc_unreliable("update_players_info", id, player_info)
 	
 remotesync func update_players_info(id, player_info):

@@ -20,6 +20,7 @@ func handle_inputs(delta):
 	emit_signal("input_ready", player_input)
 	
 remotesync func update_players_info(id, player_info):
+	print("Update info method " + str(player_info))
 	players_info[id] = player_info
 	
 func update_world():
