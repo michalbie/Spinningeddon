@@ -20,7 +20,6 @@ func create_server():
 	scene_tree.set_network_peer(peer)
 	peer.connect("peer_connected", self, "_on_peer_connected")
 	peer.connect("peer_disconnected", self, "_on_peer_disconnected")
-	print(scene_tree.get_network_unique_id())
 	create_lobby()
 	
 func create_client():
@@ -30,8 +29,8 @@ func create_client():
 	peer.connect("peer_connected", self, "_on_peer_connected")
 	peer.connect("peer_disconnected", self, "_on_peer_disconnected")
 	
+	
 func _on_peer_connected(id):
-	print(scene_tree.get_network_unique_id())
 	if !scene_tree.is_network_server():
 		create_lobby()
 	rpc_id(id, "register_player", my_name)
@@ -40,10 +39,10 @@ func _on_peer_disconnected(id):
 	unregister_player(players[id])
 	
 remote func register_player(new_player_name):
-	var id = scene_tree.get_rpc_sender_id()
-	players[id] = new_player_name
+	var sender_id = scene_tree.get_rpc_sender_id()
+	players[sender_id] = new_player_name
 	
-	if id != 1: #for client screen
+	if sender_id != 1: #for client screen
 		lobby.add_item(new_player_name)
 
 func unregister_player(id):
@@ -59,7 +58,7 @@ func create_lobby():
 	if !scene_tree.is_network_server(): #for server screen
 		lobby.add_item(my_name)
 
-remote func disconnect_from_server(id):
+remote func disconnect_from_server(id): #refactorize gt sender rpc id 
 	if scene_tree.is_network_server():
 		if id != 1:
 			scene_tree.get_network_peer().disconnect_peer(id, true)

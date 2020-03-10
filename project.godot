@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 LobbyManager="*res://Scripts/GameManagement/LobbyManager.gd"
+GameManager="*res://Scripts/GameManagement/GameManager.gd"
 
 [input]
 

@@ -48,3 +48,4 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "Start Game"
 [connection signal="pressed" from="MarginContainer/QuitLobbyBtn" to="." method="_on_QuitLobbyBtn_pressed"]
+[connection signal="pressed" from="MarginContainer/StartGameBtn" to="." method="_on_StartGameBtn_pressed"]
