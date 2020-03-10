@@ -35,9 +35,13 @@ func _on_peer_connected(id):
 	print("Connected" + str(id))
 	if !get_tree().is_network_server():
 		players[id] = my_name
+		print("Players: " + str(players))
 		rpc_id(id, "register_player", my_name)
 	
 func _on_connection_succeeded():
+	if !get_tree().is_network_server():
+		players[get_tree().get_network_unique_id()] = my_name
+		print("Players: " + str(players))
 	create_lobby()
 	
 func _on_peer_disconnected(id):
