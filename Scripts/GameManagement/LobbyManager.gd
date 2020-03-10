@@ -32,8 +32,9 @@ func create_client():
 	
 	
 func _on_peer_connected(id):
-	players[id] = my_name
+	print("Connected" + str(id))
 	if !get_tree().is_network_server():
+		players[id] = my_name
 		rpc_id(id, "register_player", my_name)
 	
 func _on_connection_succeeded():
