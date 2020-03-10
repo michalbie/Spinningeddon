@@ -28,12 +28,14 @@ func create_client():
 	scene_tree.set_network_peer(peer)
 	peer.connect("peer_connected", self, "_on_peer_connected")
 	peer.connect("peer_disconnected", self, "_on_peer_disconnected")
+	peer.connect("connection_succeeded", self, "_on_connection_succeeded")
 	
 	
 func _on_peer_connected(id):
-	if !scene_tree.is_network_server():
-		create_lobby()
 	rpc_id(id, "register_player", my_name)
+	
+func _on_connection_succeeded():
+	create_lobby()
 	
 func _on_peer_disconnected(id):
 	unregister_player(players[id])
