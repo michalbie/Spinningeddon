@@ -1,5 +1,7 @@
 extends Node
 
+signal player_update_ready(id, player_info)
+
 var GameSession = preload("res://Scenes/World/World.tscn")
 var Player = preload("res://Entities/Character/Player/Player.tscn")
 var world
@@ -22,7 +24,7 @@ remotesync func initialize_players():
 		var player = Player.instance()
 		player.set_name(str(p))
 		player.global_position = Vector2(randi()%int(get_viewport().size.x), randi()%int(get_viewport().size.y))
-		world.add_child(player)
+		connect("player_update_ready", player, "_on_player_update_ready")
 		players_info[p] = {"position": player.global_position}
 		get_tree().change_scene_to(world)
 		
@@ -41,7 +43,7 @@ func update(id, mouse_pos, delta):
 	player.move_and_collide(direction.normalized() * player.move_speed * delta)
 	var player_info = {"position": player.global_position}
 	print("Update method " + str(player_info))
-	rpc_unreliable("update_players_info", id, player_info)
+	emit_signal("player_update_ready", id, player_info)
 	
 remotesync func update_players_info(id, player_info):
 	players_info[id] = player_info

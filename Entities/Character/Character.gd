@@ -19,6 +19,9 @@ func handle_inputs(delta):
 	var player_input = {"mouse_pos": mouse_pos, "delta": delta}
 	emit_signal("input_ready", player_input)
 	
+func _on_player_update_ready(id, player_info):
+	rpc_unreliable("update_players_info", id, player_info)
+	
 remotesync func update_players_info(id, player_info):
 	print("Update info method " + str(player_info))
 	players_info[id] = player_info
