@@ -26,22 +26,16 @@ func create_client():
 	peer = NetworkedMultiplayerENet.new()
 	peer.create_client(server_ip, PORT)
 	scene_tree.set_network_peer(peer)
-	peer.connect("peer_connected", self, "_on_peer_connected")
+	#peer.connect("peer_connected", self, "_on_peer_connected")
 	peer.connect("peer_disconnected", self, "_on_peer_disconnected")
 	peer.connect("connection_succeeded", self, "_on_connection_succeeded")
 	
 	
 func _on_peer_connected(id):
-	print("Connected" + str(id))
-	if !get_tree().is_network_server():
-		players[id] = my_name
-		print("Players: " + str(players))
-		rpc_id(id, "register_player", my_name)
+	print("Connected: " + str(id))
 	
 func _on_connection_succeeded():
-	if !get_tree().is_network_server():
-		players[get_tree().get_network_unique_id()] = my_name
-		print("Players: " + str(players))
+	rpc_id(1, "register_player", my_name)
 	create_lobby()
 	
 func _on_peer_disconnected(id):
@@ -50,9 +44,11 @@ func _on_peer_disconnected(id):
 remote func register_player(new_player_name):
 	var sender_id = scene_tree.get_rpc_sender_id()
 	players[sender_id] = new_player_name
+	lobby.add_item(new_player_name)
+	rpc("update_player_list", sender_id, new_player_name)
 	
-	if sender_id != 1: #for client screen
-		lobby.add_item(new_player_name)
+remote func update_player_list(id, new_player_name):
+	 players[id] = new_player_name
 
 func unregister_player(id):
 	lobby.remove_item(id)
