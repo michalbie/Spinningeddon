@@ -5,9 +5,6 @@
 [node name="Character" type="KinematicBody2D"]
 script = ExtResource( 1 )
 move_speed = 300
-rotate_cooldown = 5.0
-rotate_speed = 5
-bullet_speed = 600
 
 [node name="Rifle" type="Sprite" parent="."]
 
@@ -23,4 +20,6 @@ bullet_speed = 600
 
 [node name="RotateCooldown" type="Timer" parent="."]
 wait_time = 10.0
+[connection signal="mouse_entered" from="Body/StandingCircle" to="." method="_on_StandingCircle_mouse_entered"]
+[connection signal="mouse_exited" from="Body/StandingCircle" to="." method="_on_StandingCircle_mouse_exited"]
 [connection signal="timeout" from="RotateCooldown" to="." method="RotateCooldown_timeout"]

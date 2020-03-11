@@ -5,7 +5,7 @@
 [ext_resource path="res://Entities/Character/assets/rifle.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 13.7262
+radius = 18.9905
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 37.0
@@ -30,5 +30,3 @@ shape = SubResource( 1 )
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource( 2 )
-[connection signal="mouse_entered" from="Body/StandingCircle" to="." method="_on_StandingCircle_mouse_entered"]
-[connection signal="mouse_exited" from="Body/StandingCircle" to="." method="_on_StandingCircle_mouse_exited"]

@@ -9,6 +9,11 @@ onready var scene_tree = get_tree()
 func _ready():
 	connect("start_game", GameManager, "prepare_game")
 	StartGameBtn_configure()
+	initialize_lobby()
+	
+func initialize_lobby():
+	for id in LobbyManager.players:
+		add_item(LobbyManager.players[id])
 
 func StartGameBtn_configure():
 	if !scene_tree.is_network_server():
@@ -30,9 +35,8 @@ remotesync func hide_lobby():
 
 func _on_QuitLobbyBtn_pressed():
 	scene_tree.change_scene("res://Scenes/MainMenu/MainMenu.tscn")
-	LobbyManager.disconnect_from_server(scene_tree.get_network_unique_id())
-	queue_free()
-
+	LobbyManager.disconnect_me()
+	#queue_free()
 
 func _on_StartGameBtn_pressed():
 	print("Start!")

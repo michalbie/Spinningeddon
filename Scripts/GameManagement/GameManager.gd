@@ -27,21 +27,18 @@ remotesync func initialize_players():
 		player.position = Vector2(randi()%int(get_viewport().size.x), randi()%int(get_viewport().size.y))
 		connect("player_update_ready", player, "_on_player_update_ready")
 		players_info[p] = {"position": player.position}
-		print("Player spawn point: " + str(player.position))
 		get_tree().change_scene_to(world)
 		
 func _on_input_ready(input):
 	rpc_unreliable_id(1, "process_input", input)
 		
-remote func process_input(input):
-	var mouse_pos = input['mouse_pos']
-	var delta = input['delta']
-	update(get_tree().get_rpc_sender_id(), mouse_pos, delta)
+remote func process_input(input): #TODO bez sensu ta funkcja. Lepiej przekazywać słownik zamiast zmiennych
+	update(get_tree().get_rpc_sender_id(), input)
 	
-func update(id, mouse_pos, delta):
+func update(id, input):
 	var player = get_tree().get_root().get_node("World/" + str(id))
-	var direction = mouse_pos - player.position
-	if !player.inside_circle:
-		player.position += direction.normalized() * player.move_speed * delta
+	var direction = input['mouse_pos'] - player.position
+	if input['inside_circle'] == false:
+		player.move_and_collide(direction.normalized() * player.move_speed * input['delta'])
 	var player_info = {"position": player.position}
 	emit_signal("player_update_ready", id, player_info)

@@ -26,7 +26,6 @@ func create_client():
 	peer = NetworkedMultiplayerENet.new()
 	peer.create_client(server_ip, PORT)
 	scene_tree.set_network_peer(peer)
-	#peer.connect("peer_connected", self, "_on_peer_connected")
 	peer.connect("peer_disconnected", self, "_on_peer_disconnected")
 	peer.connect("connection_succeeded", self, "_on_connection_succeeded")
 	
@@ -35,23 +34,25 @@ func _on_peer_connected(id):
 	print("Connected: " + str(id))
 	
 func _on_connection_succeeded():
-	rpc_id(1, "register_player", my_name)
-	create_lobby()
+	rpc_id(1, "register_new_player", scene_tree.get_network_unique_id(), my_name)
+	
+remote func register_new_player(new_id, new_player_name):
+	players[new_id] = new_player_name
+	lobby.add_item(players[new_id])
+	rpc("update_players_lobby", new_id, players)
 	
 func _on_peer_disconnected(id):
-	unregister_player(players[id])
+	unregister_player(id)
 	
-remote func register_player(new_player_name):
-	var sender_id = scene_tree.get_rpc_sender_id()
-	players[sender_id] = new_player_name
-	lobby.add_item(new_player_name)
-	rpc("update_player_list", sender_id, new_player_name)
-	
-remote func update_player_list(id, new_player_name):
-	 players[id] = new_player_name
+remote func update_players_lobby(new_player_id, players_list):
+	players = players_list
+	if new_player_id == scene_tree.get_network_unique_id():
+		create_lobby()
+	else:
+		lobby.add_item(players[new_player_id])
 
 func unregister_player(id):
-	lobby.remove_item(id)
+	lobby.remove_item(players[id])
 	players.erase(id)
 	
 func create_lobby():
@@ -59,16 +60,9 @@ func create_lobby():
 	lobby = Lobby.instance()
 	add_child(lobby)
 	scene_tree.change_scene_to(lobby)
-	
-	if !scene_tree.is_network_server(): #for server screen
-		lobby.add_item(my_name)
 
-remote func disconnect_from_server(id): #refactorize gt sender rpc id 
-	if scene_tree.is_network_server():
-		if id != 1:
-			scene_tree.get_network_peer().disconnect_peer(id, true)
-		else:
-			scene_tree.network_peer = null #when server quits the lobby its removing server
-	else:
-		rpc_id(1, "disconnect_from_server", scene_tree.get_network_unique_id())
-
+func disconnect_me(): #refactorize gt sender rpc id 
+	scene_tree.network_peer.close_connection()
+	scene_tree.network_peer = null
+	players.clear()
+	remove_child(lobby)
