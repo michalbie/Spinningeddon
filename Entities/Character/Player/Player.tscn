@@ -12,7 +12,7 @@ radius = 37.0
 
 [node name="Player" instance=ExtResource( 2 )]
 position = Vector2( 183.667, 210.985 )
-move_speed = 100
+move_speed = 250
 
 [node name="Body" parent="." index="1"]
 texture = ExtResource( 1 )
@@ -30,5 +30,5 @@ shape = SubResource( 1 )
 
 [node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource( 2 )
-[connection signal="mouse_entered" from="Body/StandingCircle" to="." method="StandingCircle_mouse_entered"]
-[connection signal="mouse_exited" from="Body/StandingCircle" to="." method="StandingCircle_mouse_exited"]
+[connection signal="mouse_entered" from="Body/StandingCircle" to="." method="_on_StandingCircle_mouse_entered"]
+[connection signal="mouse_exited" from="Body/StandingCircle" to="." method="_on_StandingCircle_mouse_exited"]

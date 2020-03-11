@@ -35,16 +35,13 @@ func _on_input_ready(input):
 		
 remote func process_input(input):
 	var mouse_pos = input['mouse_pos']
-	print("Mouse_position: " + str(mouse_pos))
 	var delta = input['delta']
 	update(get_tree().get_rpc_sender_id(), mouse_pos, delta)
 	
 func update(id, mouse_pos, delta):
 	var player = get_tree().get_root().get_node("World/" + str(id))
-	var direction = mouse_pos - players_info[id]['position']
-	player.move_and_collide(direction.normalized() * player.move_speed * delta)
+	var direction = mouse_pos - player.position
+	if !player.inside_circle:
+		player.position += direction.normalized() * player.move_speed * delta
 	var player_info = {"position": player.position}
 	emit_signal("player_update_ready", id, player_info)
-	
-remotesync func update_players_info(id, player_info):
-	players_info[id] = player_info
