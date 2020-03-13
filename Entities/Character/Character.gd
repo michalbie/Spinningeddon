@@ -53,7 +53,7 @@ func got_shot(dmg):
 	if dmg >= hp:
 		hp = 0
 		being_removed = true
-		GameManager.rpc("delete_player", int(self.get_name()))
+		GameManager.world.rpc("delete_player", int(self.get_name()))
 	else:
 		hp -= dmg
 

@@ -51,24 +51,3 @@ func update_bullets():
 	for bullet in bullets_info:
 		world.get_node(bullet).global_position = bullets_info[bullet]['position']
 
-
-remotesync func spawn_bullet(player_id):
-	var bullet = Bullet.instance()
-	var player = world.get_node(str(player_id))
-	bullet.set_name("bullet" + str(bullets_count))
-	world.add_child(bullet)
-	bullet.global_position = player.get_node("Body/Rifle/Bullet_spawn").global_position
-	bullet.init(player.bullet_speed, player.bullet_damage, 
-				Vector2(0, -1).rotated(player.get_node("Body").rotation), 
-				player.get_node("Body").rotation, player.bullet_range)
-	bullets_info[bullet.get_name()] = {"position": bullet.global_position}
-	bullets_count += 1
-	
-remotesync func delete_bullet(bullet_name):
-	bullets_info.erase(bullet_name)
-	world.get_node(bullet_name).queue_free()
-	world.remove_child(world.get_node(bullet_name))
-		
-remotesync func delete_player(player_name):
-	players_info.erase(player_name)
-	world.get_node(str(player_name)).queue_free()
