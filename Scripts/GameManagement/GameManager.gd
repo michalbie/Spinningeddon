@@ -1,12 +1,11 @@
 extends Node
 
-signal player_update_ready(id, player_info)
-
 var GameSession = preload("res://Scenes/World/World.tscn")
 var Player = preload("res://Entities/Character/Player/Player.tscn")
 var Bullet = preload("res://Entities/Bullet/Bullet.tscn")
 var world
 remotesync var in_game = false
+var can_update = true
 
 remote var players_info = {}
 remote var bullets_info = {}
@@ -66,16 +65,10 @@ remotesync func spawn_bullet(player_id):
 	bullets_count += 1
 	
 remotesync func delete_bullet(bullet_name):
-	if world.get_node(bullet_name).exist == true:
-		world.get_node(bullet_name).exist = false
-		bullets_info.erase(bullet_name)
-
-		print("Actual world's children: ")
-		for child in world.get_children():
-			print(child.get_name())
-		print('---------------------------')
-		print("Deleting: " + bullet_name)
-		print('---------------------------')
-		print('---------------------------')
-		world.get_node(bullet_name).queue_free()
-		world.remove_child(world.get_node(bullet_name))
+	bullets_info.erase(bullet_name)
+	world.get_node(bullet_name).queue_free()
+	world.remove_child(world.get_node(bullet_name))
+		
+remotesync func delete_player(player_name):
+	players_info.erase(player_name)
+	world.get_node(str(player_name)).queue_free()

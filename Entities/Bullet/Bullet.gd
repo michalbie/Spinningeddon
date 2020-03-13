@@ -1,7 +1,5 @@
 extends KinematicBody2D
 
-var exist = true
-
 var speed
 var damage
 var velocity = Vector2()
