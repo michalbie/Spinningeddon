@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 
 LobbyManager="*res://Scripts/GameManagement/LobbyManager.gd"
 GameManager="*res://Scripts/GameManagement/GameManager.gd"
+Server="*res://Scripts/GameManagement/Server.gd"
 
 [input]
 

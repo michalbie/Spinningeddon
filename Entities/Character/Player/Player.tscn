@@ -13,6 +13,7 @@ radius = 37.0
 [node name="Player" instance=ExtResource( 2 )]
 position = Vector2( 183.667, 210.985 )
 move_speed = 250
+bullet_range = 800
 
 [node name="Body" parent="." index="1"]
 texture = ExtResource( 1 )
