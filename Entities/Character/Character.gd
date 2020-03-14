@@ -43,7 +43,6 @@ func send_inputs(delta):
 	player_input['inside_circle'] = inside_circle
 	player_input['switch_rotation'] = switch_rotation
 	player_input['shoot'] = shoot
-	player_input['being_removed'] = being_removed
 	switch_rotation = false
 	shoot = false
 	if !being_removed:

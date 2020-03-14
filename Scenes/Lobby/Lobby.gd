@@ -36,7 +36,6 @@ remotesync func hide_lobby():
 func _on_QuitLobbyBtn_pressed():
 	scene_tree.change_scene("res://Scenes/MainMenu/MainMenu.tscn")
 	LobbyManager.disconnect_me()
-	#queue_free()
 
 func _on_StartGameBtn_pressed():
 	print("Start!")

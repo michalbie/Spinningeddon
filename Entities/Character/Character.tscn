@@ -9,6 +9,7 @@ rotate_cooldown = 3.0
 rotate_speed = 2
 bullet_speed = 600
 bullet_range = 800
+hp = 100
 
 [node name="Rifle" type="Sprite" parent="."]
 

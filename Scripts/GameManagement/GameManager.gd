@@ -2,11 +2,9 @@ extends Node
 
 var GameSession = preload("res://Scenes/World/World.tscn")
 var Player = preload("res://Entities/Character/Player/Player.tscn")
-var Bullet = preload("res://Entities/Bullet/Bullet.tscn")
 var world
-remotesync var in_game = false
-var can_update = true
 
+remotesync var in_game = false
 remote var players_info = {}
 remote var bullets_info = {}
 remote var bullets_count = 0

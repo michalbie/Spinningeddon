@@ -1,7 +1,5 @@
 extends Node
 
-var Bullet = preload("res://Entities/Bullet/Bullet.tscn")
-
 func _process(delta):
 	if GameManager.in_game and get_tree().is_network_server():
 		calculate_bullets(delta)
