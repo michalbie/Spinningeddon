@@ -2,63 +2,65 @@ extends KinematicBody2D
 
 var Bullet = preload("res://Entities/Bullet/Bullet.tscn")
 
+signal input_ready(input)
+
 export (int) var move_speed
-export (String) var character_class
 export (float) var rotate_cooldown
 export (int) var rotate_speed
-export (float) var hp
 export (int) var bullet_speed
 export (int) var bullet_damage
+export (int) var bullet_range
+export (int) var hp
 
-var rotate_direction = -1  #1 = right, -1 = left
-var can_rotate = true
-var inside_standing_circle = false
+var inside_circle = false
+var switch_rotation = false
+var rotate_direction = 1 #-1 - left, 1 - right
+var shoot = false
 
+var being_removed = false
 
-func _process(delta):
-	listen_inputs()
-	move(delta)
-	rotate_player(delta)
-	
+func _ready():
+	connect("input_ready", Server, "_on_input_ready")
+
+func _physics_process(delta):
+	if !get_tree().is_network_server() and str(get_tree().get_network_unique_id()) == self.get_name():
+		if !being_removed:
+			listen_inputs()
+			send_inputs(delta)
+
 func listen_inputs():
-	if Input.is_action_just_pressed("switch_rotation") and can_rotate:
-		rotate_direction = -rotate_direction
-		can_rotate = false
-		$RotateCooldown.start(rotate_cooldown)
+	if Input.is_action_just_pressed("switch_rotation"):
+		switch_rotation = true
 		
 	if Input.is_action_just_pressed("shoot"):
-		shoot()
-	
-func move(delta):
-	if !inside_standing_circle:
-		var direction = get_viewport().get_mouse_position() - position
-		var velocity_vector = direction.normalized() * move_speed * delta
-		move_and_collide(velocity_vector)
+		shoot = true
 
-func rotate_player(delta):
-	$Body.rotate(rotate_direction * rotate_speed * delta)
-
-func shoot():
-	var bullet = Bullet.instance()
-	bullet.global_position = get_node("Body/Rifle/Bullet_spawn").global_position
-	bullet.init(bullet_speed, bullet_damage, Vector2(0, -1).rotated($Body.rotation),
-				$Body.rotation, self.get_name())
-	get_parent().add_child(bullet)
+func send_inputs(delta):
+	var mouse_pos = get_viewport().get_mouse_position()
+	var player_input = {}
+	player_input['delta'] = delta
+	player_input['mouse_pos'] = mouse_pos
+	player_input['inside_circle'] = inside_circle
+	player_input['switch_rotation'] = switch_rotation
+	player_input['shoot'] = shoot
+	switch_rotation = false
+	shoot = false
+	if !being_removed:
+		emit_signal("input_ready", player_input)
 
 func got_shot(dmg):
 	if dmg >= hp:
 		hp = 0
-		queue_free()
+		being_removed = true
+		GameManager.world.rpc("delete_player", int(self.get_name()))
 	else:
 		hp -= dmg
 
+func _on_StandingCircle_mouse_entered():
+	inside_circle = true
 
-func RotateCooldown_timeout():
-	can_rotate = true
+func _on_StandingCircle_mouse_exited():
+	inside_circle = false
+
+func _on_RotateCooldown_timeout():
 	$RotateCooldown.stop()
-
-func StandingCircle_mouse_entered():
-	inside_standing_circle = true
-
-func StandingCircle_mouse_exited():
-	inside_standing_circle = false

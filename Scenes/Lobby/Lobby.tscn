@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/Lobby/Lobby.gd" type="Script" id=1]
+
+[node name="Lobby" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitLobbyBtn" type="Button" parent="MarginContainer"]
+margin_right = 100.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 40 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Quit Lobby"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_top = 290.0
+margin_right = 1004.0
+margin_bottom = 290.0
+size_flags_horizontal = 5
+size_flags_vertical = 4
+
+[node name="StartGameBtn" type="Button" parent="MarginContainer"]
+margin_left = 439.0
+margin_top = 530.0
+margin_right = 564.0
+margin_bottom = 580.0
+rect_min_size = Vector2( 125, 50 )
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Start Game"
+[connection signal="pressed" from="MarginContainer/QuitLobbyBtn" to="." method="_on_QuitLobbyBtn_pressed"]
+[connection signal="pressed" from="MarginContainer/StartGameBtn" to="." method="_on_StartGameBtn_pressed"]

@@ -15,9 +15,15 @@ _global_script_class_icons={
 
 [application]
 
-config/name="SpinningGame"
+config/name="Spinningeddon"
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+LobbyManager="*res://Scripts/GameManagement/LobbyManager.gd"
+GameManager="*res://Scripts/GameManagement/GameManager.gd"
+Server="*res://Scripts/GameManagement/Server.gd"
 
 [input]
 

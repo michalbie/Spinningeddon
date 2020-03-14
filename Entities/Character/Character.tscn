@@ -5,11 +5,11 @@
 [node name="Character" type="KinematicBody2D"]
 script = ExtResource( 1 )
 move_speed = 300
-rotate_cooldown = 5.0
-rotate_speed = 5
-hp = 100.0
+rotate_cooldown = 3.0
+rotate_speed = 2
 bullet_speed = 600
-bullet_damage = 20
+bullet_range = 800
+hp = 100
 
 [node name="Body" type="Sprite" parent="."]
 
@@ -25,5 +25,7 @@ show_behind_parent = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="RotateCooldown" type="Timer" parent="."]
-wait_time = 10.0
-[connection signal="timeout" from="RotateCooldown" to="." method="RotateCooldown_timeout"]
+wait_time = 3.0
+[connection signal="mouse_entered" from="Body/StandingCircle" to="." method="_on_StandingCircle_mouse_entered"]
+[connection signal="mouse_exited" from="Body/StandingCircle" to="." method="_on_StandingCircle_mouse_exited"]
+[connection signal="timeout" from="RotateCooldown" to="." method="_on_RotateCooldown_timeout"]

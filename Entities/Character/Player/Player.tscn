@@ -5,15 +5,18 @@
 [ext_resource path="res://Entities/Character/assets/rifle.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 13.7262
+radius = 18.9905
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 37.0
 
 [node name="Player" instance=ExtResource( 2 )]
 position = Vector2( 183.667, 210.985 )
+move_speed = 250
+bullet_damage = 50
+hp = 100
 
-[node name="Body" parent="." index="0"]
+[node name="Body" parent="." index="1"]
 texture = ExtResource( 1 )
 
 [node name="Rifle" parent="Body" index="0"]
@@ -26,7 +29,5 @@ position = Vector2( 0, -66 )
 [node name="Shape2D" parent="Body/StandingCircle" index="0"]
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="2"]
 shape = SubResource( 2 )
-[connection signal="mouse_entered" from="Body/StandingCircle" to="." method="StandingCircle_mouse_entered"]
-[connection signal="mouse_exited" from="Body/StandingCircle" to="." method="StandingCircle_mouse_exited"]
