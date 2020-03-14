@@ -49,3 +49,11 @@ func update_bullets():
 	for bullet in bullets_info:
 		world.get_node(bullet).global_position = bullets_info[bullet]['position']
 
+# TODO: Make a function that removes player from the list and sends a signal about it		
+func delete_player():
+	pass
+		
+# TODO: Make a function that ends the game (returns to menu for now) depending on a recieved signal
+func end_game():
+	pass
+

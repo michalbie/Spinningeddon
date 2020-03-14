@@ -20,5 +20,6 @@ remotesync func delete_bullet(bullet_name):
 	remove_child(get_node(bullet_name))
 		
 remotesync func delete_player(player_name):
+	#TODO: Move earsing player to GameManager
 	GameManager.players_info.erase(player_name)
 	get_node(str(player_name)).queue_free()

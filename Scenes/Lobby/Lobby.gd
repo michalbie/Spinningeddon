@@ -16,10 +16,12 @@ func initialize_lobby():
 		add_item(LobbyManager.players[id])
 
 func StartGameBtn_configure():
+	# TODO: Make button not clickable at the start
 	if !scene_tree.is_network_server():
 		$MarginContainer/StartGameBtn.disabled = true
 
 func add_item(player_name):
+	# TODO: Check if there is enough players
 	var new_label = PlayerLabel.instance()
 	labels_container.add_child(new_label)
 	new_label.set_text(player_name)
