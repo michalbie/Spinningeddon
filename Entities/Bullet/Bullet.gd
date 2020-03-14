@@ -14,4 +14,3 @@ func init(sp, dmg, vel, rot, ran):
 	velocity = vel
 	$Sprite.rotate(rot)
 	bullet_range = ran
-	

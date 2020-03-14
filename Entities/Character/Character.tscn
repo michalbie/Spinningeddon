@@ -10,11 +10,12 @@ rotate_speed = 2
 bullet_speed = 600
 bullet_range = 800
 
-[node name="Rifle" type="Sprite" parent="."]
-
-[node name="Bullet_spawn" type="Node2D" parent="Rifle"]
-
 [node name="Body" type="Sprite" parent="."]
+
+[node name="Rifle" type="Sprite" parent="Body"]
+show_behind_parent = true
+
+[node name="Bullet_spawn" type="Node2D" parent="Body/Rifle"]
 
 [node name="StandingCircle" type="Area2D" parent="Body"]
 
