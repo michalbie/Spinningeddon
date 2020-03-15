@@ -16,24 +16,29 @@ func initialize_lobby():
 		add_item(LobbyManager.players[id])
 
 func StartGameBtn_configure():
-	# TODO: Make button not clickable at the start
-	if !scene_tree.is_network_server():
-		$MarginContainer/StartGameBtn.disabled = true
+	$MarginContainer/StartGameBtn.disabled = true
 
 func add_item(player_name):
-	# TODO: Check if there is enough players
 	var new_label = PlayerLabel.instance()
 	labels_container.add_child(new_label)
 	new_label.set_text(player_name)
+	if scene_tree.is_network_server() and labels_container.get_child_count() > 1:
+		$MarginContainer/StartGameBtn.disabled = false
 	
 func remove_item(player_name):
 	for c in labels_container.get_children():
 		if c.text == player_name:
 			labels_container.remove_child(c)
+			if scene_tree.is_network_server() and labels_container.get_child_count() < 2:
+				$MarginContainer/StartGameBtn.disabled = true
 			break
 
 remotesync func hide_lobby():
 	self.visible = false
+	
+remotesync func show_lobby():
+	print("Lobby shown!")
+	self.visible = true
 
 func _on_QuitLobbyBtn_pressed():
 	scene_tree.change_scene("res://Scenes/MainMenu/MainMenu.tscn")
