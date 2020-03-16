@@ -6,7 +6,7 @@ var lobby
 var peer
 onready var scene_tree = get_tree()
 
-const PORT = 2137
+const PORT = 48468 #2137
 const LOBBY_SIZE = 5
 
 var players = {}
@@ -43,6 +43,7 @@ remote func register_new_player(new_id, new_player_name):
 	
 func _on_peer_disconnected(id):
 	unregister_player(id)
+	GameManager.player_died(id)
 	
 remote func update_players_lobby(new_player_id, players_list):
 	players = players_list

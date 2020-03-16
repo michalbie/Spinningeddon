@@ -60,6 +60,8 @@ func player_died(player_name):
 func end_game():
 	in_game = false
 	world.queue_free()
+	bullets_count = 0
+	bullets_info = {}
 	LobbyManager.lobby.visible = true
 	get_tree().change_scene_to(LobbyManager.lobby)
 
