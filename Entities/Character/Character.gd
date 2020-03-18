@@ -4,23 +4,30 @@ var Bullet = preload("res://Entities/Bullet/Bullet.tscn")
 
 signal input_ready(input)
 
-export (int) var move_speed
-export (float) var rotate_cooldown
-export (int) var rotate_speed
-export (int) var bullet_speed
-export (int) var bullet_damage
-export (int) var bullet_range
-export (int) var hp
+var Globals = preload("res://Scripts/Globals.gd")
+export(preload("res://Scripts/Globals.gd").level) var move_speed
+export(preload("res://Scripts/Globals.gd").level) var rotate_cooldown
+export(preload("res://Scripts/Globals.gd").level) var rotate_speed
+export(preload("res://Scripts/Globals.gd").level) var bullet_speed
+export(preload("res://Scripts/Globals.gd").level) var bullet_damage
+export(preload("res://Scripts/Globals.gd").level) var bullet_range
+export(preload("res://Scripts/Globals.gd").level) var hp
 
 var inside_circle = false
 var switch_rotation = false
 var rotate_direction = 1 #-1 - left, 1 - right
 var shoot = false
-
 var being_removed = false
 
 func _ready():
 	connect("input_ready", Server, "_on_input_ready")
+	move_speed = Globals.move_speed[move_speed]
+	rotate_cooldown = Globals.rotate_cooldown[rotate_cooldown]
+	rotate_speed = Globals.rotate_speed[rotate_speed]
+	bullet_speed = Globals.bullet_speed[bullet_speed]
+	bullet_damage = Globals.bullet_damage[bullet_damage]
+	bullet_range = Globals.bullet_range[bullet_range]
+	hp = Globals.hp[hp]
 
 func _physics_process(delta):
 	if !get_tree().is_network_server() and str(get_tree().get_network_unique_id()) == self.get_name():

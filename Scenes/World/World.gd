@@ -7,7 +7,7 @@ remotesync func spawn_bullet(player_id):
 	var player = get_node(str(player_id))
 	bullet.set_name("bullet" + str(GameManager.bullets_count))
 	add_child(bullet)
-	bullet.global_position = player.get_node("Body/Rifle/Bullet_spawn").global_position
+	bullet.global_position = player.get_node("Body/Bullet_spawn").global_position
 	bullet.init(player.bullet_speed, player.bullet_damage, 
 				Vector2(0, -1).rotated(player.get_node("Body").rotation), 
 				player.get_node("Body").rotation, player.bullet_range)

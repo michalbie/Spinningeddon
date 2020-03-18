@@ -47,5 +47,14 @@ rect_min_size = Vector2( 125, 50 )
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "Start Game"
+
+[node name="Button" type="Button" parent="MarginContainer"]
+margin_left = 439.0
+margin_right = 564.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 125, 50 )
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Select Class"
 [connection signal="pressed" from="MarginContainer/QuitLobbyBtn" to="." method="_on_QuitLobbyBtn_pressed"]
 [connection signal="pressed" from="MarginContainer/StartGameBtn" to="." method="_on_StartGameBtn_pressed"]

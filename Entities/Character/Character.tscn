@@ -4,19 +4,10 @@
 
 [node name="Character" type="KinematicBody2D"]
 script = ExtResource( 1 )
-move_speed = 300
-rotate_cooldown = 3.0
-rotate_speed = 2
-bullet_speed = 600
-bullet_range = 800
-hp = 100
 
 [node name="Body" type="Sprite" parent="."]
 
-[node name="Rifle" type="Sprite" parent="Body"]
-show_behind_parent = true
-
-[node name="Bullet_spawn" type="Node2D" parent="Body/Rifle"]
+[node name="Bullet_spawn" type="Node2D" parent="Body"]
 
 [node name="StandingCircle" type="Area2D" parent="Body"]
 

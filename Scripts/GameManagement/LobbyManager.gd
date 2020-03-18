@@ -1,6 +1,7 @@
 extends Node
 
-var Player = preload("res://Entities/Character/Player/Player.tscn")
+#var Player = preload("res://Entities/Character/Player/Player.tscn")
+var Player = preload("res://Entities/Character/Player/Classes/Soldier.tscn")
 
 var lobby
 var peer
