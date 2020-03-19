@@ -5,7 +5,7 @@
 [ext_resource path="res://Maps/Objects/ConcreteWall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Maps/Objects/MetalWall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Maps/Objects/StoneWall.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Maps/Objects/BrickWall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Maps/Objects/BricksWall.tscn" type="PackedScene" id=6]
 
 [node name="BattleRoyaleMap" type="Node2D"]
 
@@ -21,7 +21,7 @@ __meta__ = {
 }
 
 [node name="WoodWall" parent="." instance=ExtResource( 1 )]
-position = Vector2( 5.16324, 1.99279 )
+position = Vector2( 9.1313, 4.39467 )
 
 [node name="ConcreteWall" parent="." instance=ExtResource( 3 )]
 position = Vector2( 267.917, 3.38257 )
@@ -33,5 +33,5 @@ rotation = -3.14159
 [node name="StoneWall" parent="." instance=ExtResource( 5 )]
 position = Vector2( 789.201, 4.11157 )
 
-[node name="BrickWall" parent="StoneWall" instance=ExtResource( 6 )]
-position = Vector2( 264, 0 )
+[node name="BricksWall" parent="." instance=ExtResource( 6 )]
+position = Vector2( 785.353, 77.1635 )
