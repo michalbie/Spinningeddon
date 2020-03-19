@@ -2,7 +2,7 @@ extends Node
 
 var GameSession = preload("res://Scenes/World/World.tscn")
 #var Player = preload("res://Entities/Character/Player/Player.tscn")
-var Player = preload("res://Entities/Character/Player/Classes/Soldier.tscn")
+const CLASSES_PATH = "res://Entities/Character/Player/Classes/"
 var Lobby = preload("res://Scenes/Lobby/Lobby.tscn")
 var world
 
@@ -31,7 +31,8 @@ remotesync func initialize_world():
 remotesync func initialize_players():
 	print("initializing players...")
 	for p in LobbyManager.players:
-		var player = Player.instance()
+		var loaded_class = load(CLASSES_PATH + LobbyManager.players[p]["class"] + ".tscn")
+		var player = loaded_class.instance()
 		player.set_name(str(p))
 		world.add_child(player)
 		player.position = Vector2(randi()%int(get_viewport().size.x), randi()%int(get_viewport().size.y))

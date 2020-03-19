@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sniper.png-0a3feae7b7cd44a9e0e3d8ee60031f5b.stex"
+path="res://.import/LightAssaulter.png-da50b0f0e175da905010f74d0f3a457b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Character/assets/sniper.png"
-dest_files=[ "res://.import/sniper.png-0a3feae7b7cd44a9e0e3d8ee60031f5b.stex" ]
+source_file="res://Entities/Character/assets/LightAssaulter.png"
+dest_files=[ "res://.import/LightAssaulter.png-da50b0f0e175da905010f74d0f3a457b.stex" ]
 
 [params]
 

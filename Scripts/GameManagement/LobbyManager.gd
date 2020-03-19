@@ -38,8 +38,8 @@ func _on_connection_succeeded():
 	rpc_id(1, "register_new_player", scene_tree.get_network_unique_id(), my_name)
 	
 remote func register_new_player(new_id, new_player_name):
-	players[new_id] = new_player_name
-	lobby.add_item(players[new_id])
+	players[new_id] = {"name": new_player_name, "class": "Soldier"}
+	lobby.add_item(players[new_id]["name"])
 	rpc("update_players_lobby", new_id, players)
 	
 func _on_peer_disconnected(id):
@@ -52,10 +52,10 @@ remote func update_players_lobby(new_player_id, players_list):
 	if new_player_id == scene_tree.get_network_unique_id():
 		create_lobby()
 	else:
-		lobby.add_item(players[new_player_id])
+		lobby.add_item(players[new_player_id]["name"])
 
 func unregister_player(id):
-	lobby.remove_item(players[id])
+	lobby.remove_item(players[id]["name"])
 	players.erase(id)
 	
 func create_lobby():
