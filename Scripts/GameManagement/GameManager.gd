@@ -49,3 +49,18 @@ func update_bullets():
 	for bullet in bullets_info:
 		world.get_node(bullet).global_position = bullets_info[bullet]['position']
 
+func delete_player(player_name):
+	players_info.erase(player_name)
+	if players_info.size() < 2:
+		end_game()
+
+func end_game():
+	in_game = false
+	world.visible = false
+	bullets_count = 0
+	bullets_info.clear()
+	players_info.clear()
+	world.queue_free()
+	LobbyManager.lobby.visible = true
+	get_tree().change_scene_to(LobbyManager.lobby)
+

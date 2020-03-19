@@ -16,22 +16,28 @@ func initialize_lobby():
 		add_item(LobbyManager.players[id])
 
 func StartGameBtn_configure():
-	if !scene_tree.is_network_server():
-		$MarginContainer/StartGameBtn.disabled = true
+	$MarginContainer/StartGameBtn.disabled = true
 
 func add_item(player_name):
 	var new_label = PlayerLabel.instance()
 	labels_container.add_child(new_label)
 	new_label.set_text(player_name)
+	if scene_tree.is_network_server() and LobbyManager.players.size() >= 2:
+		$MarginContainer/StartGameBtn.disabled = false
 	
 func remove_item(player_name):
 	for c in labels_container.get_children():
 		if c.text == player_name:
 			labels_container.remove_child(c)
+			if scene_tree.is_network_server() and LobbyManager.players.size() < 2:
+				$MarginContainer/StartGameBtn.disabled = true
 			break
 
 remotesync func hide_lobby():
 	self.visible = false
+	
+remotesync func show_lobby():
+	self.visible = true
 
 func _on_QuitLobbyBtn_pressed():
 	scene_tree.change_scene("res://Scenes/MainMenu/MainMenu.tscn")
