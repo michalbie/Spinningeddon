@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/droga.png-0a9abf18747ddeb64e5a2d7454f84ed1.stex"
+path="res://.import/sidewalk.png-5e5e37d0dd2538e03b0f76037fcd8263.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/assets/droga.png"
-dest_files=[ "res://.import/droga.png-0a9abf18747ddeb64e5a2d7454f84ed1.stex" ]
+source_file="res://Maps/assets/sidewalk.png"
+dest_files=[ "res://.import/sidewalk.png-5e5e37d0dd2538e03b0f76037fcd8263.stex" ]
 
 [params]
 

@@ -31,11 +31,16 @@ func create(selected_name, mp):
 	var node
 	var preload_string = "res://Maps/Objects/" + str(selected_name) + ".tscn"
 	node = load(preload_string).instance()
-	node.global_position = mp
 	undo_redo.create_action("Create object")
 	undo_redo.add_do_method(self, "add_object", node)
 	undo_redo.add_undo_method(self, "delete_object", node)
 	undo_redo.commit_action()
+	
+	if "global_position" in node:
+		node.global_position = mp
+	else:
+		node.rect_position = mp
+	
 
 
 func add_object(node):

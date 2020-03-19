@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/dach-3.png-8cdacaf64f0193b68261cf76290684cb.stex"
+path="res://.import/roof1.png-ea5d5d5133d6cb80cd1c7ee86b0b9a55.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/assets/dach-3.png"
-dest_files=[ "res://.import/dach-3.png-8cdacaf64f0193b68261cf76290684cb.stex" ]
+source_file="res://Maps/assets/roof1.png"
+dest_files=[ "res://.import/roof1.png-ea5d5d5133d6cb80cd1c7ee86b0b9a55.stex" ]
 
 [params]
 

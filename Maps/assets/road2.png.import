@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pień.png-6ca9da5abdfeacf0e7ebe43091cfbace.stex"
+path="res://.import/road2.png-2b86e0c9699e11b3b3e2c511dbabd3bd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/assets/pień.png"
-dest_files=[ "res://.import/pień.png-6ca9da5abdfeacf0e7ebe43091cfbace.stex" ]
+source_file="res://Maps/assets/road2.png"
+dest_files=[ "res://.import/road2.png-2b86e0c9699e11b3b3e2c511dbabd3bd.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chodnik.png-3f6b2958d95e196df3032350cae45d4c.stex"
+path="res://.import/roof5.png-55bb4346de94e25b74929c8d98270cd4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/assets/chodnik.png"
-dest_files=[ "res://.import/chodnik.png-3f6b2958d95e196df3032350cae45d4c.stex" ]
+source_file="res://Maps/assets/roof5.png"
+dest_files=[ "res://.import/roof5.png-55bb4346de94e25b74929c8d98270cd4.stex" ]
 
 [params]
 

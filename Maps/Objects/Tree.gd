@@ -1,4 +1,4 @@
-extends "res://Maps/Objects/share/ObjectBase.gd"
+extends Node2D
 
 func _on_Area_body_exited(body):
 	if "distance_traveled" in body:

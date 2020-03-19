@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/droga-2.png-a2c1e6b82defa618419ead1228ba55b3.stex"
+path="res://.import/roof4.png-2b724499177bfc45053d225b6cb88064.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Maps/assets/droga-2.png"
-dest_files=[ "res://.import/droga-2.png-a2c1e6b82defa618419ead1228ba55b3.stex" ]
+source_file="res://Maps/assets/roof4.png"
+dest_files=[ "res://.import/roof4.png-2b724499177bfc45053d225b6cb88064.stex" ]
 
 [params]
 
