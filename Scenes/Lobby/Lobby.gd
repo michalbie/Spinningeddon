@@ -50,7 +50,6 @@ func _on_QuitLobbyBtn_pressed():
 
 func _on_StartGameBtn_pressed():
 	print("Start!")
-	# LobbyManager.rset("players", LobbyManager.players)
 	rpc("hide_lobby")
 	emit_signal("start_game")
 	

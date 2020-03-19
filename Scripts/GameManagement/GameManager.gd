@@ -1,7 +1,6 @@
 extends Node
 
 var GameSession = preload("res://Scenes/World/World.tscn")
-#var Player = preload("res://Entities/Character/Player/Player.tscn")
 const CLASSES_PATH = "res://Entities/Character/Player/Classes/"
 var Lobby = preload("res://Scenes/Lobby/Lobby.tscn")
 var world
