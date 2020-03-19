@@ -10,7 +10,6 @@ func _on_input_ready(input):
 remote func process_input(input): 
 	calculate_player(get_tree().get_rpc_sender_id(), input)
 	
-	
 func calculate_player(id, input):
 	var player = get_tree().get_root().get_node("World/" + str(id))
 	
@@ -18,7 +17,7 @@ func calculate_player(id, input):
 		var player_info = {}
 		calculate_player_position(player, input)
 		calculate_player_rotation(player, input)
-		check_if_player_shoot(id, input)
+		check_if_player_shoot(player, id, input)
 		send_player_info(id, player)
 	else:
 		print("PLAYER NULL")
@@ -35,9 +34,11 @@ func calculate_player_rotation(player, input):
 			player.rotate_direction  = -player.rotate_direction
 	player.get_node("Body").rotate(player.rotate_direction * player.rotate_speed * input['delta'])
 	
-func check_if_player_shoot(id, input):
+func check_if_player_shoot(player, id, input):
 	if input['shoot'] == true:
-		GameManager.world.rpc("spawn_bullet", id)
+		if player.get_node("ShootCooldown").is_stopped() == true:
+			player.get_node("ShootCooldown").start(player.shoot_cooldown)
+			GameManager.world.rpc("spawn_bullet", id)
 		
 func send_player_info(id, player):
 	var player_info = {}

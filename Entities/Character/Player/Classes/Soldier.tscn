@@ -7,6 +7,7 @@
 move_speed = 1
 rotate_cooldown = 1
 rotate_speed = 1
+shoot_cooldown = 1
 bullet_speed = 1
 bullet_damage = 1
 bullet_range = 1
