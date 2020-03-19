@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Maps/Objects/ObjectBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Maps/assets/wood.png" type="Texture" id=2]
+[ext_resource path="res://Maps/Objects/WoodWall.gd" type="Script" id=3]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 250, 0, 250, 50, 0, 50 )
+
+[node name="WoodWall" instance=ExtResource( 1 )]
+z_index = 1
+collision_layer = 1024
+collision_mask = 0
+script = ExtResource( 3 )
+
+[node name="Texture" parent="." index="0"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
+
+[node name="Area" type="Area2D" parent="." index="2"]
+collision_layer = 1024
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area" index="0"]
+position = Vector2( 46.781, 17.153 )
+polygon = PoolVector2Array( -47.686, -16.8601, -47.1662, 32.5198, 202.333, 33.0396, 202.333, -15.8206 )
+[connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]

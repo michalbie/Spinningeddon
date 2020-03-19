@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Maps/Objects/WoodWall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Maps/assets/grass.png" type="Texture" id=2]
+[ext_resource path="res://Maps/Objects/ConcreteWall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Maps/Objects/MetalWall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Maps/Objects/StoneWall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Maps/Objects/BrickWall.tscn" type="PackedScene" id=6]
+
+[node name="BattleRoyaleMap" type="Node2D"]
+
+[node name="GroundLayer" type="TextureRect" parent="."]
+margin_right = 30140.0
+margin_bottom = 29098.0
+mouse_filter = 2
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WoodWall" parent="." instance=ExtResource( 1 )]
+position = Vector2( 5.16324, 1.99279 )
+
+[node name="ConcreteWall" parent="." instance=ExtResource( 3 )]
+position = Vector2( 267.917, 3.38257 )
+
+[node name="MetalWall" parent="." instance=ExtResource( 4 )]
+position = Vector2( 776.688, 54.624 )
+rotation = -3.14159
+
+[node name="StoneWall" parent="." instance=ExtResource( 5 )]
+position = Vector2( 789.201, 4.11157 )
+
+[node name="BrickWall" parent="StoneWall" instance=ExtResource( 6 )]
+position = Vector2( 264, 0 )
