@@ -51,7 +51,7 @@ func update_bullets():
 	for bullet in bullets_info:
 		world.get_node(bullet).global_position = bullets_info[bullet]['position']
 
-func player_died(player_name):
+func delete_player(player_name):
 	players_info.erase(player_name)
 	if players_info.size() < 2:
 		end_game()
