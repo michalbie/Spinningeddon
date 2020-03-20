@@ -1,7 +1,5 @@
 extends Node
 
-var Player = preload("res://Entities/Character/Player/Classes/Soldier.tscn")
-
 var lobby
 var peer
 onready var scene_tree = get_tree()
