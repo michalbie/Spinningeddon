@@ -41,6 +41,8 @@ remote func register_new_player(new_id, new_player_name):
 	
 func _on_peer_disconnected(id):
 	unregister_player(id)
+	if get_tree().is_network_server() and LobbyManager.players.size() < 2:
+		lobby.get_node("MarginContainer/StartGameBtn").disabled = true
 	if GameManager.in_game:
 		GameManager.delete_player(id)
 	
