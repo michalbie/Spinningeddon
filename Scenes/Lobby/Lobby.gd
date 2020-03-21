@@ -3,17 +3,21 @@ extends Control
 signal start_game
 
 var PlayerLabel = preload("res://Scenes/Lobby/PlayerLabel.tscn")
-onready var labels_container = get_node("MarginContainer/VBoxContainer")
+onready var labels_container = get_node("MarginContainer/HBoxContainer/VBoxContainer")
 onready var scene_tree = get_tree()
 
 func _ready():
 	connect("start_game", GameManager, "prepare_game")
+	for button in $"MarginContainer/HBoxContainer/ClassesMenu/Classes".get_children():
+		button.connect("pressed", self, "_on_class_selected", [button.name])
 	StartGameBtn_configure()
 	initialize_lobby()
 	
 func initialize_lobby():
 	for id in LobbyManager.players:
-		add_item(LobbyManager.players[id])
+		add_item(LobbyManager.players[id]["name"])
+	if scene_tree.is_network_server():
+		$"MarginContainer/HBoxContainer/ClassesMenu".visible = false
 
 func StartGameBtn_configure():
 	$MarginContainer/StartGameBtn.disabled = true
@@ -48,4 +52,10 @@ func _on_StartGameBtn_pressed():
 	rpc("hide_lobby")
 	emit_signal("start_game")
 	
+func _on_class_selected(class_id):
+	$"MarginContainer/HBoxContainer/ClassesMenu/TextureRect".texture = load("res://Entities/Character/assets/" + class_id + ".png")
+	LobbyManager.players[scene_tree.get_network_unique_id()]["class"] = class_id
+	rpc("set_player_class", class_id)
 	
+remote func set_player_class(class_id):
+	LobbyManager.players[scene_tree.get_rpc_sender_id()]["class"] = class_id
