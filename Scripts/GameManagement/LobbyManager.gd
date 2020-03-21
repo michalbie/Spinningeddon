@@ -42,7 +42,7 @@ remote func register_new_player(new_id, new_player_name):
 func _on_peer_disconnected(id):
 	unregister_player(id)
 	if GameManager.in_game:
-		GameManager.player_died(id)
+		GameManager.delete_player(id)
 	
 remote func update_players_lobby(new_player_id, players_list):
 	players = players_list
