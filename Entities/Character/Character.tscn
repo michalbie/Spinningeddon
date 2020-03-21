@@ -18,6 +18,9 @@ script = ExtResource( 1 )
 
 [node name="RotateCooldown" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="ShootCooldown" type="Timer" parent="."]
 [connection signal="mouse_entered" from="Body/StandingCircle" to="." method="_on_StandingCircle_mouse_entered"]
 [connection signal="mouse_exited" from="Body/StandingCircle" to="." method="_on_StandingCircle_mouse_exited"]
 [connection signal="timeout" from="RotateCooldown" to="." method="_on_RotateCooldown_timeout"]
+[connection signal="timeout" from="ShootCooldown" to="." method="_on_ShootCooldown_timeout"]

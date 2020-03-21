@@ -5,6 +5,7 @@
 
 [node name="CloseRifleman" instance=ExtResource( 1 )]
 move_speed = 1
+shoot_cooldown = 2
 bullet_damage = 2
 hp = 1
 
