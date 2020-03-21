@@ -27,7 +27,7 @@ func _input(event):
 		if event.pressed and event.scancode == KEY_F7:
 			create(current_selected, mouse_pos)
 
-func create(selected_name, mp):
+func create(selected_name, mouse_pos):
 	var node
 	var preload_string = "res://Maps/Objects/" + str(selected_name) + ".tscn"
 	node = load(preload_string).instance()
@@ -37,9 +37,9 @@ func create(selected_name, mp):
 	undo_redo.commit_action()
 	
 	if "global_position" in node:
-		node.global_position = mp
+		node.global_position = mouse_pos
 	else:
-		node.rect_position = mp
+		node.rect_position = mouse_pos
 	
 
 

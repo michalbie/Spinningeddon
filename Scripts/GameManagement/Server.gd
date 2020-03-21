@@ -26,7 +26,6 @@ func calculate_player(id, input):
 func calculate_player_position(player, input):
 	var direction = input['mouse_pos'] - player.position
 	if input['inside_circle'] == false:
-		#print("calculation input:" + str(input['inside_circle']))
 		player.move_and_collide(direction.normalized() * player.move_speed * input['delta'])
 			
 func calculate_player_rotation(player, input):

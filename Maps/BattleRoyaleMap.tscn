@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Maps/Objects/WoodWall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/assets/grass.png" type="Texture" id=2]
@@ -16,7 +16,6 @@
 [ext_resource path="res://Maps/Objects/Roof6.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Maps/Objects/Roof4.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Maps/Objects/Rock.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Maps/assets/road1.png" type="Texture" id=17]
 
 [node name="BattleRoyaleMap" type="Node2D"]
 
@@ -96,14 +95,8 @@ position = Vector2( -21.4763, 2398.5 )
 [node name="Rock3" parent="." instance=ExtResource( 16 )]
 position = Vector2( 466.257, 1868.09 )
 
-[node name="Road3" type="TextureRect" parent="." instance=ExtResource( 13 )]
+[node name="Road3" parent="." instance=ExtResource( 13 )]
 margin_left = 568.0
 margin_top = 3262.0
 margin_right = 3181.0
 margin_bottom = 3762.0
-mouse_filter = 2
-texture = ExtResource( 17 )
-stretch_mode = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}

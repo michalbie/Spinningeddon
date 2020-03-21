@@ -27,7 +27,7 @@ Server="*res://Scripts/GameManagement/Server.gd"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "MapEditor", "MapEditorDock" )
+enabled=PoolStringArray( "MapEditorDock" )
 
 [input]
 
