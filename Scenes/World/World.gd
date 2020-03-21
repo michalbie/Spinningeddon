@@ -1,6 +1,13 @@
 extends Node2D
 
 var Bullet = preload("res://Entities/Bullet/Bullet.tscn")
+var BattleRoyaleMap = preload("res://Maps/BattleRoyaleMap.tscn")
+
+var map
+
+func _ready():
+	map = BattleRoyaleMap.instance()
+	add_child(map)
 
 remotesync func spawn_bullet(player_id):
 	var bullet = Bullet.instance()
@@ -11,7 +18,7 @@ remotesync func spawn_bullet(player_id):
 	bullet.init(player.bullet_speed, player.bullet_damage, 
 				Vector2(0, -1).rotated(player.get_node("Body").rotation), 
 				player.get_node("Body").rotation, player.bullet_range)
-	GameManager.bullets_info[bullet.get_name()] = {"position": bullet.global_position}
+	GameManager.bullets_info[bullet.get_name()] = {"position": bullet.global_position, "rotation": bullet.get_node("Sprite").rotation}
 	GameManager.bullets_count += 1
 	
 remotesync func delete_bullet(bullet_name):

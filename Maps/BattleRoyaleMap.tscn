@@ -1,0 +1,102 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Maps/Objects/WoodWall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Maps/assets/grass.png" type="Texture" id=2]
+[ext_resource path="res://Maps/Objects/ConcreteWall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Maps/Objects/MetalWall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Maps/Objects/StoneWall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Maps/Objects/BricksWall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Maps/Objects/Tree.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Maps/Objects/Roof1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Maps/Objects/Roof3.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Maps/Objects/Roof5.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Maps/Objects/Roof2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Maps/Objects/Road2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Maps/Objects/Road1.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Maps/Objects/Roof6.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Maps/Objects/Roof4.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Maps/Objects/Rock.tscn" type="PackedScene" id=16]
+
+[node name="BattleRoyaleMap" type="Node2D"]
+
+[node name="GroundLayer" type="TextureRect" parent="."]
+margin_right = 11331.0
+margin_bottom = 9687.0
+mouse_filter = 2
+texture = ExtResource( 2 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WoodWall" parent="." instance=ExtResource( 1 )]
+
+[node name="StoneWall" parent="." instance=ExtResource( 5 )]
+position = Vector2( 253.674, -1.69116 )
+
+[node name="ConcreteWall" parent="." instance=ExtResource( 3 )]
+position = Vector2( 510.73, -3.38232 )
+
+[node name="BricksWall" parent="." instance=ExtResource( 6 )]
+position = Vector2( 766.095, -5.07349 )
+
+[node name="MetalWall" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1010.4, 44.5183 )
+rotation = 1.57079
+
+[node name="Tree" parent="." instance=ExtResource( 7 )]
+position = Vector2( 432.937, 103.161 )
+
+[node name="Rock" parent="." instance=ExtResource( 16 )]
+position = Vector2( -112.812, 344.853 )
+
+[node name="Road2" parent="." instance=ExtResource( 12 )]
+margin_left = 568.0
+margin_top = 1219.0
+margin_right = 3623.0
+margin_bottom = 1719.0
+rect_rotation = 89.9999
+
+[node name="Road1" parent="." instance=ExtResource( 13 )]
+margin_left = 62.2889
+margin_top = 1218.79
+margin_right = 1062.29
+margin_bottom = 1718.79
+rect_rotation = -89.9999
+
+[node name="Roof1" parent="." instance=ExtResource( 8 )]
+position = Vector2( -469.181, 671.415 )
+
+[node name="Roof2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 618.834, 707.817 )
+
+[node name="Roof3" parent="." instance=ExtResource( 9 )]
+position = Vector2( -546.03, 1371.14 )
+
+[node name="Roof4" parent="." instance=ExtResource( 15 )]
+position = Vector2( 655.236, 1354.96 )
+
+[node name="Roof5" parent="." instance=ExtResource( 10 )]
+position = Vector2( -576.513, 2047.87 )
+
+[node name="Roof6" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1634.92, 2517.59 )
+rotation = 3.14159
+
+[node name="Roof7" parent="." instance=ExtResource( 11 )]
+position = Vector2( 649.157, 2727.72 )
+
+[node name="Tree2" parent="." instance=ExtResource( 7 )]
+position = Vector2( -572.785, 2461.99 )
+
+[node name="Rock2" parent="." instance=ExtResource( 16 )]
+position = Vector2( -21.4763, 2398.5 )
+
+[node name="Rock3" parent="." instance=ExtResource( 16 )]
+position = Vector2( 466.257, 1868.09 )
+
+[node name="Road3" parent="." instance=ExtResource( 13 )]
+margin_left = 568.0
+margin_top = 3262.0
+margin_right = 3181.0
+margin_bottom = 3762.0

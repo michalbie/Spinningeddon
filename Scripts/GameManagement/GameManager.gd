@@ -48,6 +48,7 @@ func update_players():
 func update_bullets():
 	for bullet in bullets_info:
 		world.get_node(bullet).global_position = bullets_info[bullet]['position']
+		world.get_node(bullet + "/Sprite").rotation = bullets_info[bullet]['rotation']
 
 func delete_player(player_name):
 	players_info.erase(player_name)

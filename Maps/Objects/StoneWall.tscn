@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Maps/Objects/share/ObjectBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Maps/assets/stone.png" type="Texture" id=2]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 0, 0, 250, 0, 250, 50, 0, 50 )
+
+[node name="StoneWall" instance=ExtResource( 1 )]
+z_index = 1
+collision_layer = 2048
+collision_mask = 3
+object_material = 1
+
+[node name="Texture" parent="." index="0"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
