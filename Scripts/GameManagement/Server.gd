@@ -60,9 +60,7 @@ func calculate_bullet_state(bullet, delta):
 		var collision = bullet_instance.move_and_collide(bullet_instance.velocity * bullet_instance.speed * delta)
 		
 		if collision:
-			if collision.collider.has_method("got_shot"):
-				collision.collider.got_shot(bullet_instance.damage)
-				GameManager.world.rpc("delete_bullet", bullet_instance.get_name())
+			bullet_instance.handle_collision(collision, collision.collider)
 		else:
 			var current_postion = bullet_instance.global_position
 			var distance_vector = current_postion - previous_position

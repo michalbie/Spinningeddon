@@ -11,6 +11,7 @@ radius = 37.0
 
 [node name="Player" instance=ExtResource( 2 )]
 position = Vector2( 183.667, 210.985 )
+z_index = 1
 
 [node name="Body" parent="." index="0"]
 texture = ExtResource( 1 )
@@ -20,3 +21,6 @@ shape = SubResource( 1 )
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="3"]
+current = true

@@ -26,6 +26,10 @@ GameManager="*res://Scripts/GameManagement/GameManager.gd"
 Server="*res://Scripts/GameManagement/Server.gd"
 Globals="*res://Scripts/Globals.gd"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "MapEditorDock" )
+
 [input]
 
 switch_rotation={

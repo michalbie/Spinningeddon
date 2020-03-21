@@ -43,13 +43,14 @@ func listen_inputs():
 		shoot = true
 
 func send_inputs(delta):
-	var mouse_pos = get_viewport().get_mouse_position()
+	var mouse_pos = get_global_mouse_position()
 	var player_input = {}
 	player_input['delta'] = delta
 	player_input['mouse_pos'] = mouse_pos
 	player_input['inside_circle'] = inside_circle
 	player_input['switch_rotation'] = switch_rotation
 	player_input['shoot'] = shoot
+	print("charaacter input:" + str(player_input['inside_circle']))
 	switch_rotation = false
 	shoot = false
 	if !being_removed:
@@ -65,9 +66,11 @@ func got_shot(dmg):
 
 func _on_StandingCircle_mouse_entered():
 	inside_circle = true
+	print("entered")
 
 func _on_StandingCircle_mouse_exited():
 	inside_circle = false
+	print("exited")
 
 func _on_RotateCooldown_timeout():
 	$RotateCooldown.stop()
