@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Maps/Objects/share/ObjectBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Maps/assets/gatehouse.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 124.583, 123.157 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24.5363, 31.8102 )
+
+[node name="Gatehouse" instance=ExtResource( 1 )]
+object_material = 2
+
+[node name="Texture" parent="." index="0"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 124.696, 126.146 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
+position = Vector2( 124.696, 382.789 )
+shape = SubResource( 2 )
