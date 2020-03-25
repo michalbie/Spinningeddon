@@ -7,12 +7,14 @@
 extents = Vector2( 115.474, 8.41659 )
 
 [node name="MetalFence" instance=ExtResource( 1 )]
+z_index = 2
+collision_layer = 1024
 object_material = 2
 
-[node name="Texture" parent="." index="0"]
-texture = ExtResource( 2 )
-centered = false
-
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="0"]
 position = Vector2( 115.067, 10.8896 )
 shape = SubResource( 1 )
+
+[node name="Texture" parent="." index="1"]
+texture = ExtResource( 2 )
+centered = false

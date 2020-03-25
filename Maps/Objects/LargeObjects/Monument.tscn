@@ -10,16 +10,17 @@ radius = 187.835
 extents = Vector2( 330.216, 115.795 )
 
 [node name="Monument" instance=ExtResource( 1 )]
+z_index = 4
 object_material = 1
 
-[node name="Texture" parent="." index="0"]
-texture = ExtResource( 2 )
-centered = false
-
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="0"]
 position = Vector2( 377.396, 373.835 )
 shape = SubResource( 1 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="1"]
 position = Vector2( 375.615, 372.055 )
 shape = SubResource( 2 )
+
+[node name="Texture" parent="." index="2"]
+texture = ExtResource( 2 )
+centered = false
