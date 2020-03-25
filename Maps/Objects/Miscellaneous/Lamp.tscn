@@ -8,11 +8,12 @@ radius = 19.1386
 height = 0.750488
 
 [node name="Lamp" instance=ExtResource( 1 )]
+z_index = 4
 
-[node name="Texture" parent="." index="0"]
-texture = ExtResource( 2 )
-centered = false
-
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="0"]
 position = Vector2( 55.1778, 231.417 )
 shape = SubResource( 1 )
+
+[node name="Texture" parent="." index="1"]
+texture = ExtResource( 2 )
+centered = false

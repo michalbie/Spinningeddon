@@ -7,12 +7,13 @@
 radius = 992.553
 
 [node name="Chimney" instance=ExtResource( 1 )]
+z_index = 4
 object_material = 1
 
-[node name="Texture" parent="." index="0"]
-texture = ExtResource( 2 )
-centered = false
-
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="0"]
 position = Vector2( 994.912, 1001.5 )
 shape = SubResource( 1 )
+
+[node name="Texture" parent="." index="1"]
+texture = ExtResource( 2 )
+centered = false

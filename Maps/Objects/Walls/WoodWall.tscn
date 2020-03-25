@@ -4,7 +4,6 @@
 [ext_resource path="res://Maps/assets/wood.png" type="Texture" id=2]
 [ext_resource path="res://Maps/Objects/Walls/WoodWall.gd" type="Script" id=3]
 
-
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 250, 0, 250, 50, 0, 50 )
 
@@ -14,13 +13,13 @@ collision_layer = 1024
 collision_mask = 0
 script = ExtResource( 3 )
 
-[node name="Texture" parent="." index="0"]
-texture = ExtResource( 2 )
-centered = false
-
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="0"]
 z_index = 1
 shape = SubResource( 1 )
+
+[node name="Texture" parent="." index="1"]
+texture = ExtResource( 2 )
+centered = false
 
 [node name="Area" type="Area2D" parent="." index="2"]
 collision_layer = 1024
