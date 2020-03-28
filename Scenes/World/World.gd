@@ -34,7 +34,8 @@ remotesync func kill_player(player_name, killer_name):
 	
 func get_random_camera():
 	randomize()
-	var random_index = randi() % GameManager.players_info.size()
-	self.get_node(str(GameManager.players_info.keys()[random_index])).get_node("Camera2D").make_current()
-	self.get_node(str(GameManager.players_info.keys()[random_index])).observers_list.append(get_tree().get_network_unique_id())
+	if GameManager.players_info.size() > 0:
+		var random_index = randi() % GameManager.players_info.size()
+		self.get_node(str(GameManager.players_info.keys()[random_index])).get_node("Camera2D").make_current()
+		self.get_node(str(GameManager.players_info.keys()[random_index])).observers_list.append(get_tree().get_network_unique_id())
 
