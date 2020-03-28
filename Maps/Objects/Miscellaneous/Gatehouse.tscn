@@ -12,14 +12,14 @@ extents = Vector2( 24.5363, 31.8102 )
 [node name="Gatehouse" instance=ExtResource( 1 )]
 object_material = 2
 
-[node name="Texture" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 124.696, 126.146 )
+shape = SubResource( 1 )
+
+[node name="Texture" parent="." index="1"]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 centered = false
-
-[node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( 124.696, 126.146 )
-shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
 position = Vector2( 124.696, 382.789 )

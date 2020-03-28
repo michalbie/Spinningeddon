@@ -32,7 +32,7 @@ func calculate_player_rotation(player, input):
 		if player.get_node("RotateCooldown").is_stopped() == true:
 			player.get_node("RotateCooldown").start(player.rotate_cooldown)
 			player.rotate_direction  = -player.rotate_direction
-	player.get_node("Body").rotate(player.rotate_direction * player.rotate_speed * input['delta'])
+	player.rotate(player.rotate_direction * player.rotate_speed * input['delta'])
 	
 func check_if_player_shoot(player, id, input):
 	if input['shoot'] == true:
@@ -43,7 +43,7 @@ func check_if_player_shoot(player, id, input):
 func send_player_info(id, player):
 	var player_info = {}
 	player_info['position'] = player.position
-	player_info['body_rotation'] = player.get_node("Body").rotation
+	player_info['body_rotation'] = player.rotation
 	GameManager.players_info[id] = player_info
 	GameManager.rset_unreliable("players_info", GameManager.players_info)
 
