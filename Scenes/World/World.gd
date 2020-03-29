@@ -16,9 +16,9 @@ remotesync func spawn_bullet(player_id):
 	add_child(bullet)
 	bullet.global_position = player.get_node("Body/Bullet_spawn").global_position
 	bullet.init(player.bullet_speed, player.bullet_damage, 
-				Vector2(0, -1).rotated(player.get_node("Body").rotation), 
-				player.get_node("Body").rotation, player.bullet_range, player_id)
-	GameManager.bullets_info[bullet.get_name()] = {"position": bullet.global_position, "rotation": bullet.get_node("Sprite").rotation}
+				Vector2(0, -1).rotated(player.rotation), 
+				player.rotation, player.bullet_range)
+	GameManager.bullets_info[bullet.get_name()] = {"position": bullet.global_position, "rotation": bullet.rotation}
 	GameManager.bullets_count += 1
 	
 remotesync func delete_bullet(bullet_name):

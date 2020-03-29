@@ -13,7 +13,7 @@ func init(sp, dmg, vel, rot, ran, owner):
 	speed = sp
 	damage = dmg
 	velocity = vel
-	$Sprite.rotate(rot)
+	self.rotate(rot)
 	bullet_range = ran
 	bullet_owner = owner
 	
@@ -30,9 +30,9 @@ func handle_collision(collision, collider):
 			
 		elif collider_material == collider.materials.METAL:
 			var motion = collision.remainder.bounce(collision.normal)
-			$Sprite.rotate(velocity.angle_to(motion))
+			self.rotate(velocity.angle_to(motion))
 			velocity = velocity.bounce(collision.normal)
-			GameManager.bullets_info[self.get_name()]['rotation'] = $Sprite.rotation
+			GameManager.bullets_info[self.get_name()]['rotation'] = self.rotation
 			
 	elif "bullet_range" in collider:
 		GameManager.world.rpc("delete_bullet", self.get_name())
