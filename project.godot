@@ -26,9 +26,10 @@ GameManager="*res://Scripts/GameManagement/GameManager.gd"
 Server="*res://Scripts/GameManagement/Server.gd"
 Globals="*res://Scripts/Globals.gd"
 
-[editor_plugins]
+[display]
 
-enabled=PoolStringArray( "MapEditorDock" )
+window/size/resizable=false
+window/stretch/mode="viewport"
 
 [input]
 

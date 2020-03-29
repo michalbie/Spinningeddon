@@ -23,4 +23,3 @@ shape = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
-current = true
