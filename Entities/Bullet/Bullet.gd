@@ -9,13 +9,13 @@ var bullet_owner
 
 remote var distance_traveled = 0
 
-func init(sp, dmg, vel, rot, ran, par_nam):
+func init(sp, dmg, vel, rot, ran, owner):
 	speed = sp
 	damage = dmg
 	velocity = vel
 	$Sprite.rotate(rot)
 	bullet_range = ran
-	bullet_owner = par_nam
+	bullet_owner = owner
 	
 func handle_collision(collision, collider):
 	if collider.has_method("got_shot"):

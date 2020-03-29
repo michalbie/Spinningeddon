@@ -33,7 +33,6 @@ func _ready():
 	bullet_range = Globals.bullet_range[bullet_range]
 	hp = Globals.hp[hp]
 	if self.get_name() == str(get_tree().get_network_unique_id()):
-		print(self.get_name())
 		self.get_node("Camera2D").current = true
 
 func _physics_process(delta):
@@ -62,11 +61,11 @@ func send_inputs(delta):
 	if !being_removed:
 		emit_signal("input_ready", player_input)
 
-func got_shot(dmg, killer):
+func got_shot(dmg, source):
 	if dmg >= hp:
 		hp = 0
 		being_removed = true
-		GameManager.world.rpc("kill_player", int(self.get_name()), killer)
+		GameManager.world.rpc("kill_player", int(self.get_name()), source)
 		
 	else:
 		hp -= dmg
