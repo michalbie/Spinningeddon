@@ -644,7 +644,6 @@ rect_scale = Vector2( 0.12616, 0.637937 )
 [node name="Roof5" parent="." instance=ExtResource( 9 )]
 position = Vector2( 305.402, 215.84 )
 scale = Vector2( 2.99211, 3.01166 )
-z_index = 2
 
 [node name="MetalWall" parent="." instance=ExtResource( 16 )]
 position = Vector2( 305.47, 216.137 )
@@ -689,7 +688,6 @@ scale = Vector2( 3.51991, 1.90528 )
 [node name="Roof6" parent="." instance=ExtResource( 17 )]
 position = Vector2( 3387.37, -9.20459 )
 scale = Vector2( 2.9382, 2.11548 )
-z_index = 1
 
 [node name="WoodWall" parent="." instance=ExtResource( 18 )]
 position = Vector2( 3498.1, 3870.16 )
@@ -780,7 +778,6 @@ scale = Vector2( 0.830898, 1.36812 )
 position = Vector2( 4662.9, 3052.22 )
 rotation = 0.591588
 scale = Vector2( 0.846877, 1.36443 )
-z_index = 3
 
 [node name="WoodWall13" parent="." instance=ExtResource( 18 )]
 position = Vector2( 4295.02, 5002.96 )
@@ -812,19 +809,16 @@ scale = Vector2( 0.84, 1 )
 position = Vector2( 4440.65, 4612.71 )
 rotation = 0.367226
 scale = Vector2( 0.879865, 1.18092 )
-z_index = 3
 
 [node name="Roof19" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1899.19, 10370.6 )
 rotation = 0.367226
 scale = Vector2( 0.878721, 1.18138 )
-z_index = 3
 
 [node name="Roof10" parent="." instance=ExtResource( 7 )]
 position = Vector2( 5418.66, 5627.88 )
 rotation = 1.5641
 scale = Vector2( 0.724142, 1.15868 )
-z_index = 3
 
 [node name="WoodWall19" parent="." instance=ExtResource( 18 )]
 position = Vector2( 6311.53, 6022.21 )
@@ -840,7 +834,6 @@ scale = Vector2( 1.50287, 1.50287 )
 position = Vector2( 6896.51, 5956.76 )
 rotation = 1.46734
 scale = Vector2( 1.705, 1.59147 )
-z_index = 3
 
 [node name="BricksWall" parent="." instance=ExtResource( 15 )]
 position = Vector2( 5834.91, 3130.34 )
@@ -871,7 +864,6 @@ scale = Vector2( 0.244244, 13.8985 )
 position = Vector2( 5794.79, 3096.48 )
 rotation = -0.0450597
 scale = Vector2( 1.41772, 1.98143 )
-z_index = 2
 
 [node name="BricksWall2" parent="." instance=ExtResource( 15 )]
 position = Vector2( 6467.47, 5109.53 )
@@ -897,7 +889,6 @@ scale = Vector2( 2.01478, 1.95496 )
 position = Vector2( 6420.92, 5077.88 )
 rotation = -0.183523
 scale = Vector2( 1.25048, 1.55331 )
-z_index = 1
 
 [node name="StoneWall" parent="." instance=ExtResource( 10 )]
 position = Vector2( 8303.14, 4545.89 )
@@ -1043,7 +1034,6 @@ rect_scale = Vector2( 0.713581, 0.943157 )
 position = Vector2( 6041.67, 4060.9 )
 rotation = -0.0424082
 scale = Vector2( 0.916888, 0.556958 )
-z_index = 2
 
 [node name="BricksWall3" parent="." instance=ExtResource( 15 )]
 position = Vector2( 6072.3, 4028.97 )
@@ -1074,7 +1064,6 @@ scale = Vector2( 0.360465, 10.2051 )
 position = Vector2( 9850.14, 3438.04 )
 rotation = -0.619973
 scale = Vector2( 1.70162, 1.6234 )
-z_index = 1
 
 [node name="ConcreteWall16" parent="." instance=ExtResource( 19 )]
 position = Vector2( 11242.6, 2512.15 )
@@ -1100,7 +1089,6 @@ scale = Vector2( 0.360465, 10.2051 )
 position = Vector2( 10560.4, 2930.35 )
 rotation = -0.619973
 scale = Vector2( 1.70162, 1.6234 )
-z_index = 1
 
 [node name="MetalWall4" parent="." instance=ExtResource( 16 )]
 position = Vector2( 6262.44, 10076.5 )
@@ -1110,7 +1098,7 @@ rotation = -0.187561
 position = Vector2( 11958.5, -1022.83 )
 rotation = 0.948691
 scale = Vector2( 4.33497, 3.15147 )
-z_index = 1
+z_index = 4
 
 [node name="BricksWall33" parent="." instance=ExtResource( 15 )]
 position = Vector2( 12732.5, 323.48 )
@@ -1224,7 +1212,6 @@ scale = Vector2( 1.04897, 0.989056 )
 position = Vector2( 1893.36, 6537.71 )
 rotation = -0.0690132
 scale = Vector2( 0.862826, 1.23467 )
-z_index = 3
 
 [node name="WoodWall29" parent="." instance=ExtResource( 18 )]
 position = Vector2( 210.861, 8755.22 )
@@ -1250,7 +1237,6 @@ scale = Vector2( 1.8439, 2.2784 )
 position = Vector2( 849.437, 8640.32 )
 rotation = 1.41311
 scale = Vector2( 1.18075, 1.77554 )
-z_index = 3
 
 [node name="WoodWall37" parent="." instance=ExtResource( 18 )]
 position = Vector2( 11729.5, 7687.41 )
@@ -1853,13 +1839,11 @@ scale = Vector2( 1.51687, 1.51687 )
 position = Vector2( 11376.4, 4227.54 )
 rotation = -0.638474
 scale = Vector2( 0.91888, 1.38932 )
-z_index = 1
 
 [node name="CpnRoof" parent="." instance=ExtResource( 30 )]
 position = Vector2( 7575.56, 7599.9 )
 rotation = 0.547548
 scale = Vector2( 1.13294, 1.37418 )
-z_index = 1
 
 [node name="FuelDispatcher" parent="." instance=ExtResource( 27 )]
 position = Vector2( 6932.83, 7741.58 )
@@ -1878,11 +1862,6 @@ object_material = 2
 position = Vector2( 1799.95, 772.224 )
 scale = Vector2( 0.22946, 0.22946 )
 object_material = 2
-
-[node name="Chimney3" parent="." instance=ExtResource( 24 )]
-position = Vector2( 601.084, 2895.59 )
-scale = Vector2( 0.367613, 0.367613 )
-z_index = 0
 
 [node name="Monument" parent="." instance=ExtResource( 25 )]
 position = Vector2( 1104.58, 2755.04 )
@@ -2799,19 +2778,17 @@ scale = Vector2( 1.23648, 1.23648 )
 position = Vector2( 6118.98, 10919.6 )
 rotation = -0.964707
 scale = Vector2( 0.598034, 0.816963 )
-z_index = 1
 
 [node name="CinemaRoof2" parent="." instance=ExtResource( 31 )]
 position = Vector2( 5767.11, 9391.85 )
 rotation = 0.616839
 scale = Vector2( 2.16458, 2.25966 )
-z_index = 1
+z_index = 4
 
 [node name="CpnRoof2" parent="." instance=ExtResource( 30 )]
 position = Vector2( 6019.09, 10492.8 )
 rotation = 0.615024
 scale = Vector2( 0.327831, 0.424742 )
-z_index = 1
 
 [node name="Tree89" parent="." instance=ExtResource( 6 )]
 position = Vector2( 9717.68, 5529.27 )
@@ -2857,16 +2834,14 @@ scale = Vector2( 1.75577, 1.75577 )
 position = Vector2( 7229.09, 482.699 )
 rotation = -0.643527
 scale = Vector2( 2.288, 2.727 )
-z_index = 1
+z_index = 4
 
 [node name="BlockRoof2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 10691.1, 1631.29 )
 rotation = -3.77589
 scale = Vector2( 1.67132, 1.84318 )
-z_index = 1
 
 [node name="BlockRoof3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 9046.59, 3988.1 )
 rotation = -5.3557
 scale = Vector2( 1.682, 1.859 )
-z_index = 1
