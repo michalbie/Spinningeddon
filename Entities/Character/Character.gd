@@ -45,8 +45,11 @@ func listen_inputs():
 	if Input.is_action_just_pressed("switch_rotation"):
 		switch_rotation = true
 		
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_pressed("shoot"):
 		shoot = true
+		
+	if Input.is_action_just_released("shoot"):
+		shoot = false
 
 func send_inputs(delta):
 	var mouse_pos = get_global_mouse_position()
