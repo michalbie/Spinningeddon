@@ -1,5 +1,6 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
+[ext_resource path="res://Maps/Objects/Roofs/BlockRoof.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/assets/grass.png" type="Texture" id=2]
 [ext_resource path="res://Maps/Objects/Vehicles/GrayCar.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Maps/Objects/Vehicles/Truck.tscn" type="PackedScene" id=5]
@@ -909,9 +910,9 @@ rotation = -0.642714
 scale = Vector2( 3.70318, 2.96637 )
 
 [node name="StoneWall6" parent="." instance=ExtResource( 10 )]
-position = Vector2( 8534.79, 4566.24 )
-rotation = 0.925332
-scale = Vector2( 5.49508, 3.48748 )
+position = Vector2( 8536.59, 4566.24 )
+rotation = 0.927016
+scale = Vector2( 5.50522, 3.47264 )
 
 [node name="StoneWall8" parent="." instance=ExtResource( 10 )]
 position = Vector2( 9137.22, 4115.31 )
@@ -949,8 +950,8 @@ rotation = -2.21429
 scale = Vector2( 0.884503, 1.83148 )
 
 [node name="StoneWall23" parent="." instance=ExtResource( 10 )]
-position = Vector2( 7305.13, 429.534 )
-rotation = -0.642893
+position = Vector2( 7303.24, 429.534 )
+rotation = -0.643475
 scale = Vector2( 3.15139, 1.94226 )
 
 [node name="StoneWall24" parent="." instance=ExtResource( 10 )]
@@ -1881,10 +1882,12 @@ object_material = 2
 [node name="Chimney3" parent="." instance=ExtResource( 24 )]
 position = Vector2( 601.084, 2895.59 )
 scale = Vector2( 0.367613, 0.367613 )
+z_index = 0
 
 [node name="Monument" parent="." instance=ExtResource( 25 )]
 position = Vector2( 1104.58, 2755.04 )
 rotation = 1.04191
+z_index = 1
 
 [node name="PlayingField" parent="." instance=ExtResource( 29 )]
 margin_left = 13161.6
@@ -2339,163 +2342,136 @@ scale = Vector2( 4.33372, 1 )
 position = Vector2( 11553.4, 1603.55 )
 rotation = 2.55264
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp40" parent="." instance=ExtResource( 34 )]
 position = Vector2( 11035.5, 1727.48 )
 rotation = 0.974014
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp4" parent="." instance=ExtResource( 34 )]
 position = Vector2( 12287.8, 1394.89 )
 rotation = 5.65977
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp15" parent="." instance=ExtResource( 34 )]
 position = Vector2( 10380.2, 314.941 )
 rotation = 3.23099
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp42" parent="." instance=ExtResource( 34 )]
 position = Vector2( 9161.52, 1028.27 )
 rotation = 2.74411
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp16" parent="." instance=ExtResource( 34 )]
 position = Vector2( 8043.21, 1859.63 )
 rotation = 2.55027
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp17" parent="." instance=ExtResource( 34 )]
 position = Vector2( 9030.22, 2492.55 )
 rotation = 4.79489
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp14" parent="." instance=ExtResource( 34 )]
 position = Vector2( 12858.7, 673.45 )
 rotation = 2.55264
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp5" parent="." instance=ExtResource( 34 )]
 position = Vector2( 11098.4, 2224.75 )
 rotation = 5.66984
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp20" parent="." instance=ExtResource( 34 )]
 position = Vector2( 11607.4, 2109.68 )
 rotation = 4.03866
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp41" parent="." instance=ExtResource( 34 )]
 position = Vector2( 10868.2, 1016.45 )
 rotation = 4.03866
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp21" parent="." instance=ExtResource( 34 )]
 position = Vector2( 11921.6, 3021.44 )
 rotation = 7.2211
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp22" parent="." instance=ExtResource( 34 )]
 position = Vector2( 12651.9, 3565.85 )
 rotation = 4.03866
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp23" parent="." instance=ExtResource( 34 )]
 position = Vector2( 12837.8, 4265.16 )
 rotation = 8.15946
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp24" parent="." instance=ExtResource( 34 )]
 position = Vector2( 12187.2, 5088.41 )
 rotation = 5.65577
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp25" parent="." instance=ExtResource( 34 )]
 position = Vector2( 11390.5, 5349.54 )
 rotation = 8.79599
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp26" parent="." instance=ExtResource( 34 )]
 position = Vector2( 10837.3, 6070.99 )
 rotation = 5.65577
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp27" parent="." instance=ExtResource( 34 )]
 position = Vector2( 10819.6, 7341.26 )
 rotation = 1.12023
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp28" parent="." instance=ExtResource( 34 )]
 position = Vector2( 11372.8, 8633.66 )
 rotation = 4.65011
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp31" parent="." instance=ExtResource( 34 )]
 position = Vector2( 10124.7, 9124.95 )
 rotation = 6.09949
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp32" parent="." instance=ExtResource( 34 )]
 position = Vector2( 8451.63, 9107.25 )
 rotation = 3.36356
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp33" parent="." instance=ExtResource( 34 )]
 position = Vector2( 6862.68, 9527.72 )
 rotation = 5.32841
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp35" parent="." instance=ExtResource( 34 )]
 position = Vector2( 7389.38, 7704.2 )
 rotation = 4.38884
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp36" parent="." instance=ExtResource( 34 )]
 position = Vector2( 5946.49, 7952.05 )
 rotation = 5.77306
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp39" parent="." instance=ExtResource( 34 )]
 position = Vector2( 4972.76, 8748.74 )
 rotation = 5.50406
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp37" parent="." instance=ExtResource( 34 )]
 position = Vector2( 5884.52, 5464.62 )
 rotation = 4.79906
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp38" parent="." instance=ExtResource( 34 )]
 position = Vector2( 5990.75, 6965.05 )
 rotation = 4.46039
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp34" parent="." instance=ExtResource( 34 )]
 position = Vector2( 6774.16, 10430.6 )
@@ -2506,115 +2482,96 @@ scale = Vector2( 0.780652, 0.780652 )
 position = Vector2( 11775.6, 10200.5 )
 rotation = 4.1495
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp6" parent="." instance=ExtResource( 34 )]
 position = Vector2( 10427, 2396.88 )
 rotation = 2.52854
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp7" parent="." instance=ExtResource( 34 )]
 position = Vector2( 9994.43, 3020.54 )
 rotation = 5.66984
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp8" parent="." instance=ExtResource( 34 )]
 position = Vector2( 9261.1, 3241.18 )
 rotation = 2.59945
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp18" parent="." instance=ExtResource( 34 )]
 position = Vector2( 10146.3, 4670.79 )
 rotation = 4.03931
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp19" parent="." instance=ExtResource( 34 )]
 position = Vector2( 11168.7, 4259.17 )
 rotation = 4.77957
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp9" parent="." instance=ExtResource( 34 )]
 position = Vector2( 8698.02, 3963.15 )
 rotation = 5.66984
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp10" parent="." instance=ExtResource( 34 )]
 position = Vector2( 7623.13, 4612.9 )
 rotation = 5.97023
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp11" parent="." instance=ExtResource( 34 )]
 position = Vector2( 5675, 4535.64 )
 rotation = 9.55988
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp12" parent="." instance=ExtResource( 34 )]
 position = Vector2( 4277.31, 4247.88 )
 rotation = 6.95364
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp44" parent="." instance=ExtResource( 34 )]
 position = Vector2( 1511.34, 3649.57 )
 rotation = 8.27214
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp45" parent="." instance=ExtResource( 34 )]
 position = Vector2( 1800.69, 2776.63 )
 rotation = 5.54115
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp46" parent="." instance=ExtResource( 34 )]
 position = Vector2( 854.179, 1761.46 )
 rotation = 7.88623
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp47" parent="." instance=ExtResource( 34 )]
 position = Vector2( 854.179, 2693.25 )
 rotation = 6.95612
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp48" parent="." instance=ExtResource( 34 )]
 position = Vector2( 3188.58, 1594.71 )
 rotation = 5.496
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp49" parent="." instance=ExtResource( 34 )]
 position = Vector2( 4409.72, 1251.42 )
 rotation = 3.15325
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp50" parent="." instance=ExtResource( 34 )]
 position = Vector2( 6185.04, 1668.27 )
 rotation = -0.862679
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp43" parent="." instance=ExtResource( 34 )]
 position = Vector2( 491.267, 5277.77 )
 rotation = 7.41753
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp13" parent="." instance=ExtResource( 34 )]
 position = Vector2( 3428.7, 2875.13 )
 rotation = 10.356
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Rock15" parent="." instance=ExtResource( 21 )]
 position = Vector2( 5327.59, 3744.71 )
@@ -2833,7 +2790,6 @@ scale = Vector2( 1.29999, 1.29999 )
 position = Vector2( 12731.6, 11174.2 )
 rotation = -2.57358
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Tree87" parent="." instance=ExtResource( 6 )]
 position = Vector2( 12493, 9811.69 )
@@ -2896,3 +2852,21 @@ scale = Vector2( 0.873991, 0.873991 )
 position = Vector2( 6279.54, 4268.73 )
 rotation = 0.748667
 scale = Vector2( 1.75577, 1.75577 )
+
+[node name="BlockRoof" type="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 7229.09, 482.699 )
+rotation = -0.643527
+scale = Vector2( 2.288, 2.727 )
+z_index = 1
+
+[node name="BlockRoof2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 10691.1, 1631.29 )
+rotation = -3.77589
+scale = Vector2( 1.67132, 1.84318 )
+z_index = 1
+
+[node name="BlockRoof3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 9046.59, 3988.1 )
+rotation = -5.3557
+scale = Vector2( 1.682, 1.859 )
+z_index = 1
