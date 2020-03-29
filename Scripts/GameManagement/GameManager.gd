@@ -34,7 +34,6 @@ remotesync func initialize_players():
 		var player = picked_class_scene.instance()
 		player.set_name(str(p))
 		world.add_child(player)
-		#player.position = Vector2(randi()%int(get_viewport().size.x), randi()%int(get_viewport().size.y))
 		player.position = Vector2(0, 0)
 		players_info[p] = {"position": player.position, "body_rotation": player.get_node("Body").rotation}
 		get_tree().change_scene_to(world)
