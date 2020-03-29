@@ -34,7 +34,7 @@ remotesync func initialize_players():
 		var player = picked_class_scene.instance()
 		player.set_name(str(p))
 		world.add_child(player)
-		player.position = Vector2(randi()%int(get_viewport().size.x), randi()%int(get_viewport().size.y))
+		player.position = Vector2(0, 0)
 		players_info[p] = {"position": player.position, "body_rotation": player.get_node("Body").rotation}
 		get_tree().change_scene_to(world)
 		
@@ -44,13 +44,15 @@ func update_world():
 		
 func update_players():
 	for player_id in players_info:
-		world.get_node(str(player_id)).position = players_info[player_id]["position"]
-		world.get_node(str(player_id) + "/Body").rotation = players_info[player_id]["body_rotation"]
+		if world.get_node(str(player_id)) != null:
+			world.get_node(str(player_id)).position = players_info[player_id]["position"]
+			world.get_node(str(player_id)).rotation = players_info[player_id]["body_rotation"]
 
 func update_bullets():
 	for bullet in bullets_info:
-		world.get_node(bullet).global_position = bullets_info[bullet]['position']
-		world.get_node(bullet + "/Sprite").rotation = bullets_info[bullet]['rotation']
+		if world.get_node(bullet) != null:
+			world.get_node(bullet).global_position = bullets_info[bullet]['position']
+			world.get_node(bullet).rotation = bullets_info[bullet]['rotation']
 
 func delete_player(player_name):
 	players_info.erase(player_name)
