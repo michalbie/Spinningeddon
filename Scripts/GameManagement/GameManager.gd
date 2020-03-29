@@ -44,13 +44,15 @@ func update_world():
 		
 func update_players():
 	for player_id in players_info:
-		world.get_node(str(player_id)).position = players_info[player_id]["position"]
-		world.get_node(str(player_id)).rotation = players_info[player_id]["body_rotation"]
+		if world.get_node(str(player_id)) != null:
+			world.get_node(str(player_id)).position = players_info[player_id]["position"]
+			world.get_node(str(player_id)).rotation = players_info[player_id]["body_rotation"]
 
 func update_bullets():
 	for bullet in bullets_info:
-		world.get_node(bullet).global_position = bullets_info[bullet]['position']
-		world.get_node(bullet).rotation = bullets_info[bullet]['rotation']
+		if world.get_node(bullet) != null:
+			world.get_node(bullet).global_position = bullets_info[bullet]['position']
+			world.get_node(bullet).rotation = bullets_info[bullet]['rotation']
 
 func delete_player(player_name):
 	players_info.erase(player_name)

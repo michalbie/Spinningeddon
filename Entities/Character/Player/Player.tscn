@@ -32,5 +32,4 @@ rotation = 1.57079
 scale = Vector2( 0.2, 0.2 )
 shape = SubResource( 2 )
 
-[node name="Camera2D" type="Camera2D" parent="." index="5"]
-current = true
+[node name="Camera2D" type="Camera2D" parent="." index="3"]

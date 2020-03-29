@@ -26,7 +26,16 @@ remotesync func delete_bullet(bullet_name):
 	get_node(bullet_name).queue_free()
 	remove_child(get_node(bullet_name))
 		
-remotesync func kill_player(player_name):
+remotesync func kill_player(player_name, killer_name):
 	GameManager.delete_player(player_name)
+	if player_name == get_tree().get_network_unique_id() or get_tree().get_network_unique_id() in get_node(str(player_name)).observers_list:
+		get_random_camera()
 	get_node(str(player_name)).queue_free()
+	
+func get_random_camera():
+	randomize()
+	if GameManager.players_info.size() > 0:
+		var random_index = randi() % GameManager.players_info.size()
+		self.get_node(str(GameManager.players_info.keys()[random_index])).get_node("Camera2D").make_current()
+		self.get_node(str(GameManager.players_info.keys()[random_index])).observers_list.append(get_tree().get_network_unique_id())
 
