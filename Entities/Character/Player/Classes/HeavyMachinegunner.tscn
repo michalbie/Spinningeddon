@@ -1,15 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Entities/Character/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Character/assets/HeavyMachinegunner.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 2.71907
+height = 58.1534
 
 [node name="HeavyMachinegunner" instance=ExtResource( 1 )]
 bullet_range = 1
 hp = 2
 
 [node name="Body" parent="." index="0"]
-scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 2 )
 
 [node name="Bullet_spawn" parent="Body" index="0"]
-position = Vector2( -1.04163, -449.358 )
+position = Vector2( -2.50154, -519.435 )
+
+[node name="RifleCollisionShape" parent="." index="1"]
+position = Vector2( -0.184036, -56.3995 )
+shape = SubResource( 1 )

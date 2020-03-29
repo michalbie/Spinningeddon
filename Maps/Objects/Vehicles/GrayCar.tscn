@@ -5,5 +5,5 @@
 
 [node name="GrayCar" instance=ExtResource( 2 )]
 
-[node name="Texture" parent="." index="0"]
+[node name="Texture" parent="." index="1"]
 texture = ExtResource( 1 )
