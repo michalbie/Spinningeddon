@@ -1,7 +1,6 @@
 extends Node
 
 var GameSession = preload("res://Scenes/World/World.tscn")
-const CLASSES_PATH = "res://Entities/Character/Player/Classes/"
 var Lobby = preload("res://Scenes/Lobby/Lobby.tscn")
 var world
 var occupied_spawnpoints = []
@@ -30,7 +29,7 @@ remotesync func initialize_world():
 remotesync func initialize_players():
 	print("initializing players...")
 	for p in LobbyManager.players:
-		var picked_class_scene = load(CLASSES_PATH + LobbyManager.players[p]["class"] + ".tscn")
+		var picked_class_scene = Globals.classes[LobbyManager.players[p]["class"]]["scene"]
 		var player = picked_class_scene.instance()
 		player.set_name(str(p))
 		world.add_child(player)
