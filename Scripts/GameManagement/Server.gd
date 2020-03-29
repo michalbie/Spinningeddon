@@ -40,14 +40,13 @@ func check_if_player_shoot(player, id, input):
 			player.get_node("ShootCooldown").start(player.shoot_cooldown)
 			if player is Globals.classes["CloseRifleman"]["class"]:
 				player.rotate(-player.bullet_spread)
-				GameManager.world.rpc("spawn_bullet", id, "")
+				GameManager.world.rpc("spawn_bullet", id)
 				player.rotate(player.bullet_spread)
 				GameManager.world.rpc("spawn_bullet", id)
 				player.rotate(player.bullet_spread)
 				GameManager.world.rpc("spawn_bullet", id)
 				player.rotate(-player.bullet_spread)
 			elif player is Globals.classes["Soldier"]["class"]:
-				print("Soldier")
 				GameManager.world.rpc("spawn_bullet", id, true)
 			else:
 				GameManager.world.rpc("spawn_bullet", id)
