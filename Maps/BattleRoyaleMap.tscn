@@ -1824,6 +1824,11 @@ position = Vector2( 1421.49, 4773.87 )
 rotation = -0.336034
 scale = Vector2( 1.3184, 1.3184 )
 
+[node name="GrayCar4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 6634.66, 4209.89 )
+rotation = -0.336034
+scale = Vector2( 1.3184, 1.3184 )
+
 [node name="MetalFence18" parent="." instance=ExtResource( 32 )]
 position = Vector2( 2371.4, 3258.71 )
 rotation = 2.65427
@@ -2496,7 +2501,6 @@ object_material = 2
 position = Vector2( 6774.16, 10430.6 )
 rotation = 6.31164
 scale = Vector2( 0.780652, 0.780652 )
-object_material = 2
 
 [node name="Lamp29" parent="." instance=ExtResource( 34 )]
 position = Vector2( 11775.6, 10200.5 )
