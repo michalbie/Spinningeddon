@@ -86,6 +86,8 @@ func _on_CpnRoof_pressed():
 func _on_CinemaRoof_pressed():
 	emit_signal("button_pressed", "Roofs/CinemaRoof")
 
+func _on_BlockRoof_pressed():
+	emit_signal("button_pressed", "Roofs/BlockRoof")
 
 func _on_Chimney_pressed():
 	emit_signal("button_pressed", "LargeObjects/Chimney")
@@ -125,3 +127,5 @@ func _on_GrayCar_pressed():
 
 func _on_Truck_pressed():
 	emit_signal("button_pressed", "Vehicles/Truck")
+
+
