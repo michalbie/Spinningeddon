@@ -44,7 +44,7 @@ func _on_peer_disconnected(id):
 	if get_tree().is_network_server() and LobbyManager.players.size() < 2:
 		lobby.get_node("MarginContainer/StartGameBtn").disabled = true
 	if GameManager.in_game:
-		GameManager.delete_player(id)
+		GameManager.world.kill_player(id, id)
 	
 remote func update_players_lobby(new_player_id, players_list):
 	players = players_list
