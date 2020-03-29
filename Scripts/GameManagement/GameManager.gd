@@ -4,6 +4,7 @@ var GameSession = preload("res://Scenes/World/World.tscn")
 const CLASSES_PATH = "res://Entities/Character/Player/Classes/"
 var Lobby = preload("res://Scenes/Lobby/Lobby.tscn")
 var world
+var occupied = []
 
 remotesync var in_game = false
 remote var players_info = {}
@@ -38,10 +39,17 @@ remotesync func initialize_players():
 		get_tree().change_scene_to(world)
 		
 func random_spawnpoint():
-	var x_axis = [2054, 750, 3145, 4858, 8208, 11649, 2137, 7730, 5983, 3971, 6275, 9049, 11839, 10444, 9073, 6675, 12331]
-	var y_axis = [1510, 5000, 6606, 9790, 10184, 8987, 9001, 7470, 7184, 3498, 1179, 1604, 1826, 4098, 5777, 4295, 6470]
-	var number = randi()%17
-	return Vector2(x_axis[number], y_axis[number])
+	var cords = [[2054, 1510], [750, 5000], [3145, 6606], [4858, 9790], [8208, 10184], [11649, 8987], [2137, 9001], [7730, 7470], [5983, 7184], [3971, 3498], [6275, 1179], [9049, 1604], [11839, 1826], [10444, 4098], [9073, 5777], [6675, 4295], [12331, 6470]]
+	if LobbyManager.players.size() > cords.size():
+		return "Lobby overflown! Not enough respawn points" # intended invalid variable type, so the function won't stuck in infinite loop without our knowledge. Probably not happening, but eh
+	else:
+		while 1 == 1:
+			var number = randi() % cords.size()
+			if occupied.has(number):
+				continue
+			else:
+				occupied.append(number)
+				return Vector2(cords[number][0], cords[number][1])
 		
 func update_world():
 	update_players()
