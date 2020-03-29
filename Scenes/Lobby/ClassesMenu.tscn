@@ -16,44 +16,39 @@ size_flags_vertical = 4
 custom_constants/separation = 10
 
 [node name="Soldier" type="Button" parent="Classes"]
-margin_left = -1.0
-margin_right = 179.0
+margin_right = 180.0
 margin_bottom = 30.0
 rect_min_size = Vector2( 180, 30 )
 size_flags_horizontal = 4
 text = "Soldier"
 
 [node name="Sniper" type="Button" parent="Classes"]
-margin_left = -1.0
 margin_top = 40.0
-margin_right = 179.0
+margin_right = 180.0
 margin_bottom = 70.0
 rect_min_size = Vector2( 180, 30 )
 size_flags_horizontal = 4
 text = "Sniper"
 
 [node name="HeavyMachinegunner" type="Button" parent="Classes"]
-margin_left = -1.0
 margin_top = 80.0
-margin_right = 179.0
+margin_right = 180.0
 margin_bottom = 110.0
 rect_min_size = Vector2( 180, 30 )
 size_flags_horizontal = 4
 text = "Heavy Machinegunner"
 
 [node name="LightAssaulter" type="Button" parent="Classes"]
-margin_left = -1.0
 margin_top = 120.0
-margin_right = 179.0
+margin_right = 180.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 180, 30 )
 size_flags_horizontal = 4
 text = "Light Assaulter"
 
 [node name="CloseRifleman" type="Button" parent="Classes"]
-margin_left = -1.0
 margin_top = 160.0
-margin_right = 179.0
+margin_right = 180.0
 margin_bottom = 190.0
 rect_min_size = Vector2( 180, 30 )
 size_flags_horizontal = 4

@@ -10,7 +10,6 @@ radius = 187.835
 extents = Vector2( 330.216, 115.795 )
 
 [node name="Monument" instance=ExtResource( 1 )]
-z_index = 4
 object_material = 1
 
 [node name="CollisionShape2D" parent="." index="0"]
