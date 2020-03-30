@@ -10,6 +10,14 @@ height = 54.9311
 [node name="Soldier" instance=ExtResource( 1 )]
 position = Vector2( 40.4718, 84.541 )
 script = ExtResource( 2 )
+move_speed = 3
+rotate_cooldown = 1
+rotate_speed = 2
+shoot_cooldown = 1
+bullet_speed = 2
+bullet_damage = 2
+bullet_range = 2
+hp = 2
 
 [node name="Bullet_spawn" parent="Body" index="0"]
 position = Vector2( 1.84715, -506.481 )

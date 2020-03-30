@@ -1,5 +1,7 @@
 extends Node
 
+signal game_started()
+
 var GameSession = preload("res://Scenes/World/World.tscn")
 var Lobby = preload("res://Scenes/Lobby/Lobby.tscn")
 var world
@@ -19,6 +21,9 @@ func prepare_game():
 	rpc("initialize_world")
 	rpc("initialize_players")
 	rset("in_game", true)
+	var zone = world.get_node("BattleRoyaleMap/Zone")
+	connect("game_started", zone, "_on_Game_Started")
+	emit_signal("game_started")
 
 remotesync func initialize_world():
 	print("initializing world...")

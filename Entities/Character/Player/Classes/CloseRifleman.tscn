@@ -10,7 +10,14 @@ height = 42.8404
 
 [node name="CloseRifleman" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-shoot_cooldown = 1
+move_speed = 1
+rotate_cooldown = 1
+rotate_speed = 1
+shoot_cooldown = 2
+bullet_speed = 1
+bullet_damage = 1
+bullet_range = 1
+hp = 1
 
 [node name="Body" parent="." index="0"]
 texture = ExtResource( 2 )
