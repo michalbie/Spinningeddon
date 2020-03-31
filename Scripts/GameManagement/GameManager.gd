@@ -21,7 +21,6 @@ func prepare_game():
 	rpc("initialize_world")
 	rpc("initialize_players")
 	rset("in_game", true)
-	emit_signal("game_started")
 
 remotesync func initialize_world():
 	print("initializing world...")
@@ -41,6 +40,7 @@ remotesync func initialize_players():
 		player.position = random_spawnpoint()
 		players_info[p] = {"position": player.position, "body_rotation": player.get_node("Body").rotation}
 		get_tree().change_scene_to(world)
+	emit_signal("game_started")
 		
 func random_spawnpoint():
 	var cords = [[2054, 1510], [6444, 10348], [10576, 10283], [4092, 5202], [750, 5000], [3145, 6606], [4858, 9790], [8208, 10184], [11649, 8987], [2137, 9001], [7730, 7470], [5983, 7184], [3971, 3498], [6275, 1179], [9049, 1604], [11839, 1826], [10444, 4098], [9073, 5777], [6675, 4295], [12331, 6470]]
