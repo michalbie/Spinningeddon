@@ -13,10 +13,10 @@ script = ExtResource( 3 )
 move_speed = 2
 rotate_cooldown = 2
 rotate_speed = 1
-shoot_cooldown = 2
-bullet_speed = 2
-bullet_damage = 2
-bullet_range = 2
+bullet_speed = 4
+bullet_damage = 3
+bullet_range = 3
+hp = 2
 zoom = 3.0
 
 [node name="Body" parent="." index="0"]
