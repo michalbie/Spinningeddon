@@ -24,10 +24,58 @@ range_item_cull_mask = 2
 
 [node name="Fog" type="TextureRect" parent="."]
 light_mask = 2
-margin_left = -14641.0
-margin_top = -12118.0
-margin_right = 15040.0
-margin_bottom = 11736.0
+margin_left = -7341.0
+margin_top = -6421.0
+margin_right = 7429.0
+margin_bottom = 6439.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fog2" type="TextureRect" parent="."]
+margin_left = -7831.0
+margin_top = -14966.0
+margin_right = 8141.0
+margin_bottom = -5890.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fog3" type="TextureRect" parent="."]
+margin_left = -14107.0
+margin_top = -7043.0
+margin_right = -6948.0
+margin_bottom = 6974.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fog4" type="TextureRect" parent="."]
+margin_left = -7431.0
+margin_top = 5731.0
+margin_right = 8852.0
+margin_bottom = 13472.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fog5" type="TextureRect" parent="."]
+margin_left = 6856.0
+margin_top = -7132.0
+margin_right = 15884.0
+margin_bottom = 8042.0
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 2
