@@ -93,9 +93,9 @@ shape = SubResource( 1 )
 [node name="StartingMapArea" type="CollisionShape2D" parent="AreaZone2"]
 shape = SubResource( 2 )
 
-[node name="ZoneTween" type="Tween" parent="."]
+[node name="FogTween" type="Tween" parent="."]
 
-[node name="AreaTween" type="Tween" parent="."]
+[node name="SafeAreaTween" type="Tween" parent="."]
 [connection signal="body_entered" from="AreaZone" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="AreaZone" to="." method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="AreaZone2" to="." method="_on_Area2D_body_entered"]

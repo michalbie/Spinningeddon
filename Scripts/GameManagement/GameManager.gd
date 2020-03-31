@@ -21,8 +21,6 @@ func prepare_game():
 	rpc("initialize_world")
 	rpc("initialize_players")
 	rset("in_game", true)
-	var zone = world.get_node("BattleRoyaleMap/Zone")
-	connect("game_started", zone, "_on_Game_Started")
 	emit_signal("game_started")
 
 remotesync func initialize_world():
@@ -30,6 +28,8 @@ remotesync func initialize_world():
 	world = GameSession.instance()
 	get_tree().get_root().add_child(world)
 	get_tree().change_scene_to(world)
+	var zone = world.get_node("BattleRoyaleMap/Zone")
+	connect("game_started", zone, "_on_Game_Started")
 
 remotesync func initialize_players():
 	print("initializing players...")

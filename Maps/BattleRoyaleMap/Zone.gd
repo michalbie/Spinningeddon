@@ -5,15 +5,15 @@ export var damage_dealt = 50
 export var damage_interval = 2
 
 func _ready():
-	var zone_tween = get_node("ZoneTween")
-	zone_tween.interpolate_property($SafeZone, "texture_scale",
+	var fog_tween = get_node("FogTween")
+	fog_tween.interpolate_property($SafeZone, "texture_scale",
 	40, 3, time_to_shrink, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	zone_tween.start()
+	fog_tween.start()
 	
-	var area_tween = get_node("AreaTween")
-	area_tween.interpolate_property($AreaZone/SafeArea.shape, "radius",
+	var safe_area_tween = get_node("SafeAreaTween")
+	safe_area_tween.interpolate_property($AreaZone/SafeArea.shape, "radius",
 	9200, 690, time_to_shrink, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-	area_tween.start()
+	safe_area_tween.start()
 	
 func _on_Game_Started():
 	for player in LobbyManager.players:
