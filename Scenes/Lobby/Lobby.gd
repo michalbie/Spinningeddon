@@ -26,7 +26,7 @@ func add_item(player_name):
 	var new_label = PlayerLabel.instance()
 	labels_container.add_child(new_label)
 	new_label.set_text(player_name)
-	if scene_tree.is_network_server() and LobbyManager.players.size() >= 1:
+	if scene_tree.is_network_server() and LobbyManager.players.size() >= 2:
 		$MarginContainer/StartGameBtn.disabled = false
 	
 func remove_item(player_name):

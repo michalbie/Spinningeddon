@@ -2,7 +2,7 @@ extends Node2D
 
 var Bullet = preload("res://Entities/Bullet/Bullet.tscn")
 var SoldierBullet = preload("res://Entities/Bullet/SoldierBullet.tscn")
-var BattleRoyaleMap = preload("res://Maps/BattleRoyaleMap.tscn")
+var BattleRoyaleMap = preload("res://Maps/BattleRoyaleMap/BattleRoyaleMap.tscn")
 
 var map
 
