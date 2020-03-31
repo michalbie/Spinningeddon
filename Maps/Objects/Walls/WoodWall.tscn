@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Maps/Objects/share/ObjectBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/assets/wood.png" type="Texture" id=2]
-[ext_resource path="res://Maps/Objects/Walls/WoodWall.gd" type="Script" id=3]
+[ext_resource path="res://Maps/Objects/Walls/Wall.gd" type="Script" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 250, 0, 250, 50, 0, 50 )
@@ -26,5 +26,7 @@ collision_layer = 1024
 collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area" index="0"]
-position = Vector2( 46.781, 17.153 )
+position = Vector2( 49.5275, 17.1623 )
+scale = Vector2( 0.982543, 0.912532 )
 polygon = PoolVector2Array( -47.686, -16.8601, -47.1662, 32.5198, 202.333, 33.0396, 202.333, -15.8206 )
+[connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]

@@ -1,21 +1,28 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Entities/Character/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Character/assets/LightAssaulter.png" type="Texture" id=2]
+[ext_resource path="res://Entities/Character/Player/Classes/LightAssaulter.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 3.14581
 height = 34.1233
 
 [node name="LightAssaulter" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
 move_speed = 2
-bullet_range = 1
+rotate_cooldown = 2
+rotate_speed = 3
+shoot_cooldown = 1
+bullet_speed = 2
+bullet_damage = 2
+bullet_range = 2
 
 [node name="Body" parent="." index="0"]
 texture = ExtResource( 2 )
 
 [node name="Bullet_spawn" parent="Body" index="0"]
-position = Vector2( -4.03322, -393.587 )
+position = Vector2( -0.515, -436.489 )
 
 [node name="RifleCollisionShape" parent="." index="1"]
 position = Vector2( -0.515388, -46.5093 )
