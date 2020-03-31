@@ -20,7 +20,7 @@ bullet_range = 2
 hp = 2
 
 [node name="Bullet_spawn" parent="Body" index="0"]
-position = Vector2( 1.84715, -506.481 )
+position = Vector2( 7.53517, -597.489 )
 
 [node name="Shape2D" parent="Body/StandingCircle" index="0"]
 position = Vector2( -1.18912, -1.18915 )

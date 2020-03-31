@@ -23,7 +23,7 @@ zoom = 3.0
 texture = ExtResource( 2 )
 
 [node name="Bullet_spawn" parent="Body" index="0"]
-position = Vector2( 3.03818, -586.494 )
+position = Vector2( 6.2735, -694.877 )
 
 [node name="Shape2D" parent="Body/StandingCircle" index="0"]
 position = Vector2( 1.31763, 0.00012207 )

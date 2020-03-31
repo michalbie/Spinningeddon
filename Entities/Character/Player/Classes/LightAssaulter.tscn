@@ -23,7 +23,7 @@ hp = 1
 texture = ExtResource( 2 )
 
 [node name="Bullet_spawn" parent="Body" index="0"]
-position = Vector2( -0.515, -436.489 )
+position = Vector2( 0.558181, -501.954 )
 
 [node name="RifleCollisionShape" parent="." index="1"]
 position = Vector2( -0.515388, -46.5093 )
