@@ -30,7 +30,9 @@ func _on_Area2D_body_exited(body):
 
 func _on_Area2D_body_entered(body):
 	if body.has_method("got_shot"):
-		get_node(body.get_name()).stop()
+		var t = get_node_or_null(body.get_name())
+		if t != null:
+			t.stop()
 
 func _on_DamageTimer_timeout(player):
 	player.got_shot(damage_dealt, "Fog")
