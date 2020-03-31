@@ -10,6 +10,14 @@ height = 58.1534
 
 [node name="HeavyMachinegunner" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+move_speed = 2
+rotate_cooldown = 2
+rotate_speed = 2
+shoot_cooldown = 1
+bullet_speed = 2
+bullet_damage = 2
+bullet_range = 2
+hp = 2
 
 [node name="Body" parent="." index="0"]
 texture = ExtResource( 2 )
