@@ -26,7 +26,10 @@ func _on_Game_Started():
 
 func _on_Area2D_body_exited(body):
 	if body.has_method("got_shot"):
-		get_node(body.get_name()).start()
+		if GameManager.players_info.has(int(body.get_name())):
+			var target = get_node(body.get_name())
+			target.start()
+		
 
 func _on_Area2D_body_entered(body):
 	if body.has_method("got_shot"):

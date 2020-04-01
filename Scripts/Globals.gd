@@ -2,13 +2,13 @@ extends Node
 
 enum level {MIN, SMALL, MEDIUM, HIGH, MAX}
 
-const move_speed = [1, 100, 150, 200, 1000] # was 300
-const rotate_cooldown = [1, 1, 3, 5, 10] # was 3
-const rotate_speed = [1, 3, 5, 7, 10] # was 2
-const shoot_cooldown = [0.1, 0.25, 1.5, 3, 10]
-const bullet_speed = [1, 300, 600, 900, 1000] # was 600
+const move_speed = [1, 200, 300, 400, 1000] # was 300
+const rotate_cooldown = [10, 5, 3, 2, 1] # was 3
+const rotate_speed = [1, 2, 3, 4, 10] # was 2
+const shoot_cooldown = [2, 0.7, 0.4, 0.15, 0.1]
+const bullet_speed = [1, 800, 1600, 2400, 3500] # was 600
 const bullet_damage = [1, 15, 30, 60, 100] # was 50
-const bullet_range = [1, 500, 1250, 2000, 10000] # was 800
+const bullet_range = [1, 200, 1250, 2500, 10000] # was 800
 const hp = [1, 100, 150, 200, 1000] # was 100
 const CLASSES_PATH = "res://Entities/Character/Player/Classes/"
 var classes = {
