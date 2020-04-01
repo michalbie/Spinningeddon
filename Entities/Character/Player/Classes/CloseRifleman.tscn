@@ -10,20 +10,20 @@ height = 42.8404
 
 [node name="CloseRifleman" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-move_speed = 1
-rotate_cooldown = 1
-rotate_speed = 1
-shoot_cooldown = 2
+move_speed = 2
+rotate_cooldown = 2
+rotate_speed = 2
+shoot_cooldown = 1
 bullet_speed = 1
-bullet_damage = 1
+bullet_damage = 4
 bullet_range = 1
-hp = 1
+hp = 2
 
 [node name="Body" parent="." index="0"]
 texture = ExtResource( 2 )
 
 [node name="Bullet_spawn" parent="Body" index="0"]
-position = Vector2( 1.08344, -473.99 )
+position = Vector2( 0.93195, -575.249 )
 
 [node name="RifleCollisionShape" parent="." index="1"]
 position = Vector2( -0.238438, -51.1125 )
