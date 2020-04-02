@@ -52,11 +52,15 @@ func _on_Roof6_pressed():
 
 
 func _on_Road1_pressed():
-	emit_signal("button_pressed", "Roofs/Road1")
+	emit_signal("button_pressed", "Roads/Road1")
 
 
 func _on_Road2_pressed():
-	emit_signal("button_pressed", "Roofs/Road2")
+	emit_signal("button_pressed", "Roads/Road2")
+
+
+func _on_Road2bend_pressed():
+	emit_signal("button_pressed", "Roads/Road2Bend")
 
 
 func _on_Sidewalk_pressed():
@@ -127,5 +131,4 @@ func _on_GrayCar_pressed():
 
 func _on_Truck_pressed():
 	emit_signal("button_pressed", "Vehicles/Truck")
-
 
