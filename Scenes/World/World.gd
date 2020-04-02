@@ -4,11 +4,16 @@ var Bullet = preload("res://Entities/Bullet/Bullet.tscn")
 var SoldierBullet = preload("res://Entities/Bullet/SoldierBullet.tscn")
 var BattleRoyaleMap = preload("res://Maps/BattleRoyaleMap/BattleRoyaleMap.tscn")
 
+var GameplayInfo = preload("res://Scenes/HUD/GameplayInfo.tscn")
+
 var map
+var gameplay_info
 
 func _ready():
 	map = BattleRoyaleMap.instance()
 	add_child(map)
+	gameplay_info = GameplayInfo.instance()
+	add_child(gameplay_info)
 
 remotesync func spawn_bullet(player_id, is_soldier_bullet=false):
 	var bullet
@@ -35,7 +40,8 @@ remotesync func kill_player(player_name, killer_name):
 	GameManager.delete_player(player_name)
 	if player_name == get_tree().get_network_unique_id() or get_tree().get_network_unique_id() in get_node(str(player_name)).observers_list:
 		get_random_camera()
-	get_node(str(player_name)).queue_free()
+	if get_node(str(player_name)) != null:
+		get_node(str(player_name)).queue_free()
 	
 func get_random_camera():
 	randomize()
@@ -43,4 +49,3 @@ func get_random_camera():
 		var random_index = randi() % GameManager.players_info.size()
 		self.get_node(str(GameManager.players_info.keys()[random_index])).get_node("Camera2D").make_current()
 		self.get_node(str(GameManager.players_info.keys()[random_index])).observers_list.append(get_tree().get_network_unique_id())
-

@@ -32,6 +32,7 @@ func _on_peer_connected(id):
 	print("Connected: " + str(id))
 	
 func _on_connection_succeeded():
+	set_network_master(1)
 	rpc_id(1, "register_new_player", scene_tree.get_network_unique_id(), my_name)
 	
 remote func register_new_player(new_id, new_player_name):

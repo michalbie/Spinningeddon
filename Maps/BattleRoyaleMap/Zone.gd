@@ -1,6 +1,6 @@
 extends Node2D
 
-export var time_to_shrink = 120
+export var time_to_shrink = 10000
 export var damage_dealt = 50
 export var damage_interval = 2
 
@@ -20,6 +20,7 @@ func _on_Game_Started():
 		var timer = Timer.new()
 		var player_node = GameManager.world.get_node(str(player))
 		timer.connect("timeout", self, "_on_DamageTimer_timeout", [player_node])
+		player_node.connect("player_died", self, "delete_timer", [str(player)])
 		timer.set_wait_time(damage_interval)
 		timer.set_name(str(player))
 		add_child(timer)
@@ -37,4 +38,7 @@ func _on_Area2D_body_entered(body):
 
 func _on_DamageTimer_timeout(player):
 	player.got_shot(damage_dealt, "Fog")
-
+	
+func delete_timer(name):
+	get_node(name).stop()
+	get_node(name).queue_free()

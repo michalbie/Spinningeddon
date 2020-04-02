@@ -6,6 +6,9 @@
 margin_left = 620.0
 margin_right = 1004.0
 margin_bottom = 200.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Classes" type="VBoxContainer" parent="."]
 margin_top = 5.0
