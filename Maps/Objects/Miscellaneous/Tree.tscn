@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Maps/assets/tree.png" type="Texture" id=1]
+[ext_resource path="res://Maps/assets/stump.png" type="Texture" id=2]
+[ext_resource path="res://Maps/Objects/share/ObjectBase.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Maps/Objects/Miscellaneous/Tree.gd" type="Script" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 62.7888
+height = 6.01828
+
+[node name="Tree" type="Node2D"]
+z_index = 3
+script = ExtResource( 4 )
+
+[node name="Stump" parent="." instance=ExtResource( 3 )]
+collision_layer = 1024
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="Stump" index="0"]
+position = Vector2( 247.058, 238.234 )
+shape = SubResource( 1 )
+
+[node name="Texture" parent="Stump" index="1"]
+position = Vector2( 245.797, 236.974 )
+texture = ExtResource( 2 )
+
+[node name="Area" type="Area2D" parent="Stump"]
+collision_layer = 1024
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stump/Area"]
+position = Vector2( 247.058, 238.234 )
+shape = SubResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Leaves" type="Area2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Leaves"]
+self_modulate = Color( 1, 1, 1, 0.478431 )
+texture = ExtResource( 1 )
+centered = false
+[connection signal="body_exited" from="Stump/Area" to="." method="_on_Area_body_exited"]
+
+[editable path="Stump"]

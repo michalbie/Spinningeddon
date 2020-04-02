@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Entities/Character/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Character/assets/Sniper.png" type="Texture" id=2]
+[ext_resource path="res://Entities/Character/Player/Classes/Sniper.gd" type="Script" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 2.81328
+height = 69.8346
+
+[node name="Sniper" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+move_speed = 2
+rotate_cooldown = 2
+rotate_speed = 1
+bullet_speed = 4
+bullet_damage = 3
+bullet_range = 3
+hp = 2
+zoom = 3.0
+
+[node name="Body" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="Bullet_spawn" parent="Body" index="0"]
+position = Vector2( 6.2735, -694.877 )
+
+[node name="Shape2D" parent="Body/StandingCircle" index="0"]
+position = Vector2( 1.31763, 0.00012207 )
+
+[node name="RifleCollisionShape" parent="." index="1"]
+position = Vector2( 0.453453, -61.5928 )
+shape = SubResource( 1 )
