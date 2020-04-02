@@ -27,8 +27,10 @@ remotesync func initialize_world():
 	world = GameSession.instance()
 	get_tree().get_root().add_child(world)
 	get_tree().change_scene_to(world)
-	var zone = world.get_node("BattleRoyaleMap/Zone")
-	connect("game_started", zone, "_on_Game_Started")
+	
+	if get_tree().is_network_server():
+		var zone = world.get_node("BattleRoyaleMap/Zone")
+		connect("game_started", zone, "_on_Game_Started")
 
 remotesync func initialize_players():
 	print("initializing players...")
