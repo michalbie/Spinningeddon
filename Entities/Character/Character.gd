@@ -86,7 +86,6 @@ func got_shot(dmg, source):
 		GameManager.world.gameplay_info.rpc("update_kills_info", str(source), self.get_name())
 		emit_signal("player_died")
 		GameManager.world.rpc("kill_player", int(self.get_name()), source)
-		print("GOT SHOT")
 	else:
 		hp -= dmg
 		if hud != null:
