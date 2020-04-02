@@ -1,6 +1,6 @@
 extends Node2D
 
-export var time_to_shrink = 10000
+export var time_to_shrink = 120
 export var damage_dealt = 50
 export var damage_interval = 2
 
