@@ -84,11 +84,12 @@ func got_shot(dmg, source):
 		hp = 0
 		being_removed = true
 		GameManager.world.gameplay_info.rpc("update_kills_info", str(source), self.get_name())
-		GameManager.world.rpc("kill_player", int(self.get_name()), source)
 		emit_signal("player_died")
+		GameManager.world.rpc("kill_player", int(self.get_name()), source)
 	else:
 		hp -= dmg
-		hud.rpc_id(int(self.get_name()), "update_hp", hp)
+		if hud != null:
+			hud.rpc_id(int(self.get_name()), "update_hp", hp)
 	
 func _on_StandingCircle_mouse_entered():
 	inside_circle = true
