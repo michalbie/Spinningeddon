@@ -13,17 +13,20 @@ margin_left = 10.0
 margin_top = 7.72791
 margin_right = -10.0
 margin_bottom = -12.2721
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 margin_right = 1900.0
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 2
 
 [node name="KillingsContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 margin_left = 1900.0
 margin_right = 1900.0
+mouse_filter = 2
 size_flags_horizontal = 10
 size_flags_vertical = 3
