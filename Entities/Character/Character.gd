@@ -83,7 +83,7 @@ func got_shot(dmg, source):
 	if dmg >= hp:
 		hp = 0
 		being_removed = true
-		GameManager.world.gameplay_info.rpc("update_killings", str(source), self.get_name())
+		GameManager.world.gameplay_info.rpc("update_kills_info", str(source), self.get_name())
 		GameManager.world.rpc("kill_player", int(self.get_name()), source)
 		emit_signal("player_died")
 	else:

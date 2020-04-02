@@ -2,7 +2,7 @@ extends CanvasLayer
 
 var KillLabel = preload("res://Scenes/HUD/share/KillLabel.tscn")
 
-remote func update_killings(killer, victim):
+remote func update_kills_info(killer, victim):
 	var killer_name = str(killer)
 	if str(killer) != "Fog":
 		killer_name = LobbyManager.players[int(killer)]["name"]
