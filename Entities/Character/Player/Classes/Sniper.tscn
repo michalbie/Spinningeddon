@@ -10,14 +10,14 @@ height = 69.8346
 
 [node name="Sniper" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-move_speed = 2
+move_speed = 1
 rotate_cooldown = 2
 rotate_speed = 1
 bullet_speed = 4
 bullet_damage = 3
 bullet_range = 3
 hp = 2
-zoom = 3.0
+zoom = 2.0
 
 [node name="Body" parent="." index="0"]
 texture = ExtResource( 2 )

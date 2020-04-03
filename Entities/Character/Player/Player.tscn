@@ -4,7 +4,7 @@
 [ext_resource path="res://Entities/Character/Character.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 91.8067
+radius = 153.625
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 108.065

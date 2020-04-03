@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Maps/Objects/LargeObjects/PlayingField.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/Objects/Miscellaneous/FuelDispatcher.tscn" type="PackedScene" id=2]
@@ -33,6 +33,8 @@
 [ext_resource path="res://Maps/Objects/Roofs/CinemaRoof.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Maps/Objects/Miscellaneous/Lamp.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Maps/Objects/Walls/MetalFence.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Maps/assets/bend.png" type="Texture" id=34]
+[ext_resource path="res://Maps/Objects/Roads/Road2Bend.tscn" type="PackedScene" id=35]
 
 [node name="BattleRoyaleMap" type="Node2D"]
 
@@ -49,6 +51,237 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Road46" parent="." instance=ExtResource( 11 )]
+margin_left = 1041.0
+margin_top = 5937.0
+margin_right = 2533.0
+margin_bottom = 6437.0
+rect_rotation = 182.8
+rect_scale = Vector2( 0.263018, 0.786802 )
+
+[node name="Road21" parent="." instance=ExtResource( 11 )]
+margin_left = 1083.0
+margin_top = 5094.0
+margin_right = 2083.0
+margin_bottom = 5594.0
+grow_horizontal = 2
+rect_rotation = 92.8264
+rect_scale = Vector2( 0.786802, 0.786802 )
+
+[node name="Road2Bend" type="TextureRect" parent="." instance=ExtResource( 35 )]
+margin_left = 2023.33
+margin_top = 3707.32
+margin_right = 2524.33
+margin_bottom = 4208.32
+rect_rotation = 153.808
+rect_scale = Vector2( 0.785, 0.785 )
+mouse_filter = 2
+texture = ExtResource( 34 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Road2Bend4" parent="." instance=ExtResource( 35 )]
+margin_left = 3358.69
+margin_top = 3648.19
+margin_right = 3859.69
+margin_bottom = 4149.19
+rect_rotation = 264.648
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend6" parent="." instance=ExtResource( 35 )]
+margin_left = 3886.44
+margin_top = 4233.54
+margin_right = 4387.44
+margin_bottom = 4734.54
+rect_rotation = 264.648
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend7" parent="." instance=ExtResource( 35 )]
+margin_left = 4620.44
+margin_top = 4728.54
+margin_right = 5121.44
+margin_bottom = 5229.54
+rect_rotation = 254.382
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend26" parent="." instance=ExtResource( 35 )]
+margin_left = 9731.71
+margin_top = 8945.88
+margin_right = 10232.7
+margin_bottom = 9446.88
+rect_rotation = 386.932
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend25" parent="." instance=ExtResource( 35 )]
+margin_left = 9015.42
+margin_top = 9798.44
+margin_right = 9516.42
+margin_bottom = 10299.4
+rect_rotation = 229.481
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend24" parent="." instance=ExtResource( 35 )]
+margin_left = 8047.1
+margin_top = 9583.26
+margin_right = 8548.1
+margin_bottom = 10084.3
+rect_rotation = 252.332
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend23" parent="." instance=ExtResource( 35 )]
+margin_left = 7410.25
+margin_top = 9229.51
+margin_right = 7911.25
+margin_bottom = 9730.51
+rect_rotation = 612.619
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend22" parent="." instance=ExtResource( 35 )]
+margin_left = 6733.85
+margin_top = 8750.85
+margin_right = 7234.85
+margin_bottom = 9251.85
+rect_rotation = 263.79
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend21" parent="." instance=ExtResource( 35 )]
+margin_left = 6139.01
+margin_top = 8039.85
+margin_right = 6640.01
+margin_bottom = 8540.86
+rect_rotation = 279.204
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend27" parent="." instance=ExtResource( 35 )]
+margin_left = 5041.04
+margin_top = 8973.77
+margin_right = 5542.04
+margin_bottom = 9474.77
+rect_rotation = 193.875
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend28" parent="." instance=ExtResource( 35 )]
+margin_left = 5208.15
+margin_top = 7802.97
+margin_right = 5709.15
+margin_bottom = 8303.97
+rect_rotation = 362.164
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend20" parent="." instance=ExtResource( 35 )]
+margin_left = 5685.86
+margin_top = 7315.32
+margin_right = 6186.86
+margin_bottom = 7816.32
+rect_rotation = 287.007
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend19" parent="." instance=ExtResource( 35 )]
+margin_left = 5437.11
+margin_top = 6509.0
+margin_right = 5938.11
+margin_bottom = 7010.0
+rect_rotation = 297.682
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend18" parent="." instance=ExtResource( 35 )]
+margin_left = 11834.7
+margin_top = 11149.9
+margin_right = 12335.7
+margin_bottom = 11651.0
+rect_rotation = 267.822
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend17" parent="." instance=ExtResource( 35 )]
+margin_left = 11237.6
+margin_top = 10417.2
+margin_right = 11738.6
+margin_bottom = 10918.2
+rect_rotation = 288.899
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend16" parent="." instance=ExtResource( 35 )]
+margin_left = 10983.3
+margin_top = 9658.89
+margin_right = 11484.3
+margin_bottom = 10159.9
+rect_rotation = 291.427
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend15" parent="." instance=ExtResource( 35 )]
+margin_left = 11639.2
+margin_top = 8663.71
+margin_right = 12140.2
+margin_bottom = 9164.71
+rect_rotation = 134.296
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend14" parent="." instance=ExtResource( 35 )]
+margin_left = 11528.3
+margin_top = 7743.46
+margin_right = 12029.3
+margin_bottom = 8244.46
+rect_rotation = 120.634
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend13" parent="." instance=ExtResource( 35 )]
+margin_left = 11220.3
+margin_top = 6957.86
+margin_right = 11721.3
+margin_bottom = 7458.86
+rect_rotation = 113.227
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend8" parent="." instance=ExtResource( 35 )]
+margin_left = 5489.84
+margin_top = 5034.3
+margin_right = 5990.84
+margin_bottom = 5535.3
+rect_rotation = 238.821
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend9" parent="." instance=ExtResource( 35 )]
+margin_left = 6422.28
+margin_top = 5066.96
+margin_right = 6923.28
+margin_bottom = 5567.96
+rect_rotation = 223.953
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend10" parent="." instance=ExtResource( 35 )]
+margin_left = 7297.23
+margin_top = 4997.61
+margin_right = 7798.23
+margin_bottom = 5498.61
+rect_rotation = 216.949
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend11" parent="." instance=ExtResource( 35 )]
+margin_left = 8210.18
+margin_top = 4616.66
+margin_right = 8711.18
+margin_bottom = 5117.66
+rect_rotation = 195.642
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend2" parent="." instance=ExtResource( 35 )]
+margin_left = 1752.6
+margin_top = 4584.97
+margin_right = 2253.6
+margin_bottom = 5085.97
+rect_rotation = 167.771
+rect_scale = Vector2( 0.785, 0.785 )
+
+[node name="Road2Bend3" parent="." instance=ExtResource( 35 )]
+margin_left = 682.01
+margin_top = 4748.26
+margin_right = 1183.01
+margin_bottom = 5249.26
+rect_rotation = -0.602486
+rect_scale = Vector2( 0.785, 0.785 )
+
 [node name="Sidewalk6" parent="." instance=ExtResource( 16 )]
 margin_left = 6035.39
 margin_top = 9646.27
@@ -62,7 +295,7 @@ rotation = -0.604461
 scale = Vector2( 1.56745, 1.56745 )
 
 [node name="MetalWall9" parent="." instance=ExtResource( 17 )]
-position = Vector2( 9815.73, 1064.13 )
+position = Vector2( 9689.47, 1043.58 )
 rotation = -0.604461
 scale = Vector2( 1.46916, 1.46916 )
 
@@ -79,11 +312,11 @@ rect_rotation = -36.0875
 rect_scale = Vector2( 0.713581, 0.943157 )
 
 [node name="Sidewalk13" parent="." instance=ExtResource( 16 )]
-margin_left = 8483.0
-margin_top = 1574.0
-margin_right = 11736.0
-margin_bottom = 1824.0
-rect_rotation = -36.0875
+margin_left = 8333.1
+margin_top = 1644.55
+margin_right = 11586.1
+margin_bottom = 1894.55
+rect_rotation = -35.7
 rect_scale = Vector2( 0.713581, 0.943157 )
 
 [node name="Sidewalk14" parent="." instance=ExtResource( 16 )]
@@ -103,339 +336,283 @@ rect_rotation = 84.5001
 rect_scale = Vector2( 0.340257, 0.806097 )
 
 [node name="Road2" parent="." instance=ExtResource( 11 )]
-margin_left = 8059.0
-margin_top = 4029.0
-margin_right = 16116.0
-margin_bottom = 4529.0
+margin_left = 7937.0
+margin_top = 4132.0
+margin_right = 16282.0
+margin_bottom = 4632.0
 rect_rotation = -35.7196
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road49" parent="." instance=ExtResource( 11 )]
-margin_left = 13242.4
-margin_top = 4966.82
-margin_right = 17635.4
-margin_bottom = 5466.82
+margin_left = 13385.0
+margin_top = 5392.0
+margin_right = 18306.0
+margin_bottom = 5892.0
 rect_rotation = -125.587
 rect_scale = Vector2( 0.786802, 0.786802 )
 
-[node name="Road4" parent="." instance=ExtResource( 11 )]
-margin_left = 11914.8
-margin_top = 4893.96
-margin_right = 13306.8
-margin_bottom = 5393.96
-rect_rotation = -36.1689
-rect_scale = Vector2( 0.786802, 0.786802 )
-
 [node name="Road6" parent="." instance=ExtResource( 11 )]
-margin_left = 10496.8
-margin_top = 6902.52
-margin_right = 11496.8
-margin_bottom = 7402.52
-rect_rotation = -126.276
+margin_left = 10506.9
+margin_top = 6892.95
+margin_right = 11506.9
+margin_bottom = 7392.95
+rect_rotation = -126.1
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road8" parent="." instance=ExtResource( 11 )]
-margin_left = 10077.1
-margin_top = 6231.71
-margin_right = 13948.1
-margin_bottom = 6731.71
+margin_left = 10090.4
+margin_top = 6223.48
+margin_right = 14185.4
+margin_bottom = 6723.48
 rect_rotation = -36.0645
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road5" parent="." instance=ExtResource( 11 )]
-margin_left = 10693.7
-margin_top = 7171.14
-margin_right = 11693.7
-margin_bottom = 7671.14
-rect_rotation = -126.276
+margin_left = 10703.2
+margin_top = 7163.92
+margin_right = 11703.2
+margin_bottom = 7663.92
+rect_rotation = -126.1
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road51" parent="." instance=ExtResource( 11 )]
-margin_left = 10954.6
-margin_top = 7779.75
-margin_right = 11954.6
-margin_bottom = 8279.75
-rect_rotation = -114.457
+margin_left = 10992.3
+margin_top = 7891.66
+margin_right = 11992.3
+margin_bottom = 8391.66
+rect_rotation = -111.62
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road52" parent="." instance=ExtResource( 11 )]
-margin_left = 11041.5
-margin_top = 8448.13
-margin_right = 12041.5
-margin_bottom = 8948.13
-rect_rotation = -98.8793
+margin_left = 11083.6
+margin_top = 8669.74
+margin_right = 12083.6
+margin_bottom = 9169.74
+rect_rotation = -96.8074
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road53" parent="." instance=ExtResource( 11 )]
-margin_left = 11052.4
-margin_top = 9187.16
-margin_right = 12052.4
-margin_bottom = 9687.16
-rect_rotation = -91.7304
+margin_left = 11099.8
+margin_top = 9458.19
+margin_right = 12099.8
+margin_bottom = 9958.19
+rect_rotation = -91.1731
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road54" parent="." instance=ExtResource( 11 )]
-margin_left = 11251.7
-margin_top = 9951.58
-margin_right = 12251.7
-margin_bottom = 10451.6
-rect_rotation = -104.415
+margin_left = 11366.8
+margin_top = 10307.0
+margin_right = 12366.8
+margin_bottom = 10807.0
+rect_rotation = -108.397
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road55" parent="." instance=ExtResource( 11 )]
-margin_left = 11630.3
-margin_top = 10641.3
-margin_right = 12630.3
-margin_bottom = 11141.3
-rect_rotation = -118.281
+margin_left = 11928.6
+margin_top = 11012.4
+margin_right = 12928.6
+margin_bottom = 11512.4
+rect_rotation = -129.875
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road56" parent="." instance=ExtResource( 11 )]
-margin_left = 12166.5
-margin_top = 11193.8
-margin_right = 13166.5
-margin_bottom = 11693.8
-rect_rotation = -133.375
-rect_scale = Vector2( 0.786802, 0.786802 )
-
-[node name="Road57" parent="." instance=ExtResource( 11 )]
-margin_left = 12808.1
-margin_top = 11614.4
-margin_right = 13808.1
-margin_bottom = 12114.4
-rect_rotation = -146.129
-rect_scale = Vector2( 0.786802, 0.786802 )
-
-[node name="Road10" parent="." instance=ExtResource( 11 )]
-margin_left = 6832.59
-margin_top = 4480.44
-margin_right = 7832.59
-margin_bottom = 4980.44
-rect_rotation = -12.689
+margin_left = 12630.6
+margin_top = 11520.0
+margin_right = 13630.6
+margin_bottom = 12020.0
+rect_rotation = -144.766
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road48" parent="." instance=ExtResource( 11 )]
-margin_left = 7454.67
-margin_top = 4349.31
-margin_right = 8454.67
-margin_bottom = 4849.31
-rect_rotation = -28.7611
+margin_left = 7215.94
+margin_top = 4447.05
+margin_right = 8215.94
+margin_bottom = 4947.05
+rect_rotation = -23.5893
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road11" parent="." instance=ExtResource( 11 )]
-margin_left = 6104.52
-margin_top = 4527.09
-margin_right = 7126.52
-margin_bottom = 5027.09
+margin_left = 6419.16
+margin_top = 4510.76
+margin_right = 7441.16
+margin_bottom = 5010.76
 rect_rotation = -4.54221
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road12" parent="." instance=ExtResource( 11 )]
-margin_left = 5408.46
-margin_top = 4443.98
-margin_right = 6408.46
-margin_bottom = 4943.98
-rect_rotation = 5.40846
+margin_left = 5619.43
+margin_top = 4494.16
+margin_right = 6619.43
+margin_bottom = 4994.16
+rect_rotation = 1.22336
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road24" parent="." instance=ExtResource( 11 )]
-margin_left = 6002.0
-margin_top = 4833.0
-margin_right = 7002.0
-margin_bottom = 5333.0
-rect_rotation = 94.805
+margin_left = 5967.55
+margin_top = 4834.01
+margin_right = 6967.55
+margin_bottom = 5334.01
+rect_rotation = 91.2
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road25" parent="." instance=ExtResource( 11 )]
-margin_left = 5945.49
-margin_top = 6219.71
-margin_right = 6945.49
-margin_bottom = 6719.71
-rect_rotation = 81.473
+margin_left = 5961.88
+margin_top = 6320.3
+margin_right = 6961.88
+margin_bottom = 6820.3
+rect_rotation = 73.5511
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road59" parent="." instance=ExtResource( 11 )]
-margin_left = 5941.0
-margin_top = 5542.0
-margin_right = 6941.0
-margin_bottom = 6042.0
+margin_left = 5951.6
+margin_top = 5565.85
+margin_right = 6951.6
+margin_bottom = 6065.85
 rect_rotation = 88.629
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road33" parent="." instance=ExtResource( 11 )]
-margin_left = 5031.33
-margin_top = 8784.94
-margin_right = 6031.33
-margin_bottom = 9284.94
+margin_left = 4985.62
+margin_top = 8814.83
+margin_right = 5985.62
+margin_bottom = 9314.83
 rect_rotation = 149.424
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road63" parent="." instance=ExtResource( 11 )]
-margin_left = 5579.5
-margin_top = 8219.77
-margin_right = 6579.5
-margin_bottom = 8719.77
+margin_left = 5587.04
+margin_top = 8211.04
+margin_right = 6587.04
+margin_bottom = 8711.04
 rect_rotation = 134.481
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road26" parent="." instance=ExtResource( 11 )]
-margin_left = 6022.0
-margin_top = 6872.0
-margin_right = 7022.0
-margin_bottom = 7372.0
-rect_rotation = 65.1269
+margin_left = 6174.41
+margin_top = 7048.15
+margin_right = 7174.41
+margin_bottom = 7548.15
+rect_rotation = 58.0354
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road60" parent="." instance=ExtResource( 11 )]
-margin_left = 6300.14
-margin_top = 7517.64
-margin_right = 7300.14
-margin_bottom = 8017.64
+margin_left = 6584.39
+margin_top = 7706.74
+margin_right = 7584.39
+margin_bottom = 8206.74
 rect_rotation = 50.8488
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road32" parent="." instance=ExtResource( 11 )]
-margin_left = 6176.0
-margin_top = 7886.0
-margin_right = 7176.0
-margin_bottom = 8386.0
-rect_rotation = 149.022
+margin_left = 6248.17
+margin_top = 7797.17
+margin_right = 7248.17
+margin_bottom = 8297.17
+rect_rotation = 148.0
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road62" parent="." instance=ExtResource( 11 )]
-margin_left = 7182.29
-margin_top = 8511.48
-margin_right = 8182.29
-margin_bottom = 9011.48
-rect_rotation = 29.526
+margin_left = 7642.91
+margin_top = 8721.75
+margin_right = 8642.91
+margin_bottom = 9221.75
+rect_rotation = 29.0061
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road27" parent="." instance=ExtResource( 11 )]
-margin_left = 6718.15
-margin_top = 8044.0
-margin_right = 7718.15
-margin_bottom = 8544.0
-rect_rotation = 42.3308
-rect_scale = Vector2( 0.786802, 0.786802 )
-
-[node name="Road58" parent="." instance=ExtResource( 11 )]
-margin_left = 8361.05
-margin_top = 9049.41
-margin_right = 9361.05
-margin_bottom = 9549.41
-rect_rotation = -1.37995
+margin_left = 7082.37
+margin_top = 8317.46
+margin_right = 8082.37
+margin_bottom = 8817.46
+rect_rotation = 35.0909
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road61" parent="." instance=ExtResource( 11 )]
-margin_left = 7757.88
-margin_top = 8852.4
-margin_right = 8757.88
-margin_bottom = 9352.4
-rect_rotation = 15.1842
+margin_left = 8291.63
+margin_top = 9085.73
+margin_right = 9291.63
+margin_bottom = 9585.73
+rect_rotation = 11.5738
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road67" parent="." instance=ExtResource( 11 )]
-margin_left = 6767.0
-margin_top = 9108.0
-margin_right = 7799.0
-margin_bottom = 9608.0
-rect_rotation = 34.2886
+margin_left = 6761.59
+margin_top = 9114.32
+margin_right = 7793.59
+margin_bottom = 9614.32
+rect_rotation = 35.1
 rect_scale = Vector2( 0.379504, 0.834596 )
 
 [node name="Road31" parent="." instance=ExtResource( 11 )]
-margin_left = 7338.0
-margin_top = 8980.0
-margin_right = 8338.0
-margin_bottom = 9480.0
-rect_rotation = 124.85
+margin_left = 7370.3
+margin_top = 8927.39
+margin_right = 8462.3
+margin_bottom = 9427.39
+rect_rotation = 125.1
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road28" parent="." instance=ExtResource( 11 )]
-margin_left = 9001.0
-margin_top = 9045.54
-margin_right = 10001.0
-margin_bottom = 9545.54
-rect_rotation = -15.3777
-rect_scale = Vector2( 0.786802, 0.786802 )
-
-[node name="Road30" parent="." instance=ExtResource( 11 )]
-margin_left = 10312.0
-margin_top = 8768.0
-margin_right = 11312.0
-margin_bottom = 9268.0
-rect_rotation = -2.81659
+margin_left = 9059.76
+margin_top = 9243.4
+margin_right = 10059.8
+margin_bottom = 9743.4
+rect_rotation = -11.3576
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road29" parent="." instance=ExtResource( 11 )]
-margin_left = 9663.26
-margin_top = 8858.73
-margin_right = 10663.3
-margin_bottom = 9358.73
-rect_rotation = -7.53078
+margin_left = 9895.13
+margin_top = 9081.91
+margin_right = 11491.1
+margin_bottom = 9581.91
+rect_rotation = -1.2
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road13" parent="." instance=ExtResource( 11 )]
-margin_left = 4200.0
-margin_top = 3814.6
-margin_right = 5200.0
-margin_bottom = 4314.6
+margin_left = 4240.44
+margin_top = 3803.96
+margin_right = 5240.44
+margin_bottom = 4303.96
 rect_rotation = 33.9542
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road47" parent="." instance=ExtResource( 11 )]
-margin_left = 4754.79
-margin_top = 4197.27
-margin_right = 5754.79
-margin_bottom = 4697.27
+margin_left = 4888.79
+margin_top = 4241.27
+margin_right = 5888.79
+margin_bottom = 4741.27
 rect_rotation = 18.9944
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road45" parent="." instance=ExtResource( 11 )]
-margin_left = 5903.0
-margin_top = 1674.13
-margin_right = 7383.0
-margin_bottom = 2174.13
-rect_rotation = 274.03
+margin_left = 6322.0
+margin_top = 1305.0
+margin_right = 7814.0
+margin_bottom = 1805.0
+rect_rotation = 93.7
 rect_scale = Vector2( 0.263018, 0.786802 )
 
 [node name="Road23" parent="." instance=ExtResource( 11 )]
-margin_left = 4344.0
-margin_top = 1181.61
-margin_right = 6790.0
-margin_bottom = 1681.61
+margin_left = 4345.05
+margin_top = 1176.35
+margin_right = 6791.05
+margin_bottom = 1676.35
 rect_rotation = 3.72194
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road41" parent="." instance=ExtResource( 11 )]
-margin_left = 1193.3
-margin_top = 2024.97
-margin_right = 2193.3
-margin_bottom = 2524.97
-rect_rotation = 89.051
+margin_left = 1195.41
+margin_top = 2019.17
+margin_right = 2195.41
+margin_bottom = 2519.17
+rect_rotation = 89.7
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road20" parent="." instance=ExtResource( 11 )]
-margin_left = 1677.49
-margin_top = 4284.65
-margin_right = 2677.49
-margin_bottom = 4784.65
-rect_rotation = 120.332
-rect_scale = Vector2( 0.786802, 0.786802 )
-
-[node name="Road46" parent="." instance=ExtResource( 11 )]
-margin_left = 728.149
-margin_top = 5580.15
-margin_right = 2210.15
-margin_bottom = 6080.15
-rect_rotation = 221.181
-rect_scale = Vector2( 0.263018, 0.786802 )
-
-[node name="Road21" parent="." instance=ExtResource( 11 )]
-margin_left = 1283.12
-margin_top = 4950.8
-margin_right = 2283.12
-margin_bottom = 5450.8
-rect_rotation = 131.273
+margin_left = 1582.95
+margin_top = 4540.02
+margin_right = 2582.95
+margin_bottom = 5040.02
+rect_rotation = 130.152
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road16" parent="." instance=ExtResource( 11 )]
@@ -447,88 +624,128 @@ rect_rotation = 179.724
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road44" parent="." instance=ExtResource( 11 )]
-margin_left = 3262.0
-margin_top = 859.0
-margin_right = 4745.0
-margin_bottom = 1359.0
-rect_rotation = 178.588
+margin_left = 3279.0
+margin_top = 855.0
+margin_right = 4770.0
+margin_bottom = 1355.0
+rect_rotation = 179.7
 rect_scale = Vector2( 0.263018, 0.786802 )
 
 [node name="Road15" parent="." instance=ExtResource( 11 )]
-margin_left = 3255.0
-margin_top = 523.196
-margin_right = 5731.0
-margin_bottom = 1023.2
-rect_rotation = 89.051
+margin_left = 3278.13
+margin_top = 516.394
+margin_right = 5754.13
+margin_bottom = 1016.4
+rect_rotation = 89.7
 rect_scale = Vector2( 0.786802, 0.786802 )
 
+[node name="Road2Bend5" parent="." instance=ExtResource( 35 )]
+margin_left = 3598.0
+margin_top = 1220.0
+margin_right = 4099.0
+margin_bottom = 1725.0
+rect_rotation = 89.4176
+rect_scale = Vector2( 0.770356, 0.747514 )
+
 [node name="Road3" parent="." instance=ExtResource( 11 )]
-margin_left = 11091.0
-margin_top = 1919.64
-margin_right = 13104.0
-margin_bottom = 2419.64
-rect_rotation = -125.134
+margin_left = 10976.0
+margin_top = 2020.0
+margin_right = 13023.0
+margin_bottom = 2520.0
+rect_rotation = -125.7
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road18" parent="." instance=ExtResource( 11 )]
-margin_left = 1893.0
-margin_top = 2745.35
-margin_right = 2893.0
-margin_bottom = 3245.35
-rect_rotation = 90.2619
+margin_left = 1886.0
+margin_top = 2746.0
+margin_right = 2886.0
+margin_bottom = 3246.0
+rect_rotation = 89.7
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road19" parent="." instance=ExtResource( 11 )]
-margin_left = 1884.85
-margin_top = 3532.03
-margin_right = 2884.85
-margin_bottom = 4032.03
+margin_left = 1875.0
+margin_top = 3637.0
+margin_right = 2875.0
+margin_bottom = 4137.0
 rect_rotation = 105.742
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road22" parent="." instance=ExtResource( 11 )]
-margin_left = 3202.67
+margin_left = 3222.15
 margin_top = 1224.56
-margin_right = 4688.67
+margin_right = 4708.15
 margin_bottom = 1724.56
 rect_rotation = -2.09691
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road14" parent="." instance=ExtResource( 11 )]
-margin_left = 3272.0
-margin_top = 2542.0
-margin_right = 4404.0
-margin_bottom = 3042.0
+margin_left = 3291.0
+margin_top = 2560.0
+margin_right = 4291.0
+margin_bottom = 3060.0
 rect_rotation = 57.3188
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road42" parent="." instance=ExtResource( 11 )]
-margin_left = 3686.37
-margin_top = 3200.7
-margin_right = 4888.37
-margin_bottom = 3700.7
+margin_left = 3715.08
+margin_top = 3221.64
+margin_right = 4715.08
+margin_bottom = 3721.64
 rect_rotation = 47.957
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road1" parent="." instance=ExtResource( 15 )]
-margin_left = 3606.73
-margin_top = 9158.32
-margin_right = 4606.73
-margin_bottom = 9658.32
-rect_rotation = -28.9177
-rect_scale = Vector2( 0.637937, 0.637937 )
+margin_left = 4291.55
+margin_top = 9184.45
+margin_right = 6260.55
+margin_bottom = 9684.45
+rect_rotation = 149.4
+rect_scale = Vector2( 0.156078, 0.648074 )
 
 [node name="Tree93" parent="." instance=ExtResource( 10 )]
 position = Vector2( 2599.71, 6479.78 )
 z_index = 5
 
-[node name="Road34" parent="." instance=ExtResource( 15 )]
-margin_left = 3060.81
-margin_top = 9314.35
-margin_right = 4060.81
-margin_bottom = 9814.35
+[node name="Road39" parent="." instance=ExtResource( 15 )]
+margin_left = 3055.85
+margin_top = 9313.54
+margin_right = 7434.85
+margin_bottom = 9813.54
 rect_rotation = -16.4767
-rect_scale = Vector2( 0.637937, 0.637937 )
+rect_scale = Vector2( 0.0755493, 0.637937 )
+
+[node name="Road40" parent="." instance=ExtResource( 15 )]
+margin_left = 3365.05
+margin_top = 9222.87
+margin_right = 5689.05
+margin_bottom = 9722.87
+rect_rotation = -10.0674
+rect_scale = Vector2( 0.0755493, 0.637937 )
+
+[node name="Road50" parent="." instance=ExtResource( 15 )]
+margin_left = 3480.95
+margin_top = 9203.88
+margin_right = 5804.95
+margin_bottom = 9703.88
+rect_rotation = -13.3727
+rect_scale = Vector2( 0.0755493, 0.637937 )
+
+[node name="Road57" parent="." instance=ExtResource( 15 )]
+margin_left = 3596.85
+margin_top = 9179.18
+margin_right = 5920.85
+margin_bottom = 9679.18
+rect_rotation = -22.5216
+rect_scale = Vector2( 0.0770662, 0.643666 )
+
+[node name="Road58" parent="." instance=ExtResource( 15 )]
+margin_left = 3726.05
+margin_top = 9125.98
+margin_right = 6050.05
+margin_bottom = 9625.98
+rect_rotation = -25.8218
+rect_scale = Vector2( 0.0780393, 0.647364 )
 
 [node name="Road35" parent="." instance=ExtResource( 15 )]
 margin_left = 2653.89
@@ -539,106 +756,130 @@ rect_rotation = -30.0009
 rect_scale = Vector2( 0.459373, 0.637937 )
 
 [node name="Road17" parent="." instance=ExtResource( 11 )]
-margin_left = 1185.0
-margin_top = 1697.0
-margin_right = 2185.0
-margin_bottom = 2197.0
-rect_rotation = 89.051
+margin_left = 1193.33
+margin_top = 1687.83
+margin_right = 2193.33
+margin_bottom = 2187.83
+rect_rotation = 89.7
 rect_scale = Vector2( 0.786802, 0.786802 )
 
 [node name="Road36" parent="." instance=ExtResource( 15 )]
-margin_left = 2389.44
-margin_top = 9772.78
-margin_right = 5016.44
-margin_bottom = 10272.8
-rect_rotation = -39.839
+margin_left = 2485.58
+margin_top = 9671.66
+margin_right = 4108.58
+margin_bottom = 10171.7
+rect_rotation = -35.4074
 rect_scale = Vector2( 0.130747, 0.637937 )
 
-[node name="Road64" parent="." instance=ExtResource( 15 )]
-margin_left = 2174.19
-margin_top = 10040.6
-margin_right = 4801.19
-margin_bottom = 10540.6
-rect_rotation = -50.839
-rect_scale = Vector2( 0.130747, 0.637937 )
-
-[node name="Road65" parent="." instance=ExtResource( 15 )]
-margin_left = 2050.27
-margin_top = 10286.7
-margin_right = 4169.27
-margin_bottom = 10786.7
-rect_rotation = -62.8802
+[node name="Road66" parent="." instance=ExtResource( 15 )]
+margin_left = 2332.16
+margin_top = 9816.96
+margin_right = 3955.16
+margin_bottom = 10317.0
+rect_rotation = -43.1596
 rect_scale = Vector2( 0.130747, 0.637937 )
 
 [node name="Road68" parent="." instance=ExtResource( 15 )]
-margin_left = 1956.99
-margin_top = 10511.5
-margin_right = 4075.99
-margin_bottom = 11011.5
-rect_rotation = -67.2328
+margin_left = 2202.2
+margin_top = 9980.32
+margin_right = 3825.2
+margin_bottom = 10480.3
+rect_rotation = -51.1934
+rect_scale = Vector2( 0.130747, 0.637937 )
+
+[node name="Road75" parent="." instance=ExtResource( 15 )]
+margin_left = 2083.07
+margin_top = 10154.5
+margin_right = 3706.07
+margin_bottom = 10654.5
+rect_rotation = -55.4972
+rect_scale = Vector2( 0.130747, 0.637937 )
+
+[node name="Road76" parent="." instance=ExtResource( 15 )]
+margin_left = 1981.09
+margin_top = 10340.4
+margin_right = 3604.09
+margin_bottom = 10840.4
+rect_rotation = -61.0336
+rect_scale = Vector2( 0.130747, 0.637937 )
+
+[node name="Road77" parent="." instance=ExtResource( 15 )]
+margin_left = 1892.64
+margin_top = 10529.9
+margin_right = 3515.64
+margin_bottom = 11029.9
+rect_rotation = -64.9022
 rect_scale = Vector2( 0.130747, 0.637937 )
 
 [node name="Road37" parent="." instance=ExtResource( 15 )]
-margin_left = 2989.54
-margin_top = 8722.37
-margin_right = 3989.54
-margin_bottom = 9222.37
+margin_left = 3112.0
+margin_top = 9002.0
+margin_right = 5185.0
+margin_bottom = 9502.0
 rect_rotation = 66.5165
-rect_scale = Vector2( 0.637937, 0.637937 )
+rect_scale = Vector2( 0.1595, 0.637937 )
 
 [node name="Road38" parent="." instance=ExtResource( 15 )]
-margin_left = 2949.0
-margin_top = 8513.0
-margin_right = 5252.0
-margin_bottom = 9013.0
-rect_rotation = 76.8832
-rect_scale = Vector2( 0.12616, 0.637937 )
+margin_left = 2989.26
+margin_top = 8436.13
+margin_right = 5062.26
+margin_bottom = 8936.13
+rect_rotation = 80.0377
+rect_scale = Vector2( 0.1595, 0.637937 )
+
+[node name="Road64" parent="." instance=ExtResource( 15 )]
+margin_left = 3039.8
+margin_top = 8726.74
+margin_right = 5112.8
+margin_bottom = 9226.74
+rect_rotation = 74.3367
+rect_scale = Vector2( 0.157988, 0.639322 )
 
 [node name="Road69" parent="." instance=ExtResource( 15 )]
-margin_left = 2939.43
-margin_top = 8283.4
-margin_right = 5242.43
-margin_bottom = 8783.4
+margin_left = 2973.72
+margin_top = 8181.42
+margin_right = 5276.72
+margin_bottom = 8681.42
 rect_rotation = 86.0465
 rect_scale = Vector2( 0.12616, 0.637937 )
 
 [node name="Road70" parent="." instance=ExtResource( 15 )]
-margin_left = 2886.82
-margin_top = 7998.8
-margin_right = 5189.82
-margin_bottom = 8498.8
+margin_left = 2921.11
+margin_top = 7896.82
+margin_right = 5224.11
+margin_bottom = 8396.82
 rect_rotation = 79.5171
 rect_scale = Vector2( 0.12616, 0.637937 )
 
 [node name="Road71" parent="." instance=ExtResource( 15 )]
-margin_left = 2848.55
-margin_top = 7728.54
-margin_right = 5151.55
-margin_bottom = 8228.54
+margin_left = 2882.85
+margin_top = 7625.66
+margin_right = 5185.84
+margin_bottom = 8125.66
 rect_rotation = 81.7594
 rect_scale = Vector2( 0.12616, 0.637937 )
 
 [node name="Road72" parent="." instance=ExtResource( 15 )]
-margin_left = 2776.8
-margin_top = 7451.11
-margin_right = 5079.8
-margin_bottom = 7951.11
+margin_left = 2809.29
+margin_top = 7345.52
+margin_right = 5112.29
+margin_bottom = 7845.52
 rect_rotation = 75.2782
 rect_scale = Vector2( 0.12616, 0.637937 )
 
 [node name="Road73" parent="." instance=ExtResource( 15 )]
-margin_left = 2733.75
-margin_top = 7195.2
-margin_right = 5036.75
-margin_bottom = 7695.2
+margin_left = 2767.14
+margin_top = 7089.61
+margin_right = 5070.14
+margin_bottom = 7589.61
 rect_rotation = 80.3783
 rect_scale = Vector2( 0.12616, 0.637937 )
 
 [node name="Road74" parent="." instance=ExtResource( 15 )]
-margin_left = 2724.0
-margin_top = 7052.0
-margin_right = 4186.0
-margin_bottom = 7552.0
+margin_left = 2756.49
+margin_top = 6935.58
+margin_right = 4218.49
+margin_bottom = 7435.58
 rect_rotation = 85.1323
 rect_scale = Vector2( 0.12616, 0.637937 )
 
@@ -912,22 +1153,22 @@ rotation = 0.925332
 scale = Vector2( 5.5111, 3.3527 )
 
 [node name="StoneWall2" parent="." instance=ExtResource( 13 )]
-position = Vector2( 9345.79, 2621.12 )
+position = Vector2( 9231.27, 2609.38 )
 rotation = -2.20505
 scale = Vector2( 3.68328, 1.17643 )
 
 [node name="StoneWall4" parent="." instance=ExtResource( 13 )]
-position = Vector2( 10565, 1724.2 )
+position = Vector2( 10450.5, 1712.45 )
 rotation = -2.20505
 scale = Vector2( 3.68253, 3.13157 )
 
 [node name="StoneWall12" parent="." instance=ExtResource( 13 )]
-position = Vector2( 8847.59, 1844.56 )
+position = Vector2( 8733.07, 1832.81 )
 rotation = -0.634656
 scale = Vector2( 5.81984, 2.25889 )
 
 [node name="StoneWall13" parent="." instance=ExtResource( 13 )]
-position = Vector2( 9292.47, 2449.91 )
+position = Vector2( 9177.95, 2438.16 )
 rotation = -0.634656
 scale = Vector2( 5.82066, 3.3967 )
 
@@ -1042,52 +1283,52 @@ rotation = -0.0329411
 scale = Vector2( 1.54559, 5.1139 )
 
 [node name="ConcreteWall6" parent="." instance=ExtResource( 22 )]
-position = Vector2( 10534.1, 3019.84 )
+position = Vector2( 10386.3, 3075.76 )
 rotation = 0.950689
 scale = Vector2( 0.360465, 14.8167 )
 
 [node name="ConcreteWall12" parent="." instance=ExtResource( 22 )]
-position = Vector2( 10879.4, 3510.6 )
+position = Vector2( 10731.6, 3566.52 )
 rotation = 0.950689
 scale = Vector2( 0.360465, 14.8167 )
 
 [node name="ConcreteWall10" parent="." instance=ExtResource( 22 )]
-position = Vector2( 10512.4, 3145.28 )
+position = Vector2( 10364.6, 3201.2 )
 rotation = -0.614806
 scale = Vector2( 0.360465, 10.209 )
 
 [node name="ConcreteWall11" parent="." instance=ExtResource( 22 )]
-position = Vector2( 9983.03, 3522.44 )
+position = Vector2( 9835.23, 3578.36 )
 rotation = -0.614806
 scale = Vector2( 0.360465, 10.2051 )
 
 [node name="Roof17" parent="." instance=ExtResource( 14 )]
-position = Vector2( 9850.14, 3438.04 )
+position = Vector2( 9702.34, 3493.96 )
 rotation = -0.619973
 scale = Vector2( 1.70162, 1.6234 )
 
 [node name="ConcreteWall16" parent="." instance=ExtResource( 22 )]
-position = Vector2( 11242.6, 2512.15 )
+position = Vector2( 11094.8, 2568.07 )
 rotation = 0.950689
 scale = Vector2( 0.360465, 14.8167 )
 
 [node name="ConcreteWall15" parent="." instance=ExtResource( 22 )]
-position = Vector2( 11588, 3002.91 )
+position = Vector2( 11440.2, 3058.83 )
 rotation = 0.950689
 scale = Vector2( 0.360465, 14.8167 )
 
 [node name="ConcreteWall14" parent="." instance=ExtResource( 22 )]
-position = Vector2( 11221, 2637.59 )
+position = Vector2( 11073.2, 2693.51 )
 rotation = -0.614806
 scale = Vector2( 0.360465, 10.209 )
 
 [node name="ConcreteWall13" parent="." instance=ExtResource( 22 )]
-position = Vector2( 10691.6, 3014.75 )
+position = Vector2( 10543.8, 3070.67 )
 rotation = -0.614806
 scale = Vector2( 0.360465, 10.2051 )
 
 [node name="Roof23" parent="." instance=ExtResource( 14 )]
-position = Vector2( 10560.4, 2930.35 )
+position = Vector2( 10412.6, 2986.27 )
 rotation = -0.619973
 scale = Vector2( 1.70162, 1.6234 )
 
@@ -1108,7 +1349,7 @@ scale = Vector2( 1.66985, 2.91533 )
 z_index = 0
 
 [node name="BricksWall35" parent="." instance=ExtResource( 19 )]
-position = Vector2( 11352.9, 1312.68 )
+position = Vector2( 11352.9, 1310.68 )
 rotation = -0.622905
 scale = Vector2( 7.37373, 2.93736 )
 z_index = 0
@@ -1120,22 +1361,22 @@ scale = Vector2( 6.17852, 2.91533 )
 z_index = 0
 
 [node name="BricksWall16" parent="." instance=ExtResource( 19 )]
-position = Vector2( 11376.5, 4227.56 )
+position = Vector2( 11312.6, 4299.46 )
 rotation = -0.638441
 scale = Vector2( 3.67425, 1.04174 )
 
 [node name="BricksWall17" parent="." instance=ExtResource( 19 )]
-position = Vector2( 11759.4, 4743.16 )
+position = Vector2( 11695.5, 4815.06 )
 rotation = -0.638441
 scale = Vector2( 3.67425, 1.04174 )
 
 [node name="BricksWall19" parent="." instance=ExtResource( 19 )]
-position = Vector2( 11474.9, 4219.01 )
+position = Vector2( 11411, 4290.91 )
 rotation = 0.932411
 scale = Vector2( 2.3618, 1.68016 )
 
 [node name="BricksWall20" parent="." instance=ExtResource( 19 )]
-position = Vector2( 12145, 3721.74 )
+position = Vector2( 12081.1, 3793.64 )
 rotation = 0.932411
 scale = Vector2( 2.3618, 1.68016 )
 
@@ -1245,12 +1486,12 @@ rotation = -0.128012
 scale = Vector2( 0.897884, 5.78986 )
 
 [node name="ConcreteWall9" parent="." instance=ExtResource( 22 )]
-position = Vector2( 1886.26, 7165.83 )
+position = Vector2( 7575.6, 7600.02 )
 rotation = 0.547447
 scale = Vector2( 0.134726, 13.7381 )
 
 [node name="ConcreteWall17" parent="." instance=ExtResource( 22 )]
-position = Vector2( 8514.1, 8172.35 )
+position = Vector2( 8519.94, 8168.46 )
 rotation = 0.547919
 scale = Vector2( 0.134, 13.738 )
 
@@ -1325,7 +1566,7 @@ rotation = -0.411085
 scale = Vector2( 0.900551, 0.900551 )
 
 [node name="Tree10" parent="." instance=ExtResource( 10 )]
-position = Vector2( 4115.69, 9267.74 )
+position = Vector2( 4113.93, 9267.74 )
 scale = Vector2( 1.14412, 1.14412 )
 
 [node name="Tree11" parent="." instance=ExtResource( 10 )]
@@ -1711,7 +1952,7 @@ scale = Vector2( 1.60088, 1.60088 )
 
 [node name="MetalWall3" parent="." instance=ExtResource( 17 )]
 position = Vector2( 863.436, 8592.42 )
-rotation = 1.16213
+rotation = 1.24258
 scale = Vector2( 1.56112, 1.56112 )
 
 [node name="MetalWall5" parent="." instance=ExtResource( 17 )]
@@ -1734,6 +1975,11 @@ scale = Vector2( 1.32889, 1.32889 )
 
 [node name="RedCar" parent="." instance=ExtResource( 24 )]
 position = Vector2( 11594.2, 8366.75 )
+rotation = 0.0273943
+scale = Vector2( 1.33013, 1.33013 )
+
+[node name="RedCar5" parent="." instance=ExtResource( 24 )]
+position = Vector2( 12938.8, 4695.43 )
 rotation = 0.0273943
 scale = Vector2( 1.33013, 1.33013 )
 
@@ -1803,8 +2049,8 @@ rotation = -2.9056
 scale = Vector2( 1.3184, 1.3184 )
 
 [node name="GrayCar6" parent="." instance=ExtResource( 6 )]
-position = Vector2( 13036.3, 4531.21 )
-rotation = -0.0763739
+position = Vector2( 13029.3, 4594.41 )
+rotation = -0.481007
 scale = Vector2( 1.3184, 1.3184 )
 
 [node name="GrayCar3" parent="." instance=ExtResource( 6 )]
@@ -1837,7 +2083,7 @@ rotation = -2.06575
 scale = Vector2( 1.51687, 1.51687 )
 
 [node name="CafeteriaRoof" parent="." instance=ExtResource( 30 )]
-position = Vector2( 11376.4, 4227.54 )
+position = Vector2( 11312.5, 4299.44 )
 rotation = -0.638474
 scale = Vector2( 0.91888, 1.38932 )
 
@@ -1870,10 +2116,10 @@ rotation = 1.04191
 z_index = 1
 
 [node name="PlayingField" parent="." instance=ExtResource( 1 )]
-margin_left = 13161.6
-margin_top = 1020.74
-margin_right = 15745.6
-margin_bottom = 2690.74
+margin_left = 13043.2
+margin_top = 1135.18
+margin_right = 15627.2
+margin_bottom = 2805.18
 rect_rotation = 54.6137
 
 [node name="MetalFence11" parent="." instance=ExtResource( 33 )]
@@ -2081,43 +2327,44 @@ position = Vector2( 9312.01, 2756.41 )
 rotation = -0.62401
 
 [node name="MetalFence66" parent="." instance=ExtResource( 33 )]
-position = Vector2( 9495.59, 2626.73 )
+position = Vector2( 9497.3, 2624.16 )
 rotation = -0.63287
 
 [node name="MetalFence70" parent="." instance=ExtResource( 33 )]
-position = Vector2( 9661.81, 2504.45 )
+position = Vector2( 9680.67, 2489.87 )
 rotation = -0.606425
 
 [node name="MetalFence71" parent="." instance=ExtResource( 33 )]
-position = Vector2( 9841.38, 2376.42 )
+position = Vector2( 9867.1, 2360.13 )
 rotation = -0.631855
 
 [node name="MetalFence72" parent="." instance=ExtResource( 33 )]
-position = Vector2( 10006.3, 2257.39 )
+position = Vector2( 10047.5, 2227.38 )
 rotation = -0.641615
 
 [node name="MetalFence69" parent="." instance=ExtResource( 33 )]
-position = Vector2( 10175.1, 2132.88 )
+position = Vector2( 10214.5, 2103.73 )
 rotation = -0.634592
 
 [node name="MetalFence74" parent="." instance=ExtResource( 33 )]
-position = Vector2( 10342.9, 2009.34 )
+position = Vector2( 10384.1, 1979.33 )
 rotation = -0.606425
 
 [node name="MetalFence75" parent="." instance=ExtResource( 33 )]
-position = Vector2( 10511.9, 1893.95 )
+position = Vector2( 10552.6, 1863.94 )
 rotation = -0.631855
 
-[node name="MetalFence76" parent="." instance=ExtResource( 33 )]
-position = Vector2( 10679.7, 1772.85 )
-rotation = -0.634959
-
 [node name="MetalFence100" parent="." instance=ExtResource( 33 )]
-position = Vector2( 10898.7, 1641.49 )
-rotation = -3.7771
+position = Vector2( 10771.6, 1733.31 )
+rotation = -3.7734
 
 [node name="MetalFence73" parent="." instance=ExtResource( 33 )]
-position = Vector2( 11198.3, 1394.55 )
+position = Vector2( 11086.3, 1502.55 )
+rotation = -0.634592
+z_index = 0
+
+[node name="MetalFence76" parent="." instance=ExtResource( 33 )]
+position = Vector2( 11265.3, 1370.55 )
 rotation = -0.634592
 z_index = 0
 
@@ -2284,57 +2531,57 @@ position = Vector2( 1179.9, 5935.92 )
 rotation = 2.78183
 
 [node name="WoodWall41" parent="." instance=ExtResource( 21 )]
-position = Vector2( 11728.4, 3281.25 )
+position = Vector2( 11664.5, 3353.15 )
 rotation = -2.22624
 scale = Vector2( 0.207178, 1 )
 
 [node name="WoodWall42" parent="." instance=ExtResource( 21 )]
-position = Vector2( 11758.8, 3256.02 )
+position = Vector2( 11694.9, 3327.92 )
 rotation = 2.50101
 scale = Vector2( 4.33372, 1 )
 
 [node name="WoodWall43" parent="." instance=ExtResource( 21 )]
-position = Vector2( 11991.1, 3635 )
+position = Vector2( 11927.2, 3706.9 )
 rotation = -2.20978
 scale = Vector2( 1.81577, 1 )
 
 [node name="WoodWall44" parent="." instance=ExtResource( 21 )]
-position = Vector2( 11792.6, 4783.35 )
+position = Vector2( 11728.7, 4855.25 )
 rotation = -3.78389
 scale = Vector2( 2.88175, 1.03821 )
 
 [node name="WoodWall47" parent="." instance=ExtResource( 21 )]
-position = Vector2( 10442.7, 4185.5 )
+position = Vector2( 10378.8, 4257.4 )
 rotation = 0.910744
 scale = Vector2( 0.17878, -1 )
 
 [node name="WoodWall46" parent="." instance=ExtResource( 21 )]
-position = Vector2( 10779, 3995.35 )
+position = Vector2( 10715.1, 4067.25 )
 rotation = 2.50101
 scale = Vector2( 1.49468, 1 )
 
 [node name="WoodWall45" parent="." instance=ExtResource( 21 )]
-position = Vector2( 10505.6, 4185.2 )
+position = Vector2( 10441.7, 4257.1 )
 rotation = 0.924779
 scale = Vector2( 4.33372, 1 )
 
 [node name="Lamp3" parent="." instance=ExtResource( 32 )]
-position = Vector2( 11553.4, 1603.55 )
+position = Vector2( 11393.1, 1728.65 )
 rotation = 2.55264
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp40" parent="." instance=ExtResource( 32 )]
-position = Vector2( 11035.5, 1727.48 )
+position = Vector2( 10931.1, 1839.54 )
 rotation = 0.974014
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp4" parent="." instance=ExtResource( 32 )]
-position = Vector2( 12287.8, 1394.89 )
+position = Vector2( 12196.8, 1471.23 )
 rotation = 5.65977
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp15" parent="." instance=ExtResource( 32 )]
-position = Vector2( 10380.2, 314.941 )
+position = Vector2( 10260.9, 394.442 )
 rotation = 3.23099
 scale = Vector2( 0.780652, 0.780652 )
 
@@ -2344,47 +2591,47 @@ rotation = 2.74411
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp16" parent="." instance=ExtResource( 32 )]
-position = Vector2( 8043.21, 1859.63 )
-rotation = 2.55027
+position = Vector2( 8091.87, 1760.46 )
+rotation = 3.12609
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp17" parent="." instance=ExtResource( 32 )]
-position = Vector2( 9030.22, 2492.55 )
+position = Vector2( 8915.7, 2480.8 )
 rotation = 4.79489
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp14" parent="." instance=ExtResource( 32 )]
-position = Vector2( 12858.7, 673.45 )
+position = Vector2( 12741.2, 761.54 )
 rotation = 2.55264
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp5" parent="." instance=ExtResource( 32 )]
-position = Vector2( 11098.4, 2224.75 )
+position = Vector2( 11030.5, 2300.65 )
 rotation = 5.66984
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp20" parent="." instance=ExtResource( 32 )]
-position = Vector2( 11607.4, 2109.68 )
+position = Vector2( 11511.5, 2193.56 )
 rotation = 4.03866
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp41" parent="." instance=ExtResource( 32 )]
-position = Vector2( 10868.2, 1016.45 )
+position = Vector2( 10762.5, 1154.46 )
 rotation = 4.03866
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp21" parent="." instance=ExtResource( 32 )]
-position = Vector2( 11921.6, 3021.44 )
+position = Vector2( 11735.7, 2979.7 )
 rotation = 7.2211
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp22" parent="." instance=ExtResource( 32 )]
-position = Vector2( 12651.9, 3565.85 )
+position = Vector2( 12564.6, 3683.49 )
 rotation = 4.03866
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp23" parent="." instance=ExtResource( 32 )]
-position = Vector2( 12837.8, 4265.16 )
+position = Vector2( 12647, 4320.81 )
 rotation = 8.15946
 scale = Vector2( 0.780652, 0.780652 )
 
@@ -2394,7 +2641,7 @@ rotation = 5.65577
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp25" parent="." instance=ExtResource( 32 )]
-position = Vector2( 11390.5, 5349.54 )
+position = Vector2( 11385.9, 5360.07 )
 rotation = 8.79599
 scale = Vector2( 0.780652, 0.780652 )
 
@@ -2409,22 +2656,22 @@ rotation = 1.12023
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp28" parent="." instance=ExtResource( 32 )]
-position = Vector2( 11372.8, 8633.66 )
+position = Vector2( 11404.5, 8646.34 )
 rotation = 4.65011
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp31" parent="." instance=ExtResource( 32 )]
-position = Vector2( 10124.7, 9124.95 )
-rotation = 6.09949
+position = Vector2( 10036, 9416.5 )
+rotation = 6.17877
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp32" parent="." instance=ExtResource( 32 )]
-position = Vector2( 8451.63, 9107.25 )
-rotation = 3.36356
+position = Vector2( 8071.35, 9024.86 )
+rotation = 3.56771
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp33" parent="." instance=ExtResource( 32 )]
-position = Vector2( 6862.68, 9527.72 )
+position = Vector2( 6875.36, 9527.72 )
 rotation = 5.32841
 scale = Vector2( 0.780652, 0.780652 )
 
@@ -2434,7 +2681,7 @@ rotation = 4.38884
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp36" parent="." instance=ExtResource( 32 )]
-position = Vector2( 5946.49, 7952.05 )
+position = Vector2( 5927.48, 7926.7 )
 rotation = 5.77306
 scale = Vector2( 0.780652, 0.780652 )
 
@@ -2449,7 +2696,7 @@ rotation = 4.79906
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp38" parent="." instance=ExtResource( 32 )]
-position = Vector2( 5990.75, 6965.05 )
+position = Vector2( 6098.5, 7015.75 )
 rotation = 4.46039
 scale = Vector2( 0.780652, 0.780652 )
 
@@ -2459,12 +2706,12 @@ rotation = 6.31164
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp29" parent="." instance=ExtResource( 32 )]
-position = Vector2( 11775.6, 10200.5 )
+position = Vector2( 11699.5, 10238.5 )
 rotation = 4.1495
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp6" parent="." instance=ExtResource( 32 )]
-position = Vector2( 10427, 2396.88 )
+position = Vector2( 10424.1, 2417.43 )
 rotation = 2.52854
 scale = Vector2( 0.780652, 0.780652 )
 
@@ -2484,7 +2731,7 @@ rotation = 4.03931
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp19" parent="." instance=ExtResource( 32 )]
-position = Vector2( 11168.7, 4259.17 )
+position = Vector2( 11104.8, 4331.07 )
 rotation = 4.77957
 scale = Vector2( 0.780652, 0.780652 )
 
@@ -2499,17 +2746,17 @@ rotation = 5.97023
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp11" parent="." instance=ExtResource( 32 )]
-position = Vector2( 5675, 4535.64 )
+position = Vector2( 5681.34, 4567.33 )
 rotation = 9.55988
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp12" parent="." instance=ExtResource( 32 )]
-position = Vector2( 4277.31, 4247.88 )
+position = Vector2( 4296.32, 4241.54 )
 rotation = 6.95364
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp44" parent="." instance=ExtResource( 32 )]
-position = Vector2( 1511.34, 3649.57 )
+position = Vector2( 1536.69, 3649.57 )
 rotation = 8.27214
 scale = Vector2( 0.780652, 0.780652 )
 
@@ -2534,7 +2781,7 @@ rotation = 5.496
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp49" parent="." instance=ExtResource( 32 )]
-position = Vector2( 4409.72, 1251.42 )
+position = Vector2( 4421.3, 1251.42 )
 rotation = 3.15325
 scale = Vector2( 0.780652, 0.780652 )
 
@@ -2544,7 +2791,7 @@ rotation = -0.862679
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp43" parent="." instance=ExtResource( 32 )]
-position = Vector2( 491.267, 5277.77 )
+position = Vector2( 402.535, 5524.95 )
 rotation = 7.41753
 scale = Vector2( 0.780652, 0.780652 )
 
@@ -2752,7 +2999,7 @@ rotation = 0.494826
 scale = Vector2( 0.465516, 0.465516 )
 
 [node name="Truck2" parent="." instance=ExtResource( 7 )]
-position = Vector2( 13086.5, 4043.53 )
+position = Vector2( 13030.3, 4141.85 )
 rotation = 0.551395
 scale = Vector2( 1.49311, 1.49311 )
 
@@ -2837,7 +3084,7 @@ rotation = -0.643527
 scale = Vector2( 2.288, 2.727 )
 
 [node name="BlockRoof2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 10691.1, 1631.29 )
+position = Vector2( 10576.6, 1619.54 )
 rotation = -3.77589
 scale = Vector2( 1.67132, 1.84318 )
 
@@ -2847,3 +3094,4 @@ rotation = -5.3557
 scale = Vector2( 1.682, 1.859 )
 
 [node name="Zone" parent="." instance=ExtResource( 3 )]
+visible = false

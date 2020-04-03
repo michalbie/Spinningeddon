@@ -7,7 +7,7 @@ export var damage_interval = 2
 func _ready():
 	var fog_tween = get_node("FogTween")
 	fog_tween.interpolate_property($SafeZone, "texture_scale",
-	40, 3, time_to_shrink, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	20, 3, time_to_shrink, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	fog_tween.start()
 	
 	var safe_area_tween = get_node("SafeAreaTween")
