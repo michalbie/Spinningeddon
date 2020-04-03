@@ -4,6 +4,7 @@ signal game_started()
 
 var GameSession = preload("res://Scenes/World/World.tscn")
 var Lobby = preload("res://Scenes/Lobby/Lobby.tscn")
+var PlayerLabel = preload("res://Entities/Character/Player/PlayerName.tscn")
 var world
 var occupied_spawnpoints = []
 
@@ -38,8 +39,13 @@ remotesync func initialize_players():
 		var picked_class_scene = Globals.classes[LobbyManager.players[p]["class"]]["scene"]
 		var player = picked_class_scene.instance()
 		player.set_name(str(p))
+		var player_label = PlayerLabel.instance()
+		player_label.set_name("label_" + str(p))
+		player_label.get_node("Background/Name").text = LobbyManager.players[p]["name"]
 		world.add_child(player)
+		world.add_child(player_label)
 		player.position = random_spawnpoint()
+		player_label.position = player.position
 		players_info[p] = {"position": player.position, "body_rotation": player.get_node("Body").rotation}
 		get_tree().change_scene_to(world)
 	emit_signal("game_started")
@@ -63,6 +69,7 @@ func update_players():
 		if world.get_node(str(player_id)) != null:
 			world.get_node(str(player_id)).position = players_info[player_id]["position"]
 			world.get_node(str(player_id)).rotation = players_info[player_id]["body_rotation"]
+			world.get_node("label_" + str(player_id)).position = players_info[player_id]["position"]
 
 func update_bullets():
 	for bullet in bullets_info:
