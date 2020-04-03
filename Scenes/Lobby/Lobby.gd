@@ -18,6 +18,8 @@ func initialize_lobby():
 		add_item(LobbyManager.players[id]["name"])
 	if scene_tree.is_network_server():
 		$"MarginContainer/HBoxContainer/ClassesMenu".visible = false
+	else:
+		_on_class_selected("Soldier")
 
 func StartGameBtn_configure():
 	$MarginContainer/StartGameBtn.disabled = true
@@ -64,6 +66,7 @@ func _on_class_selected(class_id):
 	stats[5].get_node("Value").text = str(class_scene.rotate_cooldown + 1) + "/5"
 	stats[6].get_node("Value").text = str(class_scene.bullet_speed + 1) + "/5"
 	stats[7].get_node("Value").text = str(class_scene.bullet_range + 1) + "/5"
+	stats[8].text = class_scene.description
 	class_scene.queue_free()
 	LobbyManager.players[scene_tree.get_network_unique_id()]["class"] = class_id
 	rpc("set_player_class", class_id)

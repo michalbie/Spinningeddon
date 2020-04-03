@@ -15,6 +15,7 @@ export(preload("res://Scripts/Globals.gd").level) var bullet_speed
 export(preload("res://Scripts/Globals.gd").level) var bullet_damage
 export(preload("res://Scripts/Globals.gd").level) var bullet_range
 export(preload("res://Scripts/Globals.gd").level) var hp
+export (String) var description
 
 var inside_circle = false
 var switch_rotation = false

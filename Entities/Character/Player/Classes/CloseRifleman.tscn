@@ -18,6 +18,7 @@ bullet_speed = 1
 bullet_damage = 4
 bullet_range = 1
 hp = 2
+description = "Slow fucker who likes triple penetration"
 
 [node name="Body" parent="." index="0"]
 texture = ExtResource( 2 )
