@@ -1108,7 +1108,7 @@ scale = Vector2( 1.66985, 2.91533 )
 z_index = 0
 
 [node name="BricksWall35" parent="." instance=ExtResource( 19 )]
-position = Vector2( 11352.9, 1312.68 )
+position = Vector2( 11352.9, 1310.68 )
 rotation = -0.622905
 scale = Vector2( 7.37373, 2.93736 )
 z_index = 0
