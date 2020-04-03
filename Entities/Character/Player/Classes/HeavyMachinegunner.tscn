@@ -10,7 +10,6 @@ height = 58.1534
 
 [node name="HeavyMachinegunner" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-move_speed = 1
 rotate_cooldown = 2
 rotate_speed = 1
 shoot_cooldown = 3
