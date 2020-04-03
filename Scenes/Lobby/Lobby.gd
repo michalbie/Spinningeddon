@@ -8,7 +8,7 @@ onready var scene_tree = get_tree()
 
 func _ready():
 	connect("start_game", GameManager, "prepare_game")
-	for button in $"MarginContainer/HBoxContainer/ClassesMenu/Classes".get_children():
+	for button in $"MarginContainer/HBoxContainer/ClassesMenu/HBoxContainer/Classes".get_children():
 		button.connect("pressed", self, "_on_class_selected", [button.name])
 	StartGameBtn_configure()
 	initialize_lobby()
@@ -53,7 +53,18 @@ func _on_StartGameBtn_pressed():
 	emit_signal("start_game")
 	
 func _on_class_selected(class_id):
-	$"MarginContainer/HBoxContainer/ClassesMenu/TextureRect".texture = load("res://Entities/Character/assets/" + class_id + ".png")
+	$"MarginContainer/HBoxContainer/ClassesMenu/HBoxContainer/TextureRect".texture = load("res://Entities/Character/assets/" + class_id + ".png")
+	var stats = $"MarginContainer/HBoxContainer/ClassesMenu/VBoxContainer".get_children()
+	var class_scene = Globals.classes[class_id]["scene"].instance()
+	stats[0].get_node("Value").text = str(class_scene.hp + 1) + "/5"
+	stats[1].get_node("Value").text = str(class_scene.bullet_damage + 1) + "/5"
+	stats[2].get_node("Value").text = str(class_scene.shoot_cooldown + 1) + "/5"
+	stats[3].get_node("Value").text = str(class_scene.move_speed + 1) + "/5"
+	stats[4].get_node("Value").text = str(class_scene.rotate_speed + 1) + "/5"
+	stats[5].get_node("Value").text = str(class_scene.rotate_cooldown + 1) + "/5"
+	stats[6].get_node("Value").text = str(class_scene.bullet_speed + 1) + "/5"
+	stats[7].get_node("Value").text = str(class_scene.bullet_range + 1) + "/5"
+	class_scene.queue_free()
 	LobbyManager.players[scene_tree.get_network_unique_id()]["class"] = class_id
 	rpc("set_player_class", class_id)
 	
