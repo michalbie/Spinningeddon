@@ -1,3 +1,3 @@
 extends "res://Entities/Character/Character.gd"
 
-export var bullet_spread = 100
+export var bullet_spread = 100.0
