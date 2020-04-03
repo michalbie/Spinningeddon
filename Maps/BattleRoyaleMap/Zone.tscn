@@ -14,6 +14,7 @@ extents = Vector2( 7000, 6000 )
 position = Vector2( 6781.79, 5783.67 )
 z_index = 5
 script = ExtResource( 1 )
+time_to_shrink = 200
 
 [node name="SafeZone" type="Light2D" parent="."]
 light_mask = 2
@@ -28,6 +29,7 @@ margin_left = -7341.0
 margin_top = -6421.0
 margin_right = 7429.0
 margin_bottom = 6439.0
+mouse_filter = 2
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 2
@@ -40,6 +42,7 @@ margin_left = -7831.0
 margin_top = -14966.0
 margin_right = 8141.0
 margin_bottom = -5890.0
+mouse_filter = 2
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 2
@@ -52,6 +55,7 @@ margin_left = -14107.0
 margin_top = -7043.0
 margin_right = -6948.0
 margin_bottom = 6974.0
+mouse_filter = 2
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 2
@@ -64,6 +68,7 @@ margin_left = -7431.0
 margin_top = 5731.0
 margin_right = 8852.0
 margin_bottom = 13472.0
+mouse_filter = 2
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 2
@@ -76,6 +81,7 @@ margin_left = 6856.0
 margin_top = -7132.0
 margin_right = 15884.0
 margin_bottom = 8042.0
+mouse_filter = 2
 texture = ExtResource( 3 )
 expand = true
 stretch_mode = 2
@@ -84,11 +90,13 @@ __meta__ = {
 }
 
 [node name="AreaZone" type="Area2D" parent="."]
+input_pickable = false
 
 [node name="SafeArea" type="CollisionShape2D" parent="AreaZone"]
 shape = SubResource( 1 )
 
 [node name="AreaZone2" type="Area2D" parent="."]
+input_pickable = false
 
 [node name="StartingMapArea" type="CollisionShape2D" parent="AreaZone2"]
 shape = SubResource( 2 )

@@ -10,7 +10,7 @@ height = 42.8404
 
 [node name="CloseRifleman" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-move_speed = 2
+move_speed = 3
 rotate_cooldown = 2
 rotate_speed = 2
 shoot_cooldown = 1
@@ -19,6 +19,7 @@ bullet_damage = 4
 bullet_range = 1
 hp = 2
 description = "Slow fucker who likes triple penetration"
+bullet_spread = 0.15
 
 [node name="Body" parent="." index="0"]
 texture = ExtResource( 2 )

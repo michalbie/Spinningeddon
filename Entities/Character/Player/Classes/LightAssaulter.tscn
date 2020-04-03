@@ -10,7 +10,7 @@ height = 34.1233
 
 [node name="LightAssaulter" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
-move_speed = 3
+move_speed = 4
 rotate_cooldown = 3
 rotate_speed = 3
 shoot_cooldown = 3
