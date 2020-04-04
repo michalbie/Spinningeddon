@@ -35,10 +35,6 @@ window/size/fullscreen=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
-[editor_plugins]
-
-enabled=PoolStringArray( "MapEditorDock" )
-
 [input]
 
 switch_rotation={
