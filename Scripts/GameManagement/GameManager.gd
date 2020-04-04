@@ -4,6 +4,7 @@ signal game_started()
 
 var GameSession = preload("res://Scenes/World/World.tscn")
 var Lobby = preload("res://Scenes/Lobby/Lobby.tscn")
+var EndingScreen = preload("res://Scenes/HUD/EndingScreen.tscn")
 var world
 var occupied_spawnpoints = []
 
@@ -76,7 +77,12 @@ func update_bullets():
 func delete_player(player_name):
 	players_info.erase(player_name)
 	if players_info.size() < 2:
-		end_game()
+		show_ending_screen(LobbyManager.players[int(players_info.keys()[0])]['name'])
+
+func show_ending_screen(winner):
+	var screen = EndingScreen.instance()
+	screen.set_winner(winner)
+	world.add_child(screen)
 
 func end_game():
 	in_game = false
