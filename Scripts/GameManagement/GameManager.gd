@@ -33,6 +33,7 @@ remotesync func initialize_world():
 	if get_tree().is_network_server():
 		var zone = world.get_node("BattleRoyaleMap/Zone")
 		connect("game_started", zone, "_on_Game_Started")
+	connect("game_started", world.gameplay_info, "create_labels")
 		
 
 remotesync func initialize_players():
@@ -45,7 +46,6 @@ remotesync func initialize_players():
 		player.position = random_spawnpoint()
 		players_info[p] = {"position": player.position, "body_rotation": player.get_node("Body").rotation}
 		get_tree().change_scene_to(world)
-	world.gameplay_info.rpc("create_labels")
 	emit_signal("game_started")
 		
 func random_spawnpoint():

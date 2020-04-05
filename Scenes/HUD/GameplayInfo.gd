@@ -22,7 +22,7 @@ remote func update_kills_info(killer, victim):
 	new_label.visible = true
 
 
-remotesync func create_labels():
+func create_labels():
 	for p in LobbyManager.players:
 		var player_label = PlayerLabel.instance()
 		player_label.set_name("label_" + str(p))
