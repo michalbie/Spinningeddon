@@ -42,6 +42,7 @@ remotesync func kill_player(player_name, killer_name):
 		get_random_camera()
 	if get_node(str(player_name)) != null:
 		get_node(str(player_name)).queue_free()
+		get_node("label_" + str(player_name)).queue_free()
 	
 func get_random_camera():
 	randomize()

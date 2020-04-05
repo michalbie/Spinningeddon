@@ -4,7 +4,6 @@ signal game_started()
 
 var GameSession = preload("res://Scenes/World/World.tscn")
 var Lobby = preload("res://Scenes/Lobby/Lobby.tscn")
-var PlayerLabel = preload("res://Entities/Character/Player/PlayerName.tscn")
 var EndingScreen = preload("res://Scenes/HUD/EndingScreen.tscn")
 var world
 var occupied_spawnpoints = []
@@ -23,6 +22,7 @@ func prepare_game():
 	rpc("initialize_world")
 	rpc("initialize_players")
 	rset("in_game", true)
+	
 
 remotesync func initialize_world():
 	print("initializing world...")
@@ -33,6 +33,8 @@ remotesync func initialize_world():
 	if get_tree().is_network_server():
 		var zone = world.get_node("BattleRoyaleMap/Zone")
 		connect("game_started", zone, "_on_Game_Started")
+	connect("game_started", world.gameplay_info, "create_labels")
+		
 
 remotesync func initialize_players():
 	print("initializing players...")
@@ -40,13 +42,8 @@ remotesync func initialize_players():
 		var picked_class_scene = Globals.classes[LobbyManager.players[p]["class"]]["scene"]
 		var player = picked_class_scene.instance()
 		player.set_name(str(p))
-		var player_label = PlayerLabel.instance()
-		player_label.set_name("label_" + str(p))
-		player_label.get_node("Background/Name").text = LobbyManager.players[p]["name"]
 		world.add_child(player)
-		world.add_child(player_label)
 		player.position = random_spawnpoint()
-		player_label.position = player.position
 		players_info[p] = {"position": player.position, "body_rotation": player.get_node("Body").rotation}
 		get_tree().change_scene_to(world)
 	emit_signal("game_started")
@@ -70,7 +67,6 @@ func update_players():
 		if world.get_node(str(player_id)) != null:
 			world.get_node(str(player_id)).position = players_info[player_id]["position"]
 			world.get_node(str(player_id)).rotation = players_info[player_id]["body_rotation"]
-			world.get_node("label_" + str(player_id)).position = players_info[player_id]["position"]
 
 func update_bullets():
 	for bullet in bullets_info:
