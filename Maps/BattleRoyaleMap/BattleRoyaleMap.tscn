@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Maps/Objects/LargeObjects/PlayingField.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/Objects/Miscellaneous/FuelDispatcher.tscn" type="PackedScene" id=2]
@@ -33,7 +33,6 @@
 [ext_resource path="res://Maps/Objects/Roofs/CinemaRoof.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Maps/Objects/Miscellaneous/Lamp.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Maps/Objects/Walls/MetalFence.tscn" type="PackedScene" id=33]
-[ext_resource path="res://Maps/assets/bend.png" type="Texture" id=34]
 [ext_resource path="res://Maps/Objects/Roads/Road2Bend.tscn" type="PackedScene" id=35]
 
 [node name="BattleRoyaleMap" type="Node2D"]
@@ -68,19 +67,13 @@ grow_horizontal = 2
 rect_rotation = 92.8264
 rect_scale = Vector2( 0.786802, 0.786802 )
 
-[node name="Road2Bend" type="TextureRect" parent="." instance=ExtResource( 35 )]
+[node name="Road2Bend" parent="." instance=ExtResource( 35 )]
 margin_left = 2023.33
 margin_top = 3707.32
 margin_right = 2524.33
 margin_bottom = 4208.32
 rect_rotation = 153.808
 rect_scale = Vector2( 0.785, 0.785 )
-mouse_filter = 2
-texture = ExtResource( 34 )
-stretch_mode = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Road2Bend4" parent="." instance=ExtResource( 35 )]
 margin_left = 3358.69
@@ -3094,4 +3087,3 @@ rotation = -5.3557
 scale = Vector2( 1.682, 1.859 )
 
 [node name="Zone" parent="." instance=ExtResource( 3 )]
-visible = false
