@@ -1484,7 +1484,7 @@ rotation = 0.547447
 scale = Vector2( 0.134726, 13.7381 )
 
 [node name="ConcreteWall17" parent="." instance=ExtResource( 22 )]
-position = Vector2( 8519.94, 8168.46 )
+position = Vector2( 8513.67, 8172.46 )
 rotation = 0.547919
 scale = Vector2( 0.134, 13.738 )
 
@@ -2074,6 +2074,7 @@ rotation = -1.59032
 position = Vector2( 2459.46, 3437.26 )
 rotation = -2.06575
 scale = Vector2( 1.51687, 1.51687 )
+z_index = 0
 
 [node name="CafeteriaRoof" parent="." instance=ExtResource( 30 )]
 position = Vector2( 11312.5, 4299.44 )
@@ -2106,7 +2107,6 @@ object_material = 2
 [node name="Monument" parent="." instance=ExtResource( 26 )]
 position = Vector2( 1104.58, 2755.04 )
 rotation = 1.04191
-z_index = 1
 
 [node name="PlayingField" parent="." instance=ExtResource( 1 )]
 margin_left = 13043.2
@@ -2709,7 +2709,7 @@ rotation = 2.52854
 scale = Vector2( 0.780652, 0.780652 )
 
 [node name="Lamp7" parent="." instance=ExtResource( 32 )]
-position = Vector2( 9994.43, 3020.54 )
+position = Vector2( 10003.7, 3043.83 )
 rotation = 5.66984
 scale = Vector2( 0.780652, 0.780652 )
 
@@ -3087,3 +3087,4 @@ rotation = -5.3557
 scale = Vector2( 1.682, 1.859 )
 
 [node name="Zone" parent="." instance=ExtResource( 3 )]
+visible = false
