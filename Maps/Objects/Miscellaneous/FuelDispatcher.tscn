@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Maps/Objects/share/ObjectBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Maps/assets/fuel_dispatcher.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 121.657, 61.38 )
+
+[node name="FuelDispatcher" instance=ExtResource( 1 )]
+collision_layer = 2048
+collision_mask = 3
+object_material = 2
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 125.046, 93.7849 )
+shape = SubResource( 1 )
+
+[node name="Texture" parent="." index="1"]
+texture = ExtResource( 2 )
+centered = false
