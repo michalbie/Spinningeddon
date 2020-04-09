@@ -12,7 +12,7 @@ func _ready():
 	
 	var safe_area_tween = get_node("SafeAreaTween")
 	safe_area_tween.interpolate_property($AreaZone/SafeArea.shape, "radius",
-	9200, 690, time_to_shrink, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	9200, 1360, time_to_shrink, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	safe_area_tween.start()
 	
 func _on_Game_Started():
