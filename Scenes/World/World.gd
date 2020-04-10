@@ -39,25 +39,22 @@ remotesync func spawn_bullet(player_id, is_soldier_bullet=false):
 				player.rotation, player.bullet_range, str(player_id))
 	GameManager.bullets_info[bullet.get_name()] = {"position": bullet.global_position, "rotation": bullet.rotation}
 	GameManager.bullets_count += 1
-	
+
 remotesync func delete_bullet(bullet_name):
 	GameManager.bullets_info.erase(bullet_name)
 	get_node(bullet_name).queue_free()
 	remove_child(get_node(bullet_name))
-		
+
 remotesync func kill_player(player_name, killer_name):
 	GameManager.delete_player(player_name)
-	print("Observer list" + str(get_node(str(player_name)).observers_list))
 	
 	if player_name == get_tree().get_network_unique_id():
-		print("You was killed")
 		spectator_system = SpectatorSystem.instance()
 		add_child(spectator_system)
 		spectator_system.set_name("SpectatorSystem")
 		spectator_system.get_random_camera()
 		
 	if get_tree().get_network_unique_id() in get_node(str(player_name)).observers_list:
-		print("Leaving because he was killed")
 		spectator_system.get_random_camera()
 		
 	if get_node(str(player_name)) != null:
