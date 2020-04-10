@@ -10,4 +10,3 @@ func initialize_with_parameters(max_val, val):
 	
 remote func update_hp(new_hp):
 	$Control/MarginContainer/HBoxContainer/TextureProgress.set_value(new_hp)
-	print("UPDATE HP")

@@ -55,6 +55,7 @@ remotesync func kill_player(player_name, killer_name):
 		spectator_system.get_random_camera()
 		
 	if get_tree().get_network_unique_id() in get_node(str(player_name)).observers_list:
+		print("Leaving because he was killed")
 		spectator_system.get_random_camera()
 		
 	if get_node(str(player_name)) != null:
