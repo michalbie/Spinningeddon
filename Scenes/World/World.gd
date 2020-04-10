@@ -47,8 +47,10 @@ remotesync func delete_bullet(bullet_name):
 		
 remotesync func kill_player(player_name, killer_name):
 	GameManager.delete_player(player_name)
+	print("Observer list" + str(get_node(str(player_name)).observers_list))
 	
 	if player_name == get_tree().get_network_unique_id():
+		print("You was killed")
 		spectator_system = SpectatorSystem.instance()
 		add_child(spectator_system)
 		spectator_system.set_name("SpectatorSystem")

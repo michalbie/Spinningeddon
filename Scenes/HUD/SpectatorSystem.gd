@@ -11,19 +11,19 @@ func _process(delta):
 func get_random_camera():
 	randomize()
 	if GameManager.players_info.size() > 0:
-		GameManager.world.get_node(str(GameManager.players_info.keys()[current_observing])).rpc_id(1, "erase_observer", get_tree().get_network_unique_id())
+		GameManager.world.get_node(str(GameManager.players_info.keys()[current_observing])).rpc("erase_observer", get_tree().get_network_unique_id())
 		var random_index = randi() % GameManager.players_info.size()
 		current_observing = random_index
 		print("random index = " + str(random_index))
 		GameManager.world.get_node(str(GameManager.players_info.keys()[random_index])).get_node("Camera2D").make_current()
-		GameManager.world.get_node(str(GameManager.players_info.keys()[random_index])).rpc_id(1, "append_observer", get_tree().get_network_unique_id())
+		GameManager.world.get_node(str(GameManager.players_info.keys()[random_index])).rpc("append_observer", get_tree().get_network_unique_id())
 		get_player_info()
 
 func listen_camera_switch():
 	if GameManager.players_info.size() > 1 and !GameManager.players_info.has(get_tree().get_network_unique_id()) and !get_tree().is_network_server():
 		
 		if Input.is_action_just_pressed("switch_camera_left"):
-			GameManager.world.get_node(str(GameManager.players_info.keys()[current_observing])).rpc_id(1, "erase_observer", get_tree().get_network_unique_id())
+			GameManager.world.get_node(str(GameManager.players_info.keys()[current_observing])).rpc("erase_observer", get_tree().get_network_unique_id())
 			
 			if current_observing > 0:
 				current_observing -= 1
@@ -31,11 +31,11 @@ func listen_camera_switch():
 				current_observing = GameManager.players_info.size() - 1
 				
 			GameManager.world.get_node(str(GameManager.players_info.keys()[current_observing])).get_node("Camera2D").make_current()
-			GameManager.world.get_node(str(GameManager.players_info.keys()[current_observing])).rpc_id(1, "append_observer", get_tree().get_network_unique_id())
+			GameManager.world.get_node(str(GameManager.players_info.keys()[current_observing])).rpc("append_observer", get_tree().get_network_unique_id())
 			get_player_info()
 			
 		if Input.is_action_just_pressed("switch_camera_right"):
-			GameManager.world.get_node(str(GameManager.players_info.keys()[current_observing])).rpc_id(1, "erase_observer", get_tree().get_network_unique_id())
+			GameManager.world.get_node(str(GameManager.players_info.keys()[current_observing])).rpc("erase_observer", get_tree().get_network_unique_id())
 			
 			if current_observing < GameManager.players_info.size() - 1:
 				current_observing += 1
@@ -43,7 +43,7 @@ func listen_camera_switch():
 				current_observing = 0
 				
 			GameManager.world.get_node(str(GameManager.players_info.keys()[current_observing])).get_node("Camera2D").make_current()
-			GameManager.world.get_node(str(GameManager.players_info.keys()[current_observing])).rpc_id(1, "append_observer", get_tree().get_network_unique_id())
+			GameManager.world.get_node(str(GameManager.players_info.keys()[current_observing])).rpc("append_observer", get_tree().get_network_unique_id())
 			get_player_info()
 
 func get_player_info():
