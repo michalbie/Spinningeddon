@@ -5,7 +5,7 @@ var SoldierBullet = preload("res://Entities/Bullet/SoldierBullet.tscn")
 var BattleRoyaleMap = preload("res://Maps/BattleRoyaleMap/BattleRoyaleMap.tscn")
 
 var GameplayInfo = preload("res://Scenes/HUD/GameplayInfo.tscn")
-var SpectatorSystem = preload("res://Scenes/HUD/SpectatorSystem.gd")
+var SpectatorSystem = preload("res://Scenes/HUD/SpectatorSystem.tscn")
 
 var map
 var gameplay_info
@@ -19,7 +19,8 @@ func _ready():
 	add_child(gameplay_info)
 	
 	if get_tree().is_network_server():
-		spectator_system = SpectatorSystem.new()
+		spectator_system = SpectatorSystem.instance()
+		spectator_system.set_name("SpectatorSystem")
 		add_child(spectator_system)
 
 
@@ -48,8 +49,9 @@ remotesync func kill_player(player_name, killer_name):
 	GameManager.delete_player(player_name)
 	
 	if player_name == get_tree().get_network_unique_id():
-		spectator_system = SpectatorSystem.new()
-		self.add_child(spectator_system)
+		spectator_system = SpectatorSystem.instance()
+		add_child(spectator_system)
+		spectator_system.set_name("SpectatorSystem")
 		spectator_system.get_random_camera()
 		
 	if get_tree().get_network_unique_id() in get_node(str(player_name)).observers_list:
