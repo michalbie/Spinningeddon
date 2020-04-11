@@ -17,3 +17,6 @@ shape = SubResource( 1 )
 [node name="Texture" parent="." index="1"]
 texture = ExtResource( 2 )
 centered = false
+
+[node name="BulletDeathAreaShape" parent="BulletDeathArea" index="0"]
+polygon = PoolVector2Array( 12.9246, 24.9662, 39.0309, 10.0483, 131.025, 10.0483, 154.645, 26.2094, 155.888, 631.627, 14.1678, 632.87 )
