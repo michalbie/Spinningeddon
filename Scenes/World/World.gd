@@ -33,7 +33,6 @@ remotesync func spawn_bullet(player_id, is_soldier_bullet=false):
 	
 remotesync func delete_bullet(bullet_name):
 	GameManager.bullets_info.erase(bullet_name)
-	print(bullet_name + str(get_tree().get_rpc_sender_id()))
 	if get_node(bullet_name) != null:
 		get_node(bullet_name).queue_free()
 		remove_child(get_node(bullet_name))
