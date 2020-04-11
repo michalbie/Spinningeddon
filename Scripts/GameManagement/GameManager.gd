@@ -77,7 +77,7 @@ func update_bullets():
 
 func delete_player(player_name):
 	players_info.erase(player_name)
-	if players_info.size() < 2 and players_info.size():
+	if players_info.size() < 2 and players_info.size() > 0:
 		show_ending_screen(LobbyManager.players[int(players_info.keys()[0])]['name'])
 
 func show_ending_screen(winner):

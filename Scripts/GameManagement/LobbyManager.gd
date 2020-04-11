@@ -45,7 +45,7 @@ func _on_peer_disconnected(id):
 	unregister_player(id)
 	if get_tree().is_network_server() and LobbyManager.players.size() < 2:
 		lobby.get_node("MarginContainer/StartGameBtn").disabled = true
-	if GameManager.in_game: #error when player joins the lobby but is not in game
+	if GameManager.in_game:
 		if id in GameManager.players_info:
 			GameManager.world.kill_player(id, id)
 	
@@ -77,7 +77,6 @@ func ask_server_status():
 	
 remote func send_server_status(receiver_id):
 	var status = LobbyManager.server_status
-	print(status)
 	rset_id(receiver_id, "server_status", status)
 	
 
