@@ -10,6 +10,7 @@ const LOBBY_SIZE = 5
 var players = {}
 var my_name
 var server_ip
+remote var server_status = false
 
 
 func create_server():
@@ -32,6 +33,7 @@ func _on_peer_connected(id):
 	print("Connected: " + str(id))
 	
 func _on_connection_succeeded():
+	ask_server_status()
 	rpc_id(1, "register_new_player", scene_tree.get_network_unique_id(), my_name)
 	
 remote func register_new_player(new_id, new_player_name):
@@ -43,8 +45,9 @@ func _on_peer_disconnected(id):
 	unregister_player(id)
 	if get_tree().is_network_server() and LobbyManager.players.size() < 2:
 		lobby.get_node("MarginContainer/StartGameBtn").disabled = true
-	if GameManager.in_game:
-		GameManager.world.kill_player(id, id)
+	if GameManager.in_game: #error when player joins the lobby but is not in game
+		if id in GameManager.players_info:
+			GameManager.world.kill_player(id, id)
 	
 remote func update_players_lobby(new_player_id, players_list):
 	players = players_list
@@ -68,3 +71,15 @@ func disconnect_me(): #refactorize gt sender rpc id
 	scene_tree.network_peer = null
 	players.clear()
 	remove_child(lobby)
+	
+func ask_server_status():
+	rpc_id(1, "send_server_status", get_tree().get_network_unique_id())
+	
+remote func send_server_status(receiver_id):
+	var status = LobbyManager.server_status
+	print(status)
+	rset_id(receiver_id, "server_status", status)
+	
+
+
+
