@@ -22,6 +22,7 @@ var switch_rotation = false
 var rotate_direction = 1 #-1 - left, 1 - right
 var shoot = false
 var being_removed = false
+var max_hp
 
 var observers_list = []
 var hud
@@ -39,6 +40,7 @@ func _ready():
 	bullet_damage = Globals.bullet_damage[bullet_damage]
 	bullet_range = Globals.bullet_range[bullet_range]
 	hp = Globals.hp[hp]
+	max_hp = hp
 	
 	if is_server == false and self.get_name() == str(get_tree().get_network_unique_id()):
 		hud = HUD.instance()
@@ -91,6 +93,15 @@ func got_shot(dmg, source):
 		hp -= dmg
 		if hud != null:
 			hud.rpc_id(int(self.get_name()), "update_hp", hp)
+			for id in observers_list:
+				GameManager.world.spectator_system.get_node("HUD").rpc_id(int(id), "update_hp", hp)
+				
+remotesync func append_observer(observer_id):
+	observers_list.append(observer_id)
+	
+remotesync func erase_observer(observer_id):
+	observers_list.erase(observer_id)
+	
 	
 func _on_StandingCircle_mouse_entered():
 	inside_circle = true

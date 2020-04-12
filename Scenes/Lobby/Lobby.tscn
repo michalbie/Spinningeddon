@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Lobby/Lobby.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Lobby/ClassesMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/HUD/assets/open-sans/OpenSans-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_color = Color( 0.27451, 0.262745, 0.262745, 1 )
+font_data = ExtResource( 3 )
 
 [node name="Lobby" type="Control"]
 anchor_right = 1.0
@@ -32,23 +38,33 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Quit Lobby"
 
+[node name="GameStatus" type="Label" parent="MarginContainer"]
+margin_left = 813.0
+margin_right = 1087.0
+margin_bottom = 45.0
+size_flags_horizontal = 6
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.521569, 0.0666667, 0.0666667, 1 )
+text = "Game is running..."
+
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-margin_top = 358.0
+margin_top = 349.0
 margin_right = 1900.0
-margin_bottom = 702.0
+margin_bottom = 711.0
 size_flags_vertical = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-margin_top = 172.0
+margin_top = 181.0
 margin_right = 1512.0
-margin_bottom = 172.0
+margin_bottom = 181.0
 size_flags_horizontal = 7
 size_flags_vertical = 4
 
 [node name="ClassesMenu" parent="MarginContainer/HBoxContainer" instance=ExtResource( 2 )]
 margin_left = 1516.0
 margin_right = 1900.0
-margin_bottom = 344.0
+margin_bottom = 362.0
 
 [node name="StartGameBtn" type="Button" parent="MarginContainer"]
 margin_left = 887.0
