@@ -25,3 +25,12 @@ centered = false
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
 position = Vector2( 124.696, 382.789 )
 shape = SubResource( 2 )
+
+[node name="BulletDeathAreaShape" parent="BulletDeathArea" index="0"]
+polygon = PoolVector2Array( 240.803, 9.43864, 6.3161, 9.43864, 8.56, 240.56, 238.56, 240.56 )
+
+[node name="BulletDeathAreaShape2" type="CollisionPolygon2D" parent="BulletDeathArea" index="1"]
+polygon = PoolVector2Array( 105.515, 358.514, 143.103, 358.514, 141.891, 409.44, 105.515, 410.046 )
+__meta__ = {
+"_editor_description_": ""
+}
