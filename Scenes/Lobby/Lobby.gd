@@ -17,9 +17,13 @@ func initialize_lobby():
 	for id in LobbyManager.players:
 		add_item(LobbyManager.players[id]["name"])
 	if scene_tree.is_network_server():
-		$"MarginContainer/HBoxContainer/ClassesMenu".visible = false
+		$MarginContainer/HBoxContainer/ClassesMenu.visible = false
+		$MarginContainer/GameStatus.visible = false
 	else:
 		_on_class_selected("Soldier")
+		
+	if LobbyManager.server_status == false:
+		$MarginContainer/GameStatus.visible = false
 
 func StartGameBtn_configure():
 	$MarginContainer/StartGameBtn.disabled = true
@@ -73,3 +77,6 @@ func _on_class_selected(class_id):
 	
 remote func set_player_class(class_id):
 	LobbyManager.players[scene_tree.get_rpc_sender_id()]["class"] = class_id
+	
+remote func update_game_status():
+	$MarginContainer/GameStatus.visible = false

@@ -47,7 +47,7 @@ remotesync func delete_bullet(bullet_name):
 
 remotesync func kill_player(player_name, killer_name):
 	GameManager.delete_player(player_name)
-	
+
 	if player_name == get_tree().get_network_unique_id():
 		spectator_system = SpectatorSystem.instance()
 		add_child(spectator_system)
@@ -56,7 +56,7 @@ remotesync func kill_player(player_name, killer_name):
 		
 	if get_tree().get_network_unique_id() in get_node(str(player_name)).observers_list:
 		spectator_system.get_random_camera()
-		
+
 	if get_node(str(player_name)) != null:
 		get_node(str(player_name)).queue_free()
 		get_node("label_" + str(player_name)).queue_free()

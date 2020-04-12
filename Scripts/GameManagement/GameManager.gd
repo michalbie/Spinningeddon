@@ -22,6 +22,7 @@ func prepare_game():
 	rpc("initialize_world")
 	rpc("initialize_players")
 	rset("in_game", true)
+	LobbyManager.server_status = true
 	
 
 remotesync func initialize_world():
@@ -86,6 +87,9 @@ func show_ending_screen(winner):
 
 func end_game():
 	in_game = false
+	if get_tree().is_network_server():
+		notify_lobby_about_end()
+	LobbyManager.server_status = false
 	world.visible = false
 	bullets_count = 0
 	bullets_info.clear()
@@ -93,4 +97,10 @@ func end_game():
 	world.queue_free()
 	LobbyManager.lobby.visible = true
 	get_tree().change_scene_to(LobbyManager.lobby)
+	
+func notify_lobby_about_end():
+	for player in LobbyManager.players:
+		if !GameManager.players_info.has(player):
+			LobbyManager.lobby.rpc_id(int(player), "update_game_status")
+			
 
