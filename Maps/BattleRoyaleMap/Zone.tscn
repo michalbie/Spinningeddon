@@ -5,10 +5,10 @@
 [ext_resource path="res://Maps/assets/fog.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 1360.0
+radius = 9200.0
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 7000, 6000 )
+extents = Vector2( 6946.99, 5818.64 )
 
 [node name="Zone" type="Node2D"]
 position = Vector2( 6781.79, 5783.67 )
@@ -19,16 +19,20 @@ time_to_shrink = 200
 [node name="SafeZone" type="Light2D" parent="."]
 light_mask = 2
 texture = ExtResource( 2 )
-texture_scale = 3.0
+texture_scale = 20.0
 mode = 3
 range_item_cull_mask = 2
 
 [node name="Fog" type="TextureRect" parent="."]
 light_mask = 2
-margin_left = -7341.0
-margin_top = -6421.0
-margin_right = 7429.0
-margin_bottom = 6439.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -6808.0
+margin_top = -5811.0
+margin_right = 6436.0
+margin_bottom = 5523.0
 mouse_filter = 2
 texture = ExtResource( 3 )
 expand = true
@@ -38,10 +42,10 @@ __meta__ = {
 }
 
 [node name="Fog2" type="TextureRect" parent="."]
-margin_left = -7831.0
-margin_top = -14966.0
-margin_right = 8141.0
-margin_bottom = -5890.0
+margin_left = -7872.0
+margin_top = -14936.0
+margin_right = 8100.0
+margin_bottom = -5757.0
 mouse_filter = 2
 texture = ExtResource( 3 )
 expand = true
@@ -53,7 +57,7 @@ __meta__ = {
 [node name="Fog3" type="TextureRect" parent="."]
 margin_left = -14107.0
 margin_top = -7043.0
-margin_right = -6948.0
+margin_right = -6729.0
 margin_bottom = 6974.0
 mouse_filter = 2
 texture = ExtResource( 3 )
@@ -64,10 +68,10 @@ __meta__ = {
 }
 
 [node name="Fog4" type="TextureRect" parent="."]
-margin_left = -7431.0
-margin_top = 5731.0
-margin_right = 8852.0
-margin_bottom = 13472.0
+margin_left = -7554.0
+margin_top = 5448.0
+margin_right = 8729.0
+margin_bottom = 13485.0
 mouse_filter = 2
 texture = ExtResource( 3 )
 expand = true
@@ -77,10 +81,10 @@ __meta__ = {
 }
 
 [node name="Fog5" type="TextureRect" parent="."]
-margin_left = 6856.0
-margin_top = -7132.0
-margin_right = 15884.0
-margin_bottom = 8042.0
+margin_left = 6378.0
+margin_top = -7099.0
+margin_right = 15921.0
+margin_bottom = 8075.0
 mouse_filter = 2
 texture = ExtResource( 3 )
 expand = true
