@@ -9,7 +9,8 @@ func _physics_process(delta):
 	if labels_loaded:
 		for p in GameManager.players_info:
 			var player_label = GameManager.world.get_node("label_" + str(p))
-			player_label.position = GameManager.players_info[p]["position"]
+			var label_offset = player_label.get_node("Name").get_rect().size.x / 2
+			player_label.position = GameManager.players_info[p]["position"] - Vector2(label_offset, 0)
 
 remote func update_kills_info(killer, victim):
 	var killer_name = str(killer)
