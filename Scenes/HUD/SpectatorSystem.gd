@@ -52,8 +52,10 @@ remote func send_player_info(receiver_id, player_id):
 	var info = {}
 	info['max_hp'] = GameManager.world.get_node(str(player_id)).max_hp
 	info['hp'] = GameManager.world.get_node(str(player_id)).hp
+	info['kills'] = GameManager.world.get_node(str(player_id)).kills
 	GameManager.world.spectator_system.rset_id(receiver_id, "current_player_info", info)
 	GameManager.world.spectator_system.rpc_id(receiver_id, "set_new_hud", info)
+	print(info['kills'])
 
 remote func set_new_hud(info):
-	$HUD.initialize_with_parameters(info['max_hp'], info['hp'])
+	$HUD.initialize_with_parameters(info['max_hp'], info['hp'], info['kills'])
