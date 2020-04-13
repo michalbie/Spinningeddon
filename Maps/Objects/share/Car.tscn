@@ -5,15 +5,19 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 63.9709
-height = 181.887
+height = 199.351
 
 [node name="Car" instance=ExtResource( 1 )]
 object_material = 2
 
-[node name="Texture" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 79.1325, 141.035 )
+shape = SubResource( 1 )
+
+[node name="Texture" parent="." index="1"]
 texture = ExtResource( 2 )
 centered = false
 
-[node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( 79.1325, 141.035 )
-shape = SubResource( 1 )
+[node name="BulletDeathAreaShape" parent="BulletDeathArea" index="0"]
+position = Vector2( 79.1325, 144.69 )
+polygon = PoolVector2Array( -48.7809, -128.921, -3.08905, -138.973, 48.0858, -128.921, 55.2418, -52.668, 55.2418, 51.9913, 50.8273, 119.643, 37.7917, 133.906, 0.566284, 141.575, -46.8584, 131.982, -55.8093, 45.7738, -56.8219, -72.6958 )
