@@ -3087,4 +3087,3 @@ rotation = -5.3557
 scale = Vector2( 1.682, 1.859 )
 
 [node name="Zone" parent="." instance=ExtResource( 3 )]
-position = Vector2( 6742.61, 5793.46 )
