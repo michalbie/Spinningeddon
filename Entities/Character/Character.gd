@@ -23,6 +23,7 @@ var rotate_direction = 1 #-1 - left, 1 - right
 var shoot = false
 var being_removed = false
 var max_hp
+var kills = 0
 
 var observers_list = []
 var hud
@@ -87,6 +88,11 @@ func got_shot(dmg, source):
 		hp = 0
 		being_removed = true
 		GameManager.world.gameplay_info.rpc("update_kills_info", str(source), self.get_name())
+		if source != "Fog":
+			GameManager.world.get_node(str(source)).kills += 1
+			GameManager.world.get_node(str(source)).hud.rpc_id(int(source), "update_kills", GameManager.world.get_node(str(source)).kills)
+			for id in GameManager.world.get_node(str(source)).observers_list:
+				GameManager.world.spectator_system.get_node("HUD").rpc_id(int(id), "update_kills", GameManager.world.get_node(str(source)).kills)
 		emit_signal("player_died")
 		GameManager.world.rpc("kill_player", int(self.get_name()), source)
 	else:

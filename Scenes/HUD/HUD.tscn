@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/HUD/assets/health_bar_bottom.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/HUD/HUD.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/HUD/assets/health_bar_top.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/HUD/assets/open-sans/OpenSans-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.427451 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 4 )
 
 [node name="HUD" type="CanvasLayer"]
 layer = 2
@@ -43,3 +51,14 @@ size_flags_horizontal = 0
 value = 100.0
 texture_under = ExtResource( 1 )
 texture_progress = ExtResource( 3 )
+
+[node name="KillsCounter" type="Label" parent="Control/MarginContainer"]
+margin_left = 1806.0
+margin_top = 1015.0
+margin_right = 1900.0
+margin_bottom = 1060.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Kills: 0"
