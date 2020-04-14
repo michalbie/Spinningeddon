@@ -10,3 +10,4 @@ func _on_BulletDeathArea_body_entered(body):
 			
 		elif body.get_filename() == "res://Entities/Bullet/SoldierBullet.tscn":
 			body.distance_traveled += (body.bullet_range - body.distance_traveled) / 2
+
