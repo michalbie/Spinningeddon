@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Maps/Objects/LargeObjects/PlayingField.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/Objects/Miscellaneous/FuelDispatcher.tscn" type="PackedScene" id=2]
@@ -33,9 +33,7 @@
 [ext_resource path="res://Maps/Objects/Roofs/CinemaRoof.tscn" type="PackedScene" id=31]
 [ext_resource path="res://Maps/Objects/Miscellaneous/Lamp.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Maps/Objects/Walls/MetalFence.tscn" type="PackedScene" id=33]
-[ext_resource path="res://Maps/Objects/Walls/Wall.gd" type="Script" id=34]
 [ext_resource path="res://Maps/Objects/Roads/Road2Bend.tscn" type="PackedScene" id=35]
-[ext_resource path="res://Maps/Objects/share/ObjectBase.gd" type="Script" id=36]
 
 [node name="BattleRoyaleMap" type="Node2D"]
 
@@ -3128,126 +3126,74 @@ position = Vector2( 9046.59, 3988.1 )
 rotation = -5.3557
 scale = Vector2( 1.682, 1.859 )
 
-[node name="BricksWall11" type="StaticBody2D" parent="." instance=ExtResource( 19 )]
+[node name="BricksWall11" parent="." instance=ExtResource( 19 )]
 position = Vector2( 4878.93, 2783.25 )
-z_index = 2
-collision_layer = 2048
-collision_mask = 0
-script = ExtResource( 34 )
-object_material = 1
 
-[node name="BricksWall12" type="StaticBody2D" parent="." instance=ExtResource( 19 )]
+[node name="BricksWall12" parent="." instance=ExtResource( 19 )]
 position = Vector2( 5127.32, 2783.38 )
-z_index = 2
-collision_layer = 2048
-collision_mask = 0
-script = ExtResource( 34 )
-object_material = 1
 
 [node name="BricksWall13" parent="." instance=ExtResource( 19 )]
 position = Vector2( 5327.04, 2785.01 )
 rotation = -1.5708
 
-[node name="Rock62" type="StaticBody2D" parent="." instance=ExtResource( 23 )]
+[node name="Rock62" parent="." instance=ExtResource( 23 )]
 position = Vector2( 3307.53, 5040.36 )
 rotation = 0.422337
 scale = Vector2( 0.638316, 0.638316 )
-z_index = 1
-script = ExtResource( 36 )
-object_material = 1
 
-[node name="Rock63" type="StaticBody2D" parent="." instance=ExtResource( 23 )]
+[node name="Rock63" parent="." instance=ExtResource( 23 )]
 position = Vector2( 3561.78, 5298.41 )
 rotation = -0.422715
 scale = Vector2( 0.748692, 0.748692 )
-z_index = 1
-script = ExtResource( 36 )
-object_material = 1
 
-[node name="Rock64" type="StaticBody2D" parent="." instance=ExtResource( 23 )]
+[node name="Rock64" parent="." instance=ExtResource( 23 )]
 position = Vector2( 3694.6, 5032.77 )
 rotation = 2.21707
 scale = Vector2( 0.845969, 0.845969 )
-z_index = 1
-script = ExtResource( 36 )
-object_material = 1
 
-[node name="BricksWall14" type="StaticBody2D" parent="." instance=ExtResource( 19 )]
+[node name="BricksWall14" parent="." instance=ExtResource( 19 )]
 position = Vector2( 4605.15, 6750.87 )
 rotation = -0.349066
-z_index = 2
-collision_layer = 2048
-collision_mask = 0
-script = ExtResource( 34 )
-object_material = 1
 
-[node name="BricksWall15" type="StaticBody2D" parent="." instance=ExtResource( 19 )]
+[node name="BricksWall15" parent="." instance=ExtResource( 19 )]
 position = Vector2( 4886.49, 6648.88 )
 rotation = 1.22173
-z_index = 2
-collision_layer = 2048
-collision_mask = 0
-script = ExtResource( 34 )
-object_material = 1
 
 [node name="StoneWall10" parent="." instance=ExtResource( 13 )]
 position = Vector2( 7734.45, 6217.44 )
 rotation = -0.261799
 scale = Vector2( 0.355469, 1 )
 
-[node name="StoneWall5" type="StaticBody2D" parent="." instance=ExtResource( 13 )]
+[node name="StoneWall5" parent="." instance=ExtResource( 13 )]
 position = Vector2( 7680.3, 6014.65 )
 rotation = -1.8326
-z_index = 2
-collision_layer = 2048
-collision_mask = 0
-script = ExtResource( 34 )
-object_material = 1
 
 [node name="StoneWall9" parent="." instance=ExtResource( 13 )]
 position = Vector2( 7744.83, 6255.98 )
 rotation = -1.8326
 
-[node name="StoneWall7" type="StaticBody2D" parent="." instance=ExtResource( 13 )]
+[node name="StoneWall7" parent="." instance=ExtResource( 13 )]
 position = Vector2( 7772.72, 6207.08 )
 rotation = -0.261799
-scale = Vector2( 1, 1 )
-z_index = 2
-collision_layer = 2048
-collision_mask = 0
-script = ExtResource( 34 )
-object_material = 1
 
-[node name="Rock65" type="StaticBody2D" parent="." instance=ExtResource( 23 )]
+[node name="Rock65" parent="." instance=ExtResource( 23 )]
 position = Vector2( 4403.99, 5553.02 )
 scale = Vector2( 0.620554, 0.620554 )
-z_index = 1
-script = ExtResource( 36 )
-object_material = 1
 
-[node name="Rock66" type="StaticBody2D" parent="." instance=ExtResource( 23 )]
+[node name="Rock66" parent="." instance=ExtResource( 23 )]
 position = Vector2( 4599.04, 5756.88 )
 rotation = 0.624703
 scale = Vector2( 0.511657, 0.511657 )
-z_index = 1
-script = ExtResource( 36 )
-object_material = 1
 
-[node name="Rock67" type="StaticBody2D" parent="." instance=ExtResource( 23 )]
+[node name="Rock67" parent="." instance=ExtResource( 23 )]
 position = Vector2( 4527.86, 5987.11 )
 rotation = -0.385721
 scale = Vector2( -0.301623, -0.301623 )
-z_index = 1
-script = ExtResource( 36 )
-object_material = 1
 
-[node name="Rock68" type="StaticBody2D" parent="." instance=ExtResource( 23 )]
+[node name="Rock68" parent="." instance=ExtResource( 23 )]
 position = Vector2( 4652.42, 5620.66 )
 rotation = -0.406719
 scale = Vector2( 0.445024, 0.445024 )
-z_index = 1
-script = ExtResource( 36 )
-object_material = 1
 
 [node name="Rock84" parent="." instance=ExtResource( 23 )]
 position = Vector2( 793.438, 6836.95 )
@@ -3306,60 +3252,39 @@ position = Vector2( 3912.39, 6940.95 )
 rotation = -0.406719
 scale = Vector2( 0.445024, 0.445024 )
 
-[node name="Rock69" type="StaticBody2D" parent="." instance=ExtResource( 23 )]
+[node name="Rock69" parent="." instance=ExtResource( 23 )]
 position = Vector2( 10219.9, 4372.44 )
 rotation = -0.279037
 scale = Vector2( 0.642954, 0.642954 )
-z_index = 1
-script = ExtResource( 36 )
-object_material = 1
 
-[node name="Rock70" type="StaticBody2D" parent="." instance=ExtResource( 23 )]
+[node name="Rock70" parent="." instance=ExtResource( 23 )]
 position = Vector2( 10389.6, 4407.11 )
 rotation = 0.211799
 scale = Vector2( 0.77054, 0.77054 )
-z_index = 1
-script = ExtResource( 36 )
-object_material = 1
 
-[node name="Rock71" type="StaticBody2D" parent="." instance=ExtResource( 23 )]
+[node name="Rock71" parent="." instance=ExtResource( 23 )]
 position = Vector2( 10087.9, 8382.74 )
 rotation = -0.269792
 scale = Vector2( 0.772129, 0.772129 )
-z_index = 1
-script = ExtResource( 36 )
-object_material = 1
 
-[node name="Rock72" type="StaticBody2D" parent="." instance=ExtResource( 23 )]
+[node name="Rock72" parent="." instance=ExtResource( 23 )]
 position = Vector2( 10079.5, 8571.96 )
 rotation = 0.144046
 scale = Vector2( 0.788177, 0.788177 )
-z_index = 1
-script = ExtResource( 36 )
-object_material = 1
 
 [node name="Zone" parent="." instance=ExtResource( 3 )]
-visible = true
+time_to_shrink = 200
 
-[node name="Rock85" type="StaticBody2D" parent="." instance=ExtResource( 23 )]
+[node name="Rock85" parent="." instance=ExtResource( 23 )]
 position = Vector2( 6418.15, 2796.18 )
 rotation = 0.248426
-z_index = 1
-script = ExtResource( 36 )
-object_material = 1
 
-[node name="Rock86" type="StaticBody2D" parent="." instance=ExtResource( 23 )]
+[node name="Rock86" parent="." instance=ExtResource( 23 )]
 position = Vector2( 6881.85, 2610.6 )
 rotation = 0.140606
 scale = Vector2( 0.843101, 0.843101 )
-z_index = 1
-script = ExtResource( 36 )
-object_material = 1
 
-[node name="Rock87" type="StaticBody2D" parent="." instance=ExtResource( 23 )]
+[node name="Rock87" parent="." instance=ExtResource( 23 )]
 position = Vector2( 6004.98, 2527.5 )
 rotation = -0.104701
 scale = Vector2( 0.895476, 0.895476 )
-z_index = 1
-script = ExtResource( 36 )
-object_material = 1
