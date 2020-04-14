@@ -61,6 +61,3 @@ remotesync func kill_player(player_name, killer_name):
 	if get_node(str(player_name)) != null:
 		get_node(str(player_name)).queue_free()
 		get_node("label_" + str(player_name)).queue_free()
-	
-
-
