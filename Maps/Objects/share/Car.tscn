@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Maps/Objects/share/ObjectBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/assets/red_car.png" type="Texture" id=2]
-[ext_resource path="res://Maps/Objects/share/Car.gd" type="Script" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 63.9709
@@ -11,7 +10,7 @@ height = 199.351
 [node name="Car" instance=ExtResource( 1 )]
 z_index = 1
 collision_layer = 2048
-script = ExtResource( 3 )
+object_material = 2
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2( 79.1325, 141.035 )
