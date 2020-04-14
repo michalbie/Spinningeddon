@@ -3339,7 +3339,7 @@ script = ExtResource( 36 )
 object_material = 1
 
 [node name="Zone" parent="." instance=ExtResource( 3 )]
-visible = false
+visible = true
 
 [node name="Rock85" type="StaticBody2D" parent="." instance=ExtResource( 23 )]
 position = Vector2( 6418.15, 2796.18 )
