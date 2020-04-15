@@ -3,34 +3,35 @@
 [ext_resource path="res://Maps/Objects/share/ObjectBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Maps/assets/gatehouse.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 124.583, 123.157 )
-
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 24.5363, 31.8102 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 124.583, 123.157 )
 
 [node name="Gatehouse" instance=ExtResource( 1 )]
 z_index = 2
 object_material = 2
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="0"]
+position = Vector2( 124.696, 382.789 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 124.696, 126.146 )
 shape = SubResource( 1 )
 
-[node name="Texture" parent="." index="1"]
+[node name="Texture" parent="." index="2"]
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 centered = false
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2"]
-position = Vector2( 124.696, 382.789 )
-shape = SubResource( 2 )
-
 [node name="BulletDeathAreaShape" parent="BulletDeathArea" index="0"]
-polygon = PoolVector2Array( 240.803, 9.43864, 6.3161, 9.43864, 8.56, 240.56, 238.56, 240.56 )
+position = Vector2( -0.663422, 0 )
+polygon = PoolVector2Array( 247.922, 4.42635, 2.88858, 4.60117, 2.86542, 247.517, 248.257, 248.042 )
 
 [node name="BulletDeathAreaShape2" type="CollisionPolygon2D" parent="BulletDeathArea" index="1"]
-polygon = PoolVector2Array( 105.515, 358.514, 143.103, 358.514, 141.891, 409.44, 105.515, 410.046 )
+polygon = PoolVector2Array( 100.642, 352.591, 149.457, 352.204, 148.489, 414.385, 100.642, 414.773 )
 __meta__ = {
 "_editor_description_": ""
 }

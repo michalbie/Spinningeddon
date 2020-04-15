@@ -8,7 +8,6 @@ extents = Vector2( 121.657, 61.38 )
 
 [node name="FuelDispatcher" instance=ExtResource( 1 )]
 collision_layer = 2048
-collision_mask = 3
 object_material = 2
 
 [node name="CollisionShape2D" parent="." index="0"]
@@ -20,4 +19,4 @@ texture = ExtResource( 2 )
 centered = false
 
 [node name="BulletDeathAreaShape" parent="BulletDeathArea" index="0"]
-polygon = PoolVector2Array( 235.539, 45.8027, 15.2184, 45.8027, 15.2184, 142.565, 234.794, 144.054 )
+polygon = PoolVector2Array( 241.243, 37.599, 8.88853, 39.2201, 8.88853, 149.454, 240.163, 151.075 )

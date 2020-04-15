@@ -71,7 +71,7 @@ func update_players():
 
 func update_bullets():
 	for bullet in bullets_info:
-		if world.get_node(bullet) != null:
+		if world.get_node_or_null(bullet) != null:
 			world.get_node(bullet).global_position = bullets_info[bullet]['position']
 			world.get_node(bullet).rotation = bullets_info[bullet]['rotation']
 

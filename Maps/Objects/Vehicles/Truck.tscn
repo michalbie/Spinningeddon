@@ -7,7 +7,7 @@
 extents = Vector2( 80.3089, 323.232 )
 
 [node name="Truck" instance=ExtResource( 1 )]
-z_index = 1
+z_index = 2
 collision_layer = 2048
 object_material = 2
 
