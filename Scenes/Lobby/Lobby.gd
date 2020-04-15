@@ -10,7 +10,7 @@ func _ready():
 	connect("start_game", GameManager, "prepare_game")
 	for button in $"MarginContainer/HBoxContainer/ClassesMenu/HBoxContainer/Classes".get_children():
 		button.connect("pressed", self, "_on_class_selected", [button.name])
-	StartGameBtn_configure()
+	PlayerReadyBtn_configure()
 	initialize_lobby()
 	
 func initialize_lobby():
@@ -21,26 +21,22 @@ func initialize_lobby():
 		$MarginContainer/GameStatus.visible = false
 	else:
 		_on_class_selected("Soldier")
-		
 	if LobbyManager.server_status == false:
 		$MarginContainer/GameStatus.visible = false
 
-func StartGameBtn_configure():
-	$MarginContainer/StartGameBtn.disabled = true
+func PlayerReadyBtn_configure():
+	if scene_tree.is_network_server():
+		$MarginContainer/PlayerReadyBtn.visible = false
 
 func add_item(player_name):
 	var new_label = PlayerLabel.instance()
 	labels_container.add_child(new_label)
 	new_label.set_text(player_name)
-	if scene_tree.is_network_server() and LobbyManager.players.size() >= 2:
-		$MarginContainer/StartGameBtn.disabled = false
 	
 func remove_item(player_name):
 	for c in labels_container.get_children():
 		if c.text == player_name:
 			labels_container.remove_child(c)
-			if scene_tree.is_network_server() and LobbyManager.players.size() < 2:
-				$MarginContainer/StartGameBtn.disabled = true
 			break
 
 remotesync func hide_lobby():
@@ -53,10 +49,11 @@ func _on_QuitLobbyBtn_pressed():
 	scene_tree.change_scene("res://Scenes/MainMenu/MainMenu.tscn")
 	LobbyManager.disconnect_me()
 
-func _on_StartGameBtn_pressed():
-	print("Start!")
-	rpc("hide_lobby")
-	emit_signal("start_game")
+func _on_PlayerReadyBtn_pressed():
+	for button in $"MarginContainer/HBoxContainer/ClassesMenu/HBoxContainer/Classes".get_children():
+		button.disabled = true
+	$MarginContainer/PlayerReadyBtn.disabled = true
+	rpc_id(1, "_on_player_ready")
 	
 func _on_class_selected(class_id):
 	$"MarginContainer/HBoxContainer/ClassesMenu/HBoxContainer/TextureRect".texture = load("res://Entities/Character/assets/" + class_id + ".png")
@@ -80,3 +77,19 @@ remote func set_player_class(class_id):
 	
 remote func update_game_status():
 	$MarginContainer/GameStatus.visible = false
+	
+remote func _on_player_ready():
+	LobbyManager.players[scene_tree.get_rpc_sender_id()]["is_ready"] = true
+	for player in LobbyManager.players:
+		if !LobbyManager.players[player]["is_ready"]:
+			return
+	if LobbyManager.players.size() >= 2:
+		rpc("hide_lobby")
+		emit_signal("start_game")
+	
+func reset_to_default():
+	for player in LobbyManager.players:
+		LobbyManager.players[player]["is_ready"] = false
+	for button in $"MarginContainer/HBoxContainer/ClassesMenu/HBoxContainer/Classes".get_children():
+		button.disabled = false
+	$"MarginContainer/PlayerReadyBtn".disabled = false
