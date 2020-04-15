@@ -18,7 +18,7 @@ bullet_speed = 2
 bullet_damage = 1
 bullet_range = 2
 hp = 1
-description = "Szybcior but with gun"
+description = "Faster than light"
 
 [node name="Body" parent="." index="0"]
 texture = ExtResource( 2 )
