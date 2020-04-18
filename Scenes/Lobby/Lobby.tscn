@@ -66,7 +66,7 @@ margin_left = 1516.0
 margin_right = 1900.0
 margin_bottom = 362.0
 
-[node name="StartGameBtn" type="Button" parent="MarginContainer"]
+[node name="PlayerReadyBtn" type="Button" parent="MarginContainer"]
 margin_left = 887.0
 margin_top = 1010.0
 margin_right = 1012.0
@@ -74,6 +74,6 @@ margin_bottom = 1060.0
 rect_min_size = Vector2( 125, 50 )
 size_flags_horizontal = 4
 size_flags_vertical = 8
-text = "Start Game"
+text = "Ready"
 [connection signal="pressed" from="MarginContainer/QuitLobbyBtn" to="." method="_on_QuitLobbyBtn_pressed"]
-[connection signal="pressed" from="MarginContainer/StartGameBtn" to="." method="_on_StartGameBtn_pressed"]
+[connection signal="pressed" from="MarginContainer/PlayerReadyBtn" to="." method="_on_PlayerReadyBtn_pressed"]

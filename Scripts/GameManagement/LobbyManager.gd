@@ -37,14 +37,12 @@ func _on_connection_succeeded():
 	rpc_id(1, "register_new_player", scene_tree.get_network_unique_id(), my_name)
 	
 remote func register_new_player(new_id, new_player_name):
-	players[new_id] = {"name": new_player_name, "class": "Soldier"}
+	players[new_id] = {"name": new_player_name, "class": "Soldier", "is_ready": false}
 	lobby.add_item(players[new_id]["name"])
 	rpc("update_players_lobby", new_id, players)
 	
 func _on_peer_disconnected(id):
 	unregister_player(id)
-	if get_tree().is_network_server() and LobbyManager.players.size() < 2:
-		lobby.get_node("MarginContainer/StartGameBtn").disabled = true
 	if GameManager.in_game:
 		if id in GameManager.players_info:
 			GameManager.world.kill_player(id, id)
