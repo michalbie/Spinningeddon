@@ -23,6 +23,8 @@ func initialize_lobby():
 		_on_class_selected("Soldier")
 	if LobbyManager.server_status == false:
 		$MarginContainer/GameStatus.visible = false
+	else:
+		$MarginContainer/PlayerReadyBtn.disabled = true
 
 func PlayerReadyBtn_configure():
 	if scene_tree.is_network_server():
@@ -77,6 +79,7 @@ remote func set_player_class(class_id):
 	
 remote func update_game_status():
 	$MarginContainer/GameStatus.visible = false
+	$MarginContainer/PlayerReadyBtn.disabled = false
 	
 remote func _on_player_ready():
 	LobbyManager.players[scene_tree.get_rpc_sender_id()]["is_ready"] = true
