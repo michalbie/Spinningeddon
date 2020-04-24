@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Entities/Character/Character.gd" type="Script" id=1]
+[ext_resource path="res://Sounds/spingeddonMove.wav" type="AudioStream" id=2]
+[ext_resource path="res://Sounds/spingeddonShot.wav" type="AudioStream" id=3]
 
 [node name="Character" type="KinematicBody2D"]
 collision_mask = 1027
@@ -18,6 +20,16 @@ script = ExtResource( 1 )
 wait_time = 3.0
 
 [node name="ShootCooldown" type="Timer" parent="."]
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="MovingSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 2 )
+max_distance = 1000.0
+
+[node name="ShootSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 3 )
+max_distance = 2500.0
 [connection signal="mouse_entered" from="Body/StandingCircle" to="." method="_on_StandingCircle_mouse_entered"]
 [connection signal="mouse_exited" from="Body/StandingCircle" to="." method="_on_StandingCircle_mouse_exited"]
 [connection signal="timeout" from="RotateCooldown" to="." method="_on_RotateCooldown_timeout"]

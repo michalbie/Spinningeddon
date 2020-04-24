@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Entities/Character/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Character/Player/Classes/Soldier.gd" type="Script" id=2]
+[ext_resource path="res://Sounds/spingeddonMove.wav" type="AudioStream" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 3.35181
@@ -29,3 +30,7 @@ position = Vector2( -1.18912, -1.18915 )
 [node name="RifleCollisionShape" parent="." index="1"]
 position = Vector2( 0.919273, -52.3676 )
 shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="6"]
+stream = ExtResource( 3 )
+max_distance = 500.0
