@@ -93,6 +93,9 @@ func got_shot(dmg, source):
 			GameManager.world.get_node(str(source)).hud.rpc_id(int(source), "update_kills", GameManager.world.get_node(str(source)).kills)
 			for id in GameManager.world.get_node(str(source)).observers_list:
 				GameManager.world.spectator_system.get_node("HUD").rpc_id(int(id), "update_kills", GameManager.world.get_node(str(source)).kills)
+		else:
+			SoundManager.rpc_id(int(self.get_name()), "stop_fog_sound")
+			
 		emit_signal("player_died")
 		GameManager.world.rpc("kill_player", int(self.get_name()), source)
 	else:

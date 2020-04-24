@@ -35,11 +35,13 @@ func _on_Area2D_body_exited(body):
 			if GameManager.players_info.has(int(body.get_name())):
 				var target = get_node(body.get_name())
 				target.start()
+				SoundManager.rpc_id(int(body.get_name()), "play_fog_sound")
 
 func _on_Area2D_body_entered(body):
 	if get_tree().is_network_server():
 		if body.has_method("got_shot"):
 			get_node(body.get_name()).stop()
+			SoundManager.rpc_id(int(body.get_name()), "stop_fog_sound")
 
 func _on_DamageTimer_timeout(player_name):
 	if GameManager.world.get_node(player_name) != null:

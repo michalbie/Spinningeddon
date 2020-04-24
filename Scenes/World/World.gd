@@ -64,5 +64,6 @@ remotesync func kill_player(player_name, killer_name):
 		var corpse = PlayerCorpse.instance()
 		corpse.set_position(get_node(str(player_name)).position - corpse.get_rect().size / 2)
 		add_child(corpse)
+		SoundManager.rpc("play_death_sound", corpse.get_rect().position, corpse.get_name())
 		get_node(str(player_name)).queue_free()
 		get_node("label_" + str(player_name)).queue_free()

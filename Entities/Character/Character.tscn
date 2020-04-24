@@ -25,6 +25,7 @@ wait_time = 3.0
 
 [node name="MovingSound" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource( 2 )
+volume_db = -10.0
 max_distance = 1000.0
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="Sounds"]

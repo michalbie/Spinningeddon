@@ -79,6 +79,7 @@ func delete_player(player_name):
 	players_info.erase(player_name)
 	if players_info.size() < 2 and players_info.size() > 0:
 		show_ending_screen(LobbyManager.players[int(players_info.keys()[0])]['name'])
+		SoundManager.rpc("play_victory_music")
 
 func show_ending_screen(winner):
 	var screen = EndingScreen.instance()
