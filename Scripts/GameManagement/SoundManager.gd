@@ -19,7 +19,7 @@ remote func stop_moving_sound(player_name):
 remote func play_shoot_sound(player_name):
 	GameManager.world.get_node(player_name + "/Sounds/ShootSound").play()
 
-remote func play_hit_material_sound(object_name): #doesnt work i dont know why (maybe because bullet is deleted) but i think it is not neccessary
+remote func play_hit_material_sound(object_name):
 	GameManager.world.map.get_node(object_name + "/Sounds/HitMaterialSound").play()
 
 remote func play_penetrate_sound(object_name):
