@@ -6,7 +6,7 @@ func _ready():
 	connect("create_server_pressed", LobbyManager, "create_server")
 
 func _on_JoinGameBtn_pressed():
-	get_tree().change_scene("res://Scenes/MainMenu/JoinMenu.tscn")
+	get_tree().change_scene("res://Scenes/MainMenu/SubMenus/JoinMenu/JoinMenu.tscn")
 
 func _on_CreateServerBtn_pressed():
 	LobbyManager.my_name = "Serwer"

@@ -1,0 +1,190 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scenes/MainMenu/SubMenus/JoinMenu/JoinMenu.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/MainMenu/SubMenus/share/ReturnButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fonts/Arial-Rounded-MT-Bold_4291.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scenes/MainMenu/SubMenus/JoinMenu/assets/text_enter.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/MainMenu/SubMenus/JoinMenu/assets/join_button.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/MainMenu/SubMenus/JoinMenu/assets/background-tile.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/MainMenu/assets/menu_art.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 19
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="Theme" id=3]
+
+[sub_resource type="StyleBoxTexture" id=4]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 400, 46 )
+margin_left = 9.0
+margin_top = 4.0
+margin_bottom = 9.0
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 4 )
+region_rect = Rect2( 0, 0, 400, 46 )
+margin_left = 9.0
+margin_top = 4.0
+margin_bottom = 9.0
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 3 )
+
+[node name="JoinMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_top = -0.000974641
+anchor_right = 1.0
+anchor_bottom = 0.999025
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer"]
+margin_left = 591.0
+margin_top = 402.0
+margin_right = 1328.0
+margin_bottom = 678.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 614.0
+margin_top = 425.0
+margin_right = 1306.0
+margin_bottom = 655.0
+rect_min_size = Vector2( 0, 230 )
+size_flags_horizontal = 4
+size_flags_vertical = 4
+custom_constants/separation = -82
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_right = 692.0
+margin_bottom = 46.0
+size_flags_vertical = 2
+theme = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReturnButton" parent="MarginContainer/VBoxContainer/HBoxContainer3" instance=ExtResource( 2 )]
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 74.0
+margin_right = 692.0
+margin_bottom = 172.0
+size_flags_horizontal = 6
+size_flags_vertical = 2
+custom_constants/separation = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+margin_right = 521.0
+margin_bottom = 98.0
+size_flags_vertical = 3
+custom_constants/separation = 26
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer"]
+margin_right = 521.0
+margin_bottom = 36.0
+custom_constants/separation = 9
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer"]
+margin_top = 6.0
+margin_right = 112.0
+margin_bottom = 29.0
+size_flags_horizontal = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "player name"
+
+[node name="PlayerName" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer"]
+margin_left = 121.0
+margin_right = 521.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 400, 0 )
+size_flags_horizontal = 3
+custom_styles/normal = SubResource( 4 )
+max_length = 20
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer"]
+margin_top = 62.0
+margin_right = 521.0
+margin_bottom = 98.0
+custom_constants/separation = 9
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2"]
+margin_top = 6.0
+margin_right = 112.0
+margin_bottom = 29.0
+rect_min_size = Vector2( 112, 0 )
+size_flags_horizontal = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "server ip"
+
+[node name="IpAddress" type="LineEdit" parent="MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer/HBoxContainer2"]
+margin_left = 121.0
+margin_right = 521.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 3
+custom_styles/normal = SubResource( 5 )
+text = "127.0.0.1"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 571.0
+margin_right = 692.0
+margin_bottom = 98.0
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="JoinBtn" type="TextureButton" parent="MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer2"]
+margin_top = 26.0
+margin_right = 121.0
+margin_bottom = 72.0
+rect_min_size = Vector2( 50, 30 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture_normal = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer2/JoinBtn"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_default_cursor_shape = 2
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "join"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer3/ReturnButton" to="." method="_on_ReturnButton_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer2/JoinBtn" to="." method="_on_JoinBtn_pressed"]
