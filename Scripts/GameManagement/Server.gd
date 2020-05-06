@@ -26,8 +26,10 @@ func calculate_player_position(player, input):
 	var direction = input['mouse_pos'] - player.position
 	if input['inside_circle'] == false:
 		player.move_and_collide(direction.normalized() * player.move_speed * input['delta'])
+		SoundManager.rpc("play_moving_sound", player.get_name())
 	else:
 		player.move_and_collide(Vector2(0, 0))
+		SoundManager.rpc("stop_moving_sound", player.get_name())
 			
 func calculate_player_rotation(player, input):
 	if input['switch_rotation'] == true:
@@ -52,6 +54,8 @@ func check_if_player_shoot(player, id, input):
 				GameManager.world.rpc("spawn_bullet", id, true)
 			else:
 				GameManager.world.rpc("spawn_bullet", id)
+			
+			SoundManager.rpc("play_shoot_sound", player.get_name())
 		
 func send_player_info(id, player):
 	var player_info = {}

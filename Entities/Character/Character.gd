@@ -31,7 +31,6 @@ var is_server = false
 
 func _ready():
 	is_server = get_tree().is_network_server()
-	
 	connect("input_ready", Server, "_on_input_ready")
 	move_speed = Globals.move_speed[move_speed]
 	rotate_cooldown = Globals.rotate_cooldown[rotate_cooldown]
@@ -80,6 +79,7 @@ func send_inputs(delta):
 	player_input['shoot'] = shoot
 	switch_rotation = false
 	shoot = false
+		
 	if !being_removed:
 		emit_signal("input_ready", player_input)
 
@@ -93,6 +93,9 @@ func got_shot(dmg, source):
 			GameManager.world.get_node(str(source)).hud.rpc_id(int(source), "update_kills", GameManager.world.get_node(str(source)).kills)
 			for id in GameManager.world.get_node(str(source)).observers_list:
 				GameManager.world.spectator_system.get_node("HUD").rpc_id(int(id), "update_kills", GameManager.world.get_node(str(source)).kills)
+		else:
+			SoundManager.rpc_id(int(self.get_name()), "stop_fog_sound")
+			
 		emit_signal("player_died")
 		GameManager.world.rpc("kill_player", int(self.get_name()), source)
 	else:
@@ -108,7 +111,7 @@ remotesync func append_observer(observer_id):
 remotesync func erase_observer(observer_id):
 	observers_list.erase(observer_id)
 	
-	
+
 func _on_StandingCircle_mouse_entered():
 	inside_circle = true
 

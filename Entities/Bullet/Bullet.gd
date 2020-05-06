@@ -26,9 +26,11 @@ func handle_collision(collision, collider):
 		var collider_material = collider.object_material
 		
 		if collider_material == collider.materials.STONE:
+			SoundManager.rpc("play_hit_material_sound", collider.get_name())
 			GameManager.world.rpc("delete_bullet", self.get_name())
 			
 		elif collider_material == collider.materials.METAL:
+			SoundManager.rpc("play_ricochet_sound", collider.get_name())
 			var motion = collision.remainder.bounce(collision.normal)
 			self.rotate(velocity.angle_to(motion))
 			velocity = velocity.bounce(collision.normal)
@@ -37,4 +39,3 @@ func handle_collision(collision, collider):
 	elif "bullet_range" in collider:
 		GameManager.world.rpc("delete_bullet", self.get_name())
 		GameManager.world.rpc("delete_bullet", collider.get_name())
-	

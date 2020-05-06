@@ -71,7 +71,7 @@ func update_players():
 
 func update_bullets():
 	for bullet in bullets_info:
-		if world.get_node(bullet) != null:
+		if world.get_node_or_null(bullet) != null:
 			world.get_node(bullet).global_position = bullets_info[bullet]['position']
 			world.get_node(bullet).rotation = bullets_info[bullet]['rotation']
 
@@ -79,6 +79,7 @@ func delete_player(player_name):
 	players_info.erase(player_name)
 	if players_info.size() < 2 and players_info.size() > 0:
 		show_ending_screen(LobbyManager.players[int(players_info.keys()[0])]['name'])
+		SoundManager.rpc("play_victory_music")
 
 func show_ending_screen(winner):
 	var screen = EndingScreen.instance()
@@ -95,6 +96,7 @@ func end_game():
 	bullets_info.clear()
 	players_info.clear()
 	world.queue_free()
+	LobbyManager.lobby.reset_to_default()
 	LobbyManager.lobby.visible = true
 	get_tree().change_scene_to(LobbyManager.lobby)
 	

@@ -11,7 +11,6 @@ func _process(delta):
 func get_random_camera():
 	randomize()
 	if GameManager.players_info.size() > 0:
-		GameManager.world.get_node(str(GameManager.players_info.keys()[current_observing])).rpc("erase_observer", get_tree().get_network_unique_id())
 		var random_index = randi() % GameManager.players_info.size()
 		current_observing = random_index
 		GameManager.world.get_node(str(GameManager.players_info.keys()[random_index])).get_node("Camera2D").make_current()
@@ -55,7 +54,6 @@ remote func send_player_info(receiver_id, player_id):
 	info['kills'] = GameManager.world.get_node(str(player_id)).kills
 	GameManager.world.spectator_system.rset_id(receiver_id, "current_player_info", info)
 	GameManager.world.spectator_system.rpc_id(receiver_id, "set_new_hud", info)
-	print(info['kills'])
 
 remote func set_new_hud(info):
 	$HUD.initialize_with_parameters(info['max_hp'], info['hp'], info['kills'])
