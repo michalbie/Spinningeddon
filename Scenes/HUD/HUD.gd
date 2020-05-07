@@ -39,9 +39,8 @@ remote func update_players_alive():
 	var new_text = str(GameManager.players_alive) + " / " + str(GameManager.players_on_the_beginning)
 	label.set_text(new_text)
 	
-
 remote func update_kills(kills):
-	$Control/MarginContainer/HBoxContainer/VBoxContainer/KillsBar/KillsCounter.text = "Kills: " + str(kills)
+	$Control/MarginContainer/HBoxContainer/VBoxContainer/KillsBar/KillsCounter.text = "Kills " + str(kills)
 
 func remove_tween(tween):
 	tween.queue_free()

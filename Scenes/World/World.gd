@@ -56,9 +56,11 @@ remotesync func kill_player(player_name, killer_name):
 		add_child(spectator_system)
 		spectator_system.set_name("SpectatorSystem")
 		spectator_system.get_random_camera()
+		spectator_system.get_node_or_null("HUD").update_players_alive()
 		
 	if get_tree().get_network_unique_id() in get_node(str(player_name)).observers_list:
 		spectator_system.get_random_camera()
+		spectator_system.get_node_or_null("HUD").update_players_alive()
 
 	if get_node(str(player_name)) != null:
 		var corpse = PlayerCorpse.instance()
@@ -67,3 +69,5 @@ remotesync func kill_player(player_name, killer_name):
 		SoundManager.rpc("play_death_sound", corpse.get_rect().position, corpse.get_name())
 		get_node(str(player_name)).queue_free()
 		get_node("label_" + str(player_name)).queue_free()
+		
+

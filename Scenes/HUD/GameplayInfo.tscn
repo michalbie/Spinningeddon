@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
+[ext_resource path="res://Scenes/HUD/PlayersList.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/HUD/GameplayInfo.gd" type="Script" id=4]
 
 [node name="GameplayInfo" type="CanvasLayer"]
@@ -30,3 +31,7 @@ margin_right = 1900.0
 mouse_filter = 2
 size_flags_horizontal = 10
 size_flags_vertical = 3
+
+[node name="PlayersList" parent="." instance=ExtResource( 1 )]
+
+[editable path="PlayersList"]
