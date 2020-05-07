@@ -3,13 +3,13 @@ extends Control
 signal start_game
 
 var PlayerLabel = preload("res://Scenes/Lobby/PlayerLabel.tscn")
-onready var labels_container = get_node("MarginContainer/HBoxContainer/VBoxContainer")
+onready var labels_container = get_node("MarginContainer/VBoxContainer/HBoxContainer/ScrollContainer/VBoxContainer")
 onready var scene_tree = get_tree()
 
 func _ready():
 	connect("start_game", GameManager, "prepare_game")
-	for button in $"MarginContainer/HBoxContainer/ClassesMenu/HBoxContainer/Classes".get_children():
-		button.connect("pressed", self, "_on_class_selected", [button.name])
+	for section in $"MarginContainer/VBoxContainer/ClassesMenu/".get_children():
+		section.get_node("Button").connect("pressed", self, "_on_class_selected", [section.name])
 	PlayerReadyBtn_configure()
 	initialize_lobby()
 	
@@ -17,27 +17,28 @@ func initialize_lobby():
 	for id in LobbyManager.players:
 		add_item(LobbyManager.players[id]["name"])
 	if scene_tree.is_network_server():
-		$MarginContainer/HBoxContainer/ClassesMenu.visible = false
-		$MarginContainer/GameStatus.visible = false
+		$MarginContainer/VBoxContainer/ClassesMenu.visible = false
+		$MarginContainer/VBoxContainer/TopBar/GameStatus.visible = false
 	else:
 		_on_class_selected("Soldier")
+		
 	if LobbyManager.server_status == false:
-		$MarginContainer/GameStatus.visible = false
+		$MarginContainer/VBoxContainer/TopBar/GameStatus.visible = false
 	else:
-		$MarginContainer/PlayerReadyBtn.disabled = true
+		$MarginContainer/VBoxContainer/HBoxContainer/ReadyContainer/PlayerReadyBtn.disabled = true
 
 func PlayerReadyBtn_configure():
 	if scene_tree.is_network_server():
-		$MarginContainer/PlayerReadyBtn.visible = false
+		$MarginContainer/VBoxContainer/HBoxContainer/ReadyContainer/PlayerReadyBtn.visible = false
 
 func add_item(player_name):
 	var new_label = PlayerLabel.instance()
 	labels_container.add_child(new_label)
 	new_label.set_text(player_name)
-	
+
 func remove_item(player_name):
 	for c in labels_container.get_children():
-		if c.text == player_name:
+		if c.get_node("Label").text == player_name:
 			labels_container.remove_child(c)
 			break
 
@@ -47,39 +48,28 @@ remotesync func hide_lobby():
 remotesync func show_lobby():
 	self.visible = true
 
-func _on_QuitLobbyBtn_pressed():
-	scene_tree.change_scene("res://Scenes/MainMenu/MainMenu.tscn")
-	LobbyManager.disconnect_me()
 
 func _on_PlayerReadyBtn_pressed():
-	for button in $"MarginContainer/HBoxContainer/ClassesMenu/HBoxContainer/Classes".get_children():
-		button.disabled = true
-	$MarginContainer/PlayerReadyBtn.disabled = true
+	for button in $"MarginContainer/VBoxContainer/ClassesMenu".get_children():
+		button.get_node("Button").disabled = true
+	$MarginContainer/VBoxContainer/HBoxContainer/ReadyContainer/PlayerReadyBtn.disabled = true
 	rpc_id(1, "_on_player_ready")
 	
 func _on_class_selected(class_id):
-	$"MarginContainer/HBoxContainer/ClassesMenu/HBoxContainer/TextureRect".texture = load("res://Entities/Character/assets/" + class_id + ".png")
-	var stats = $"MarginContainer/HBoxContainer/ClassesMenu/VBoxContainer".get_children()
-	var class_scene = Globals.classes[class_id]["scene"].instance()
-	stats[0].get_node("Value").text = str(class_scene.hp + 1) + "/5"
-	stats[1].get_node("Value").text = str(class_scene.bullet_damage + 1) + "/5"
-	stats[2].get_node("Value").text = str(class_scene.shoot_cooldown + 1) + "/5"
-	stats[3].get_node("Value").text = str(class_scene.move_speed + 1) + "/5"
-	stats[4].get_node("Value").text = str(class_scene.rotate_speed + 1) + "/5"
-	stats[5].get_node("Value").text = str(class_scene.rotate_cooldown + 1) + "/5"
-	stats[6].get_node("Value").text = str(class_scene.bullet_speed + 1) + "/5"
-	stats[7].get_node("Value").text = str(class_scene.bullet_range + 1) + "/5"
-	stats[8].text = class_scene.description
-	class_scene.queue_free()
+	for section in $"MarginContainer/VBoxContainer/ClassesMenu".get_children():
+		section.get_node("ClassSelection").visible = false
+		
+	get_node("MarginContainer/VBoxContainer/ClassesMenu/" + class_id).get_node("ClassSelection").visible = true
 	LobbyManager.players[scene_tree.get_network_unique_id()]["class"] = class_id
 	rpc("set_player_class", class_id)
+
 	
 remote func set_player_class(class_id):
 	LobbyManager.players[scene_tree.get_rpc_sender_id()]["class"] = class_id
 	
 remote func update_game_status():
-	$MarginContainer/GameStatus.visible = false
-	$MarginContainer/PlayerReadyBtn.disabled = false
+	$MarginContainer/VBoxContainer/TopBar/GameStatus.visible = false
+	$MarginContainer/VBoxContainer/HBoxContainer/ReadyContainer/PlayerReadyBtn.disabled = false
 	
 remote func _on_player_ready():
 	LobbyManager.players[scene_tree.get_rpc_sender_id()]["is_ready"] = true
@@ -93,6 +83,11 @@ remote func _on_player_ready():
 func reset_to_default():
 	for player in LobbyManager.players:
 		LobbyManager.players[player]["is_ready"] = false
-	for button in $"MarginContainer/HBoxContainer/ClassesMenu/HBoxContainer/Classes".get_children():
-		button.disabled = false
-	$"MarginContainer/PlayerReadyBtn".disabled = false
+	for button in $"MarginContainer/VBoxContainer/ClassesMenu".get_children():
+		button.get_node("Button").disabled = false
+	$"MarginContainer/VBoxContainer/HBoxContainer/ReadyContainer/PlayerReadyBtn".disabled = false
+
+
+func _on_ReturnButton_pressed():
+	scene_tree.change_scene("res://Scenes/MainMenu/MainMenu.tscn")
+	LobbyManager.disconnect_me()
