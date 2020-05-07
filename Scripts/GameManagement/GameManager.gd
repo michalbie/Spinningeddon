@@ -7,6 +7,8 @@ var Lobby = preload("res://Scenes/Lobby/Lobby.tscn")
 var EndingScreen = preload("res://Scenes/HUD/EndingScreen.tscn")
 var world
 var occupied_spawnpoints = []
+var players_on_the_beginning = 0
+var players_alive = 0
 
 remotesync var in_game = false
 remote var players_info = {}
@@ -39,6 +41,8 @@ remotesync func initialize_world():
 
 remotesync func initialize_players():
 	print("initializing players...")
+	players_on_the_beginning = LobbyManager.players.size()
+	players_alive = LobbyManager.players.size()
 	for p in LobbyManager.players:
 		var picked_class_scene = Globals.classes[LobbyManager.players[p]["class"]]["scene"]
 		var player = picked_class_scene.instance()

@@ -36,12 +36,20 @@ func calculate_player_rotation(player, input):
 		if player.get_node("RotateCooldown").is_stopped() == true:
 			player.get_node("RotateCooldown").start(player.rotate_cooldown)
 			player.rotate_direction  = -player.rotate_direction
+			player.hud.rpc_id(int(player.get_name()), "update_rotate_cooldown", player.get_node("RotateCooldown").wait_time)
+			for id in player.observers_list:
+				GameManager.world.spectator_system.get_node("HUD").rpc_id(int(id), "update_rotate_cooldown", player.get_node("RotateCooldown").wait_time)
 	player.rotate(player.rotate_direction * player.rotate_speed * input['delta'])
 	
 func check_if_player_shoot(player, id, input):
 	if input['shoot'] == true:
 		if player.get_node("ShootCooldown").is_stopped() == true:
 			player.get_node("ShootCooldown").start(player.shoot_cooldown)
+			
+			player.hud.rpc_id(int(player.get_name()), "update_shoot_cooldown", player.get_node("ShootCooldown").wait_time)
+			for id in player.observers_list:
+				GameManager.world.spectator_system.get_node("HUD").rpc_id(int(id), "update_shoot_cooldown", player.get_node("ShootCooldown").wait_time)
+				
 			if player is Globals.classes["CloseRifleman"]["class"]:
 				player.rotate(-player.bullet_spread)
 				GameManager.world.rpc("spawn_bullet", id)

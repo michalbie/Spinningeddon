@@ -88,6 +88,10 @@ func got_shot(dmg, source):
 		hp = 0
 		being_removed = true
 		GameManager.world.gameplay_info.rpc("update_kills_info", str(source), self.get_name())
+		
+		hud.rpc("update_players_alive")
+		GameManager.world.spectator_system.get_node("HUD").rpc("update_players_alive")
+				
 		if source != "Fog":
 			GameManager.world.get_node(str(source)).kills += 1
 			GameManager.world.get_node(str(source)).hud.rpc_id(int(source), "update_kills", GameManager.world.get_node(str(source)).kills)
