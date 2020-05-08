@@ -13,8 +13,6 @@ func _ready():
 
 
 func _on_VolumeSlider_value_changed(value):
-	#var percent_value = value / $MarginContainer/CenterContainer/VBoxContainer/VolumeSlider.max_value
-	#var new_text = str(int(round(percent_value * 100 + 100))) + "%"
 	AudioServer.set_bus_volume_db(0, value) #-30 to 30 db range
 
 

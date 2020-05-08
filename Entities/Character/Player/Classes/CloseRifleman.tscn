@@ -16,8 +16,9 @@ rotate_speed = 2
 shoot_cooldown = 1
 bullet_speed = 1
 bullet_damage = 4
+bullet_range = 1
 hp = 2
-description = "You get close, you get bullet dose"
+description = "Slow fucker who likes triple penetration"
 bullet_spread = 0.15
 
 [node name="Body" parent="." index="0"]

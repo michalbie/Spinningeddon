@@ -15,9 +15,9 @@ rotate_cooldown = 1
 rotate_speed = 1
 bullet_speed = 4
 bullet_damage = 3
-bullet_range = 4
+bullet_range = 3
 hp = 2
-description = "\"I haven't even seen him!\" excuse becomes true"
+description = "Sneaky motherfucker"
 zoom = 2.0
 
 [node name="Body" parent="." index="0"]

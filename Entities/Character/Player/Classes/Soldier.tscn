@@ -19,7 +19,7 @@ bullet_speed = 3
 bullet_damage = 2
 bullet_range = 2
 hp = 2
-description = "Every cover is duvet to him"
+description = "SKURWYSYN penetrates everything"
 
 [node name="Bullet_spawn" parent="Body" index="0"]
 position = Vector2( 7.53517, -597.489 )

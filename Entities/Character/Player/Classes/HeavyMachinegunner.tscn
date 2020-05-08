@@ -17,7 +17,7 @@ bullet_speed = 2
 bullet_damage = 1
 bullet_range = 2
 hp = 4
-description = "You will be under HEAVY fire"
+description = "Very slow fucker, who just doesn't die"
 
 [node name="Body" parent="." index="0"]
 texture = ExtResource( 2 )
