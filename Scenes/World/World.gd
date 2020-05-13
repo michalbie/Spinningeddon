@@ -6,6 +6,7 @@ var BattleRoyaleMap = preload("res://Maps/BattleRoyaleMap/BattleRoyaleMap.tscn")
 
 var GameplayInfo = preload("res://Scenes/HUD/GameplayInfo.tscn")
 var SpectatorSystem = preload("res://Scenes/HUD/SpectatorSystem.tscn")
+var SettingsMenu = preload("res://Scenes/HUD/SettingsMenu.tscn")
 
 var PlayerCorpse = preload("res://Entities/Character/Corpse.tscn")
 
@@ -19,6 +20,9 @@ func _ready():
 	add_child(map)
 	gameplay_info = GameplayInfo.instance()
 	add_child(gameplay_info)
+	var settings_menu = SettingsMenu.instance()
+	add_child(settings_menu)
+	
 	
 	if get_tree().is_network_server():
 		spectator_system = SpectatorSystem.instance()
