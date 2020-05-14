@@ -3,7 +3,6 @@ extends KinematicBody2D
 var speed
 var damage
 var velocity = Vector2()
-var rotation_angle
 var bullet_range
 var bullet_owner
 
@@ -19,7 +18,7 @@ func init(sp, dmg, vel, rot, ran, owner):
 	
 func handle_collision(collision, collider):
 	if collider.has_method("got_shot"):
-		collider.got_shot(damage, bullet_owner)
+		collider.got_shot(damage, bullet_owner, self.rotation)
 		GameManager.world.rpc("delete_bullet", self.get_name())
 		
 	elif "object_material" in collider:

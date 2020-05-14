@@ -37,6 +37,10 @@ margin_top = 17.0
 margin_right = 285.0
 margin_bottom = 453.0
 
+[node name="Image" parent="Soldier/CenterContainer/MarginContainer/VBoxContainer" index="0"]
+margin_left = 0.0
+margin_right = 250.0
+
 [node name="Label" parent="Soldier/CenterContainer/MarginContainer/VBoxContainer/Image" index="0"]
 text = "Soldier"
 
@@ -61,6 +65,8 @@ margin_top = 17.0
 margin_bottom = 453.0
 
 [node name="Image" parent="Sniper/CenterContainer/MarginContainer/VBoxContainer" index="0"]
+margin_left = 0.0
+margin_right = 250.0
 texture = ExtResource( 3 )
 
 [node name="Label" parent="Sniper/CenterContainer/MarginContainer/VBoxContainer/Image" index="0"]
@@ -86,6 +92,8 @@ margin_top = 17.0
 margin_bottom = 453.0
 
 [node name="Image" parent="HeavyMachinegunner/CenterContainer/MarginContainer/VBoxContainer" index="0"]
+margin_left = 0.0
+margin_right = 250.0
 texture = ExtResource( 2 )
 
 [node name="Label" parent="HeavyMachinegunner/CenterContainer/MarginContainer/VBoxContainer/Image" index="0"]
@@ -111,6 +119,8 @@ margin_top = 17.0
 margin_bottom = 453.0
 
 [node name="Image" parent="LightAssaulter/CenterContainer/MarginContainer/VBoxContainer" index="0"]
+margin_left = 0.0
+margin_right = 250.0
 texture = ExtResource( 4 )
 
 [node name="Label" parent="LightAssaulter/CenterContainer/MarginContainer/VBoxContainer/Image" index="0"]
@@ -136,6 +146,8 @@ margin_top = 17.0
 margin_bottom = 453.0
 
 [node name="Image" parent="CloseRifleman/CenterContainer/MarginContainer/VBoxContainer" index="0"]
+margin_left = 0.0
+margin_right = 250.0
 texture = ExtResource( 5 )
 
 [node name="Label" parent="CloseRifleman/CenterContainer/MarginContainer/VBoxContainer/Image" index="0"]
