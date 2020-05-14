@@ -94,7 +94,7 @@ func reset_to_default():
 	
 func reset_labels_color():
 	for label in labels_container.get_children():
-		label.color = Color(0.24, 0.24, 0.24, 1)
+		label.get_node("Label").add_color_override("font_color", Color(0.49, 0.50, 0.51, 1))
 
 func _on_ReturnButton_pressed():
 	scene_tree.change_scene("res://Scenes/MainMenu/MainMenu.tscn")
@@ -102,5 +102,6 @@ func _on_ReturnButton_pressed():
 	
 func modify_label_ready(name):
 	for label in labels_container.get_children():
-			if label.get_node("Label").get_text() == name:
-				label.color = Color(0.22, 0.64, 0.18, 1)
+		var label_text = label.get_node("Label")
+		if label_text.get_text() == name:
+			label_text.add_color_override("font_color", Color(0.22, 0.64, 0.18, 1))
