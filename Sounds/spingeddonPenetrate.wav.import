@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/spingeddonPenetrate.wav-a9fb49c7e82f4234569fb2fee13c8365.sample"
+
+[deps]
+
+source_file="res://Sounds/spingeddonPenetrate.wav"
+dest_files=[ "res://.import/spingeddonPenetrate.wav-a9fb49c7e82f4234569fb2fee13c8365.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/spingeddonHitMaterial(NotPenetrate).wav-f8726e14319a712ce1bf352cd37b9112.sample"
+
+[deps]
+
+source_file="res://Sounds/spingeddonHitMaterial(NotPenetrate).wav"
+dest_files=[ "res://.import/spingeddonHitMaterial(NotPenetrate).wav-f8726e14319a712ce1bf352cd37b9112.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

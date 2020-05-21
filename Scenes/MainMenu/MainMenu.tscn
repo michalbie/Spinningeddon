@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/MainMenu/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/MainMenu/share/MenuButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/MainMenu/assets/menu_art.png" type="Texture" id=3]
+
+[node name="MainMenu" type="CanvasLayer"]
+layer = 6
+script = ExtResource( 1 )
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -187.5
+margin_right = 300.0
+margin_bottom = 187.5
+custom_constants/separation = 25
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinGameBtn" parent="VBoxContainer" instance=ExtResource( 2 )]
+margin_right = 385.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 300, 75 )
+
+[node name="Label" parent="VBoxContainer/JoinGameBtn" index="0"]
+text = "Join game"
+
+[node name="CreateServerBtn" parent="VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 100.0
+margin_right = 385.0
+margin_bottom = 175.0
+rect_min_size = Vector2( 300, 75 )
+
+[node name="Label" parent="VBoxContainer/CreateServerBtn" index="0"]
+text = "Create Server"
+
+[node name="SettingsBtn" parent="VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 200.0
+margin_right = 385.0
+margin_bottom = 275.0
+rect_min_size = Vector2( 300, 75 )
+
+[node name="Label" parent="VBoxContainer/SettingsBtn" index="0"]
+text = "Options"
+
+[node name="ExitBtn" parent="VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 300.0
+margin_right = 385.0
+margin_bottom = 375.0
+rect_min_size = Vector2( 300, 75 )
+
+[node name="Label" parent="VBoxContainer/ExitBtn" index="0"]
+text = "Exit"
+[connection signal="pressed" from="VBoxContainer/JoinGameBtn" to="." method="_on_JoinGameBtn_pressed"]
+[connection signal="pressed" from="VBoxContainer/CreateServerBtn" to="." method="_on_CreateServerBtn_pressed"]
+[connection signal="pressed" from="VBoxContainer/SettingsBtn" to="." method="_on_SettingsBtn_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitBtn" to="." method="_on_ExitBtn_pressed"]
+
+[editable path="VBoxContainer/JoinGameBtn"]
+
+[editable path="VBoxContainer/CreateServerBtn"]
+
+[editable path="VBoxContainer/SettingsBtn"]
+
+[editable path="VBoxContainer/ExitBtn"]

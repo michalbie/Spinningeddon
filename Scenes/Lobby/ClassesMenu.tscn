@@ -1,0 +1,155 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Lobby/share/ClassSection.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Entities/Character/assets/HeavyMachinegunner.png" type="Texture" id=2]
+[ext_resource path="res://Entities/Character/assets/Sniper.png" type="Texture" id=3]
+[ext_resource path="res://Entities/Character/assets/LightAssaulter.png" type="Texture" id=4]
+[ext_resource path="res://Entities/Character/assets/CloseRifleman.png" type="Texture" id=5]
+
+[node name="ClassesMenu" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Soldier" parent="." instance=ExtResource( 1 )]
+margin_right = 321.0
+margin_bottom = 470.0
+
+[node name="ClassSelection" parent="Soldier" index="0"]
+visible = true
+
+[node name="CenterContainer" parent="Soldier" index="1"]
+margin_right = 321.0
+margin_bottom = 470.0
+
+[node name="ClassTile" parent="Soldier/CenterContainer" index="0"]
+margin_left = 10.0
+margin_top = 15.0
+margin_right = 310.0
+margin_bottom = 455.0
+
+[node name="MarginContainer" parent="Soldier/CenterContainer" index="1"]
+margin_left = 35.0
+margin_top = 17.0
+margin_right = 285.0
+margin_bottom = 453.0
+
+[node name="Label" parent="Soldier/CenterContainer/MarginContainer/VBoxContainer/Image" index="0"]
+text = "Soldier"
+
+[node name="Button" parent="Soldier" index="2"]
+margin_right = 321.0
+margin_bottom = 470.0
+
+[node name="Sniper" parent="." instance=ExtResource( 1 )]
+margin_left = 336.0
+margin_right = 636.0
+margin_bottom = 470.0
+
+[node name="CenterContainer" parent="Sniper" index="1"]
+margin_bottom = 470.0
+
+[node name="ClassTile" parent="Sniper/CenterContainer" index="0"]
+margin_top = 15.0
+margin_bottom = 455.0
+
+[node name="MarginContainer" parent="Sniper/CenterContainer" index="1"]
+margin_top = 17.0
+margin_bottom = 453.0
+
+[node name="Image" parent="Sniper/CenterContainer/MarginContainer/VBoxContainer" index="0"]
+texture = ExtResource( 3 )
+
+[node name="Label" parent="Sniper/CenterContainer/MarginContainer/VBoxContainer/Image" index="0"]
+text = "Sniper"
+
+[node name="Button" parent="Sniper" index="2"]
+margin_bottom = 470.0
+
+[node name="HeavyMachinegunner" parent="." instance=ExtResource( 1 )]
+margin_left = 651.0
+margin_right = 951.0
+margin_bottom = 470.0
+
+[node name="CenterContainer" parent="HeavyMachinegunner" index="1"]
+margin_bottom = 470.0
+
+[node name="ClassTile" parent="HeavyMachinegunner/CenterContainer" index="0"]
+margin_top = 15.0
+margin_bottom = 455.0
+
+[node name="MarginContainer" parent="HeavyMachinegunner/CenterContainer" index="1"]
+margin_top = 17.0
+margin_bottom = 453.0
+
+[node name="Image" parent="HeavyMachinegunner/CenterContainer/MarginContainer/VBoxContainer" index="0"]
+texture = ExtResource( 2 )
+
+[node name="Label" parent="HeavyMachinegunner/CenterContainer/MarginContainer/VBoxContainer/Image" index="0"]
+text = "Heavy machinegunner"
+
+[node name="Button" parent="HeavyMachinegunner" index="2"]
+margin_bottom = 470.0
+
+[node name="LightAssaulter" parent="." instance=ExtResource( 1 )]
+margin_left = 966.0
+margin_right = 1266.0
+margin_bottom = 470.0
+
+[node name="CenterContainer" parent="LightAssaulter" index="1"]
+margin_bottom = 470.0
+
+[node name="ClassTile" parent="LightAssaulter/CenterContainer" index="0"]
+margin_top = 15.0
+margin_bottom = 455.0
+
+[node name="MarginContainer" parent="LightAssaulter/CenterContainer" index="1"]
+margin_top = 17.0
+margin_bottom = 453.0
+
+[node name="Image" parent="LightAssaulter/CenterContainer/MarginContainer/VBoxContainer" index="0"]
+texture = ExtResource( 4 )
+
+[node name="Label" parent="LightAssaulter/CenterContainer/MarginContainer/VBoxContainer/Image" index="0"]
+text = "Light Assaulter"
+
+[node name="Button" parent="LightAssaulter" index="2"]
+margin_bottom = 470.0
+
+[node name="CloseRifleman" parent="." instance=ExtResource( 1 )]
+margin_left = 1281.0
+margin_right = 1581.0
+margin_bottom = 470.0
+
+[node name="CenterContainer" parent="CloseRifleman" index="1"]
+margin_bottom = 470.0
+
+[node name="ClassTile" parent="CloseRifleman/CenterContainer" index="0"]
+margin_top = 15.0
+margin_bottom = 455.0
+
+[node name="MarginContainer" parent="CloseRifleman/CenterContainer" index="1"]
+margin_top = 17.0
+margin_bottom = 453.0
+
+[node name="Image" parent="CloseRifleman/CenterContainer/MarginContainer/VBoxContainer" index="0"]
+texture = ExtResource( 5 )
+
+[node name="Label" parent="CloseRifleman/CenterContainer/MarginContainer/VBoxContainer/Image" index="0"]
+text = "Close rifleman"
+
+[node name="Button" parent="CloseRifleman" index="2"]
+margin_bottom = 470.0
+
+[editable path="Soldier"]
+
+[editable path="Sniper"]
+
+[editable path="HeavyMachinegunner"]
+
+[editable path="LightAssaulter"]
+
+[editable path="CloseRifleman"]
