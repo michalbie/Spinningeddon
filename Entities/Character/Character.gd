@@ -64,6 +64,7 @@ func listen_inputs():
 		switch_rotation = true
 		
 	if Input.is_action_pressed("shoot"):
+		$Camera2D.camera_shoot_recoil()
 		shoot = true
 		
 	if Input.is_action_just_released("shoot"):
@@ -79,7 +80,7 @@ func send_inputs(delta):
 	player_input['shoot'] = shoot
 	switch_rotation = false
 	shoot = false
-		
+	
 	if !being_removed:
 		emit_signal("input_ready", player_input)
 
@@ -127,3 +128,4 @@ func _on_RotateCooldown_timeout():
 
 func _on_ShootCooldown_timeout():
 	$ShootCooldown.stop()
+

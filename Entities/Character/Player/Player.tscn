@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Entities/Character/assets/Soldier.png" type="Texture" id=1]
 [ext_resource path="res://Entities/Character/Character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Entities/Character/Player/Camera2D.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 153.625
@@ -33,3 +34,6 @@ scale = Vector2( 0.2, 0.2 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
+script = ExtResource( 3 )
+
+[node name="Tween" type="Tween" parent="Camera2D" index="0"]
