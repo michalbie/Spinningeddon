@@ -14,8 +14,11 @@ func _ready():
 	initialize_lobby()
 	
 func initialize_lobby():
+	print("Initializing: ", LobbyManager.players)
 	for id in LobbyManager.players:
 		add_item(LobbyManager.players[id]["name"])
+		if LobbyManager.players[id]["is_ready"]:
+			modify_label_ready(LobbyManager.players[id]["name"])
 	if scene_tree.is_network_server():
 		$MarginContainer/VBoxContainer/ClassesMenu.visible = false
 		$MarginContainer/VBoxContainer/TopBar/GameStatus.visible = false
@@ -73,6 +76,7 @@ remote func update_game_status():
 	$MarginContainer/VBoxContainer/HBoxContainer/ReadyContainer/PlayerReadyBtn.disabled = false
 	
 remote func _on_player_ready():
+	LobbyManager.players[scene_tree.get_rpc_sender_id()]["is_ready"] = true
 	if scene_tree.is_network_server():
 		LobbyManager.players[scene_tree.get_rpc_sender_id()]["is_ready"] = true
 		for player in LobbyManager.players:
@@ -83,6 +87,7 @@ remote func _on_player_ready():
 			emit_signal("start_game")
 	else:
 		modify_label_ready(LobbyManager.players[scene_tree.get_rpc_sender_id()]["name"])
+	print(get_tree().get_network_unique_id(), ": ", LobbyManager.players)
 	
 func reset_to_default():
 	for player in LobbyManager.players:
