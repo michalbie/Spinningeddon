@@ -122,7 +122,7 @@ remotesync func erase_observer(observer_id):
 	observers_list.erase(observer_id)
 	
 remote func play_blood_animation(bullet_rotation):
-	$Blood.rotate(-self.rotation + bullet_rotation + deg2rad(180))
+	$Blood.rotate(-self.rotation + bullet_rotation)
 	$AnimationPlayer.play("BloodAnimation")
 	
 remotesync func play_recoil_animation():
