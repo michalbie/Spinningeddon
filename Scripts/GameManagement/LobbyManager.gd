@@ -5,7 +5,7 @@ var peer
 onready var scene_tree = get_tree()
 
 const PORT = 48468 #2137
-const LOBBY_SIZE = 5
+const LOBBY_SIZE = 24
 
 var players = {}
 var my_name

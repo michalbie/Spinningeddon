@@ -88,12 +88,15 @@ func got_shot(dmg, source):
 		hp = 0
 		being_removed = true
 		GameManager.world.gameplay_info.rpc("update_kills_info", str(source), self.get_name())
+
 		if source != "Fog" and source != "Heart attack":
+			GameManager.world.get_node(str(source)).hud.rpc("update_players_alive")
 			GameManager.world.get_node(str(source)).kills += 1
 			GameManager.world.get_node(str(source)).hud.rpc_id(int(source), "update_kills", GameManager.world.get_node(str(source)).kills)
 			for id in GameManager.world.get_node(str(source)).observers_list:
 				GameManager.world.spectator_system.get_node("HUD").rpc_id(int(id), "update_kills", GameManager.world.get_node(str(source)).kills)
 		else:
+			GameManager.world.get_node(self.get_name()).hud.rpc("update_players_alive")
 			SoundManager.rpc_id(int(self.get_name()), "stop_fog_sound")
 			
 		emit_signal("player_died")
