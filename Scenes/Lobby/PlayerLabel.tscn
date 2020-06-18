@@ -17,6 +17,9 @@ size_flags_horizontal = 4
 theme = SubResource( 2 )
 texture = ExtResource( 3 )
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0

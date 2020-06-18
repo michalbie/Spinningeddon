@@ -14,8 +14,11 @@ func _ready():
 	initialize_lobby()
 	
 func initialize_lobby():
+	print("Initializing: ", LobbyManager.players)
 	for id in LobbyManager.players:
 		add_item(LobbyManager.players[id]["name"])
+		if LobbyManager.players[id]["is_ready"]:
+			modify_label_ready(LobbyManager.players[id]["name"])
 	if scene_tree.is_network_server():
 		$MarginContainer/VBoxContainer/ClassesMenu.visible = false
 		$MarginContainer/VBoxContainer/TopBar/GameStatus.visible = false
@@ -53,7 +56,8 @@ func _on_PlayerReadyBtn_pressed():
 	for button in $"MarginContainer/VBoxContainer/ClassesMenu".get_children():
 		button.get_node("Button").disabled = true
 	$MarginContainer/VBoxContainer/HBoxContainer/ReadyContainer/PlayerReadyBtn.disabled = true
-	rpc_id(1, "_on_player_ready")
+	rpc("_on_player_ready")
+	modify_label_ready(LobbyManager.players[scene_tree.get_network_unique_id()]["name"])
 	
 func _on_class_selected(class_id):
 	for section in $"MarginContainer/VBoxContainer/ClassesMenu".get_children():
@@ -73,12 +77,17 @@ remote func update_game_status():
 	
 remote func _on_player_ready():
 	LobbyManager.players[scene_tree.get_rpc_sender_id()]["is_ready"] = true
-	for player in LobbyManager.players:
-		if !LobbyManager.players[player]["is_ready"]:
-			return
-	if LobbyManager.players.size() >= 2:
-		rpc("hide_lobby")
-		emit_signal("start_game")
+	if scene_tree.is_network_server():
+		LobbyManager.players[scene_tree.get_rpc_sender_id()]["is_ready"] = true
+		for player in LobbyManager.players:
+			if !LobbyManager.players[player]["is_ready"]:
+				return
+		if LobbyManager.players.size() >= 2:
+			rpc("hide_lobby")
+			emit_signal("start_game")
+	else:
+		modify_label_ready(LobbyManager.players[scene_tree.get_rpc_sender_id()]["name"])
+	print(get_tree().get_network_unique_id(), ": ", LobbyManager.players)
 	
 func reset_to_default():
 	for player in LobbyManager.players:
@@ -86,8 +95,18 @@ func reset_to_default():
 	for button in $"MarginContainer/VBoxContainer/ClassesMenu".get_children():
 		button.get_node("Button").disabled = false
 	$"MarginContainer/VBoxContainer/HBoxContainer/ReadyContainer/PlayerReadyBtn".disabled = false
-
+	reset_labels_color()
+	
+func reset_labels_color():
+	for label in labels_container.get_children():
+		label.get_node("Label").add_color_override("font_color", Color(0.49, 0.50, 0.51, 1))
 
 func _on_ReturnButton_pressed():
 	scene_tree.change_scene("res://Scenes/MainMenu/MainMenu.tscn")
 	LobbyManager.disconnect_me()
+	
+func modify_label_ready(name):
+	for label in labels_container.get_children():
+		var label_text = label.get_node("Label")
+		if label_text.get_text() == name:
+			label_text.add_color_override("font_color", Color(0.22, 0.64, 0.18, 1))
