@@ -1,0 +1,188 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/MainMenu/SubMenus/Settings/Settings.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/HUD/SettingsMenu.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/Arial-Rounded-MT-Bold_4291.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Scenes/MainMenu/SubMenus/Settings/assets/arrow.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/MainMenu/SubMenus/Settings/assets/grabber.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 27
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.443137, 0.466667, 0.482353, 1 )
+shadow_size = 7
+
+[sub_resource type="StyleBoxLine" id=4]
+color = Color( 0.415686, 0.439216, 0.454902, 1 )
+thickness = 2
+vertical = true
+
+[sub_resource type="StyleBoxLine" id=5]
+color = Color( 0.411765, 0.435294, 0.45098, 1 )
+grow_end = 0.0
+thickness = 2
+
+[sub_resource type="StyleBoxLine" id=6]
+color = Color( 0.411765, 0.435294, 0.45098, 1 )
+thickness = 2
+
+[node name="SettingsMenu" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Settings" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="Settings"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1910.0
+margin_bottom = 1070.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PanelContainer" type="PanelContainer" parent="Settings/CenterContainer"]
+margin_left = 675.0
+margin_top = 280.0
+margin_right = 1225.0
+margin_bottom = 780.0
+rect_min_size = Vector2( 550, 500 )
+custom_styles/panel = SubResource( 3 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/CenterContainer/PanelContainer"]
+margin_right = 550.0
+margin_bottom = 500.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/CenterContainer/PanelContainer/MarginContainer"]
+margin_right = 550.0
+margin_bottom = 500.0
+custom_constants/separation = 28
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_bottom = 46.0
+rect_min_size = Vector2( 0, 46 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_left = 52.0
+margin_top = 74.0
+margin_right = 497.0
+margin_bottom = 173.0
+size_flags_horizontal = 4
+custom_constants/separation = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+margin_right = 181.0
+margin_bottom = 99.0
+custom_constants/separation = 25
+
+[node name="VolumeLabel" type="Label" parent="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer"]
+margin_right = 181.0
+margin_bottom = 32.0
+size_flags_horizontal = 8
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "sound volume"
+align = 1
+
+[node name="MuteLabel" type="Label" parent="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer"]
+margin_left = 13.0
+margin_top = 57.0
+margin_right = 181.0
+margin_bottom = 89.0
+size_flags_horizontal = 8
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "mute sounds"
+align = 1
+
+[node name="VSeparator" type="VSeparator" parent="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 211.0
+margin_right = 215.0
+margin_bottom = 99.0
+size_flags_horizontal = 0
+custom_styles/separator = SubResource( 4 )
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 245.0
+margin_right = 445.0
+margin_bottom = 99.0
+size_flags_horizontal = 0
+custom_constants/separation = 41
+
+[node name="VolumeSlider" type="HSlider" parent="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer2"]
+margin_right = 200.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 200, 0 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+custom_icons/grabber_highlight = ExtResource( 8 )
+custom_icons/grabber = ExtResource( 8 )
+custom_styles/slider = SubResource( 5 )
+custom_styles/grabber_area = SubResource( 6 )
+min_value = -30.0
+max_value = 30.0
+step = 0.5
+rounded = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer2"]
+margin_top = 59.0
+margin_right = 200.0
+margin_bottom = 99.0
+custom_constants/separation = 11
+
+[node name="MuteLabel" type="Label" parent="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer2/HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 40.0
+size_flags_vertical = 5
+custom_colors/font_color = Color( 0.243137, 0.247059, 0.258824, 1 )
+text = "no"
+align = 1
+valign = 1
+
+[node name="MuteCheckBox" type="CheckBox" parent="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer2/HBoxContainer"]
+margin_left = 43.0
+margin_right = 75.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 32, 32 )
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+custom_icons/radio_checked = ExtResource( 7 )
+custom_icons/checked = ExtResource( 7 )
+custom_icons/radio_unchecked = ExtResource( 7 )
+custom_icons/unchecked = ExtResource( 7 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+margin_top = 201.0
+margin_right = 550.0
+margin_bottom = 239.0
+alignment = 1
+
+[node name="Button" type="Button" parent="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 188.0
+margin_right = 361.0
+margin_bottom = 38.0
+size_flags_vertical = 5
+custom_colors/font_color = Color( 0.243137, 0.247059, 0.258824, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "Exit to menu"
+flat = true
+[connection signal="value_changed" from="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer2/VolumeSlider" to="Settings" method="_on_VolumeSlider_value_changed"]
+[connection signal="pressed" from="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer4/VBoxContainer2/HBoxContainer/MuteCheckBox" to="Settings" method="_on_MuteCheckBox_pressed"]
+[connection signal="pressed" from="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Button" to="." method="_on_Button_pressed"]
