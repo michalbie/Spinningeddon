@@ -122,8 +122,12 @@ remotesync func erase_observer(observer_id):
 	observers_list.erase(observer_id)
 	
 remote func play_blood_animation(bullet_rotation):
-	$Blood.rotate(-self.rotation + bullet_rotation)
-	$AnimationPlayer.play("BloodAnimation")
+	if $AnimationPlayer.current_animation == "BloodAnimation" and $AnimationPlayer.is_playing() == true:
+		pass
+		
+	else:
+		$Blood.rotate(-self.rotation + bullet_rotation)
+		$AnimationPlayer.play("BloodAnimation")
 	
 remotesync func play_recoil_animation():
 	if LobbyManager.players[get_tree().get_network_unique_id()]["class"] == 'Soldier':
@@ -159,3 +163,13 @@ func _on_ShootCooldown_timeout():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "BloodAnimation":
 		$Blood.rotation_degrees = 0
+		$Blood.set_frame(0)
+		$Blood.visible = false
+
+func _on_AnimationPlayer_animation_changed(old_name, new_name):
+	if old_name == "BloodAnimation":
+		$Blood.set_frame(0)
+		$Blood.visible = false
+
+		
+
