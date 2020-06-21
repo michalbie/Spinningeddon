@@ -76,7 +76,7 @@ remote func _on_player_ready():
 	for player in LobbyManager.players:
 		if !LobbyManager.players[player]["is_ready"]:
 			return
-	if LobbyManager.players.size() >= 1:
+	if LobbyManager.players.size() >= 2:
 		rpc("hide_lobby")
 		emit_signal("start_game")
 	
