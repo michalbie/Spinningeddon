@@ -42,9 +42,9 @@ __meta__ = {
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 10.0
+margin_left = 8.56812
 margin_top = 7.72791
-margin_right = -10.0
+margin_right = -11.4319
 margin_bottom = -12.2721
 mouse_filter = 2
 __meta__ = {
@@ -127,30 +127,39 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
-margin_top = 942.0
+margin_top = 966.0
 margin_right = 1900.0
 margin_bottom = 1060.0
 size_flags_vertical = 8
+custom_constants/separation = 4
 
 [node name="ShootBar" type="TextureProgress" parent="Control/MarginContainer/VBoxContainer"]
-margin_right = 1900.0
-margin_bottom = 30.0
+margin_right = 500.0
+margin_bottom = 18.0
+size_flags_horizontal = 0
 value = 100.0
 texture_under = ExtResource( 9 )
 texture_progress = ExtResource( 10 )
+nine_patch_stretch = true
+stretch_margin_top = 18
+stretch_margin_right = 500
 
 [node name="RotateBar" type="TextureProgress" parent="Control/MarginContainer/VBoxContainer"]
-margin_top = 34.0
-margin_right = 1900.0
-margin_bottom = 64.0
+margin_top = 22.0
+margin_right = 500.0
+margin_bottom = 40.0
+size_flags_horizontal = 0
 value = 100.0
 texture_under = ExtResource( 9 )
 texture_progress = ExtResource( 8 )
+nine_patch_stretch = true
+stretch_margin_top = 18
+stretch_margin_right = 500
 
 [node name="HpBar" type="TextureProgress" parent="Control/MarginContainer/VBoxContainer"]
-margin_top = 68.0
+margin_top = 44.0
 margin_right = 1000.0
-margin_bottom = 118.0
+margin_bottom = 94.0
 mouse_filter = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
