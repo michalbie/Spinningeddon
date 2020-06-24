@@ -70,6 +70,7 @@ func listen_inputs():
 				GameManager.world.get_node(self.get_name()).rpc("play_extended_recoil_animation")
 			else:
 				GameManager.world.get_node(self.get_name()).rpc("play_recoil_animation")
+
 		shoot = true
 		
 	if Input.is_action_just_released("shoot"):
@@ -88,7 +89,7 @@ func send_inputs(delta):
 	player_input['shoot'] = shoot
 	switch_rotation = false
 	shoot = false
-		
+	
 	if !being_removed:
 		emit_signal("input_ready", player_input)
 
@@ -132,12 +133,13 @@ remote func play_blood_animation(bullet_rotation):
 	$AnimationPlayer.play("BloodAnimation")
 	
 remotesync func play_recoil_animation():
-	if LobbyManager.players[get_tree().get_network_unique_id()]["class"] == 'Soldier':
-		$AnimationPlayer.play("SoldierRecoil")
-	elif LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "Sniper":
-		$AnimationPlayer.play("SniperRecoil")
-	elif LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "CloseRifleman":
-		$AnimationPlayer.play("CloseRiflemanRecoil")
+	if(get_tree().get_network_unique_id() != 1):
+		if LobbyManager.players[get_tree().get_network_unique_id()]["class"] == 'Soldier':
+			$AnimationPlayer.play("SoldierRecoil")
+		elif LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "Sniper":
+			$AnimationPlayer.play("SniperRecoil")
+		elif LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "CloseRifleman":
+			$AnimationPlayer.play("CloseRiflemanRecoil")
 	
 	
 remotesync func play_extended_recoil_animation():
@@ -175,4 +177,3 @@ func _on_AnimationPlayer_animation_changed(old_name, new_name):
 		$Blood.visible = false
 
 		
-
