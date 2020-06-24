@@ -133,12 +133,13 @@ remote func play_blood_animation(bullet_rotation):
 	$AnimationPlayer.play("BloodAnimation")
 	
 remotesync func play_recoil_animation():
-	if LobbyManager.players[get_tree().get_network_unique_id()]["class"] == 'Soldier':
-		$AnimationPlayer.play("SoldierRecoil")
-	elif LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "Sniper":
-		$AnimationPlayer.play("SniperRecoil")
-	elif LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "CloseRifleman":
-		$AnimationPlayer.play("CloseRiflemanRecoil")
+	if(get_tree().get_network_unique_id() != 1):
+		if LobbyManager.players[get_tree().get_network_unique_id()]["class"] == 'Soldier':
+			$AnimationPlayer.play("SoldierRecoil")
+		elif LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "Sniper":
+			$AnimationPlayer.play("SniperRecoil")
+		elif LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "CloseRifleman":
+			$AnimationPlayer.play("CloseRiflemanRecoil")
 	
 	
 remotesync func play_extended_recoil_animation():
