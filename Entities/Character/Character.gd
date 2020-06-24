@@ -64,7 +64,7 @@ func listen_inputs():
 		switch_rotation = true
 		
 	if Input.is_action_pressed("shoot"):
-		$Camera2D.camera_shoot_recoil()
+		#$Camera2D.camera_shoot_recoil()
 		shoot = true
 		
 	if Input.is_action_just_released("shoot"):

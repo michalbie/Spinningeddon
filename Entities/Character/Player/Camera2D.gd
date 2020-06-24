@@ -1,6 +1,6 @@
 extends Camera2D
 
-func camera_shoot_recoil():
+remote func camera_shoot_recoil():
 	#var random_offsets = Vector2(float(randi() % 20-10), float(randi() % 20-10))
 	#$Tween.interpolate_property(self, "offset",
 	#random_offsets, Vector2(0, 0), 0.3, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)

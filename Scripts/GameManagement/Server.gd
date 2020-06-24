@@ -63,6 +63,7 @@ func check_if_player_shoot(player, id, input):
 			else:
 				GameManager.world.rpc("spawn_bullet", id)
 			
+			player.get_node("Camera2D").rpc_id(int(player.get_name()), "camera_shoot_recoil")
 			SoundManager.rpc("play_shoot_sound", player.get_name())
 		
 func send_player_info(id, player):
