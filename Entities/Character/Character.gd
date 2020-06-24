@@ -52,6 +52,7 @@ func _ready():
 		
 	if self.get_name() == str(get_tree().get_network_unique_id()):
 		self.get_node("Camera2D").current = true
+		
 
 func _physics_process(delta):
 	if !is_server and str(get_tree().get_network_unique_id()) == self.get_name():
@@ -64,10 +65,18 @@ func listen_inputs():
 		switch_rotation = true
 		
 	if Input.is_action_pressed("shoot"):
-		#$Camera2D.camera_shoot_recoil()
+		if $AnimationPlayer.is_playing() == false and $Body.frame != 1:
+			if LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "HeavyMachinegunner" or LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "LightAssaulter":
+				GameManager.world.get_node(self.get_name()).rpc("play_extended_recoil_animation")
+			else:
+				GameManager.world.get_node(self.get_name()).rpc("play_recoil_animation")
+
 		shoot = true
 		
 	if Input.is_action_just_released("shoot"):
+		if LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "HeavyMachinegunner" or LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "LightAssaulter":
+			GameManager.world.get_node(self.get_name()).rpc("finish_extended_recoil_animation")
+
 		shoot = false
 
 func send_inputs(delta):
@@ -84,13 +93,13 @@ func send_inputs(delta):
 	if !being_removed:
 		emit_signal("input_ready", player_input)
 
-func got_shot(dmg, source):
+func got_shot(dmg, source, bullet_rotation):
 	if dmg >= hp:
 		hp = 0
 		being_removed = true
 		GameManager.world.gameplay_info.rpc("update_kills_info", str(source), self.get_name())
-		
-		if source != "Fog":
+
+		if source != "Fog" and source != "Heart attack":
 			GameManager.world.get_node(str(source)).hud.rpc("update_players_alive")
 			GameManager.world.get_node(str(source)).kills += 1
 			GameManager.world.get_node(str(source)).hud.rpc_id(int(source), "update_kills", GameManager.world.get_node(str(source)).kills)
@@ -104,6 +113,7 @@ func got_shot(dmg, source):
 		GameManager.world.rpc("kill_player", int(self.get_name()), source)
 	else:
 		hp -= dmg
+		rpc("play_blood_animation", bullet_rotation)
 		if hud != null:
 			hud.rpc_id(int(self.get_name()), "update_hp", hp)
 			for id in observers_list:
@@ -114,6 +124,29 @@ remotesync func append_observer(observer_id):
 	
 remotesync func erase_observer(observer_id):
 	observers_list.erase(observer_id)
+	
+remote func play_blood_animation(bullet_rotation):
+	$Blood.visible = false
+	$Blood.rotation_degrees = 0
+	$Blood.set_frame(0)
+	$Blood.rotate(-self.rotation + bullet_rotation)
+	$AnimationPlayer.play("BloodAnimation")
+	
+remotesync func play_recoil_animation():
+	if LobbyManager.players[get_tree().get_network_unique_id()]["class"] == 'Soldier':
+		$AnimationPlayer.play("SoldierRecoil")
+	elif LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "Sniper":
+		$AnimationPlayer.play("SniperRecoil")
+	elif LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "CloseRifleman":
+		$AnimationPlayer.play("CloseRiflemanRecoil")
+	
+	
+remotesync func play_extended_recoil_animation():
+	$AnimationPlayer.play("ExtendedRecoilStart")
+	$Body.set_frame(1)
+	
+remotesync func finish_extended_recoil_animation():
+	$AnimationPlayer.play("ExtendedRecoilEnd")
 	
 
 func _on_StandingCircle_mouse_entered():
@@ -129,3 +162,17 @@ func _on_RotateCooldown_timeout():
 func _on_ShootCooldown_timeout():
 	$ShootCooldown.stop()
 
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "BloodAnimation":
+		$Blood.rotation_degrees = 0
+		$Blood.set_frame(0)
+		$Blood.visible = false
+
+
+func _on_AnimationPlayer_animation_changed(old_name, new_name):
+	if old_name == "BloodAnimation":
+		$Blood.set_frame(0)
+		$Blood.visible = false
+
+		

@@ -45,7 +45,7 @@ func _on_Area2D_body_entered(body):
 
 func _on_DamageTimer_timeout(player_name):
 	if GameManager.world.get_node(player_name) != null:
-		GameManager.world.get_node(player_name).got_shot(damage_dealt, "Fog")
+		GameManager.world.get_node(player_name).got_shot(damage_dealt, "Fog", deg2rad(0))
 	
 func delete_timer(name):
 	get_node(name).stop()

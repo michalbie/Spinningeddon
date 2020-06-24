@@ -20,7 +20,7 @@ func _physics_process(delta):
 
 remote func update_kills_info(killer, victim):
 	var killer_name = str(killer)
-	if str(killer) != "Fog":
+	if str(killer) != "Fog" and str(killer) != "Heart attack":
 		killer_name = LobbyManager.players[int(killer)]["name"]
 	var victim_name = LobbyManager.players[int(victim)]["name"]
 	var new_label = KillLabel.instance()
