@@ -17,6 +17,7 @@ _global_script_class_icons={
 
 config/name="Spinningeddon"
 run/main_scene="res://Scenes/Main.tscn"
+boot_splash/image="res://Scenes/BootScreen/assets/screen_1.png"
 config/icon="res://icon.png"
 
 [autoload]
