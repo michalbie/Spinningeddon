@@ -66,6 +66,8 @@ func listen_inputs():
 		
 	if Input.is_action_pressed("shoot"):
 		if $AnimationPlayer.is_playing() == false and $Body.frame != 1:
+			$Blood.visible = false
+			$Blood.rotation_degrees = 0
 			if LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "HeavyMachinegunner" or LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "LightAssaulter":
 				GameManager.world.get_node(self.get_name()).rpc("play_extended_recoil_animation")
 			else:
@@ -74,6 +76,8 @@ func listen_inputs():
 		shoot = true
 		
 	if Input.is_action_just_released("shoot"):
+		$Blood.visible = false
+		$Blood.rotation_degrees = 0
 		if LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "HeavyMachinegunner" or LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "LightAssaulter":
 			GameManager.world.get_node(self.get_name()).rpc("finish_extended_recoil_animation")
 
