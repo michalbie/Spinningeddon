@@ -33,7 +33,7 @@ remote func update_shoot_cooldown(cooldown_time):
 	add_child(tween)
 	tween.start()
 	
-remote func update_players_alive():
+func update_players_alive_locally():
 	var label = $Control/MarginContainer/HBoxContainer/VBoxContainer/PlayersAliveBar/MarginContainer/VBoxContainer/PlayersAliveLabel
 	GameManager.players_alive -= 1
 	var new_text = str(GameManager.players_alive) + " / " + str(GameManager.players_on_the_beginning)
