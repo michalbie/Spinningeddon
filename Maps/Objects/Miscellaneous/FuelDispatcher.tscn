@@ -7,6 +7,7 @@
 extents = Vector2( 121.657, 61.38 )
 
 [node name="FuelDispatcher" instance=ExtResource( 1 )]
+z_index = 1
 collision_layer = 2048
 object_material = 2
 
