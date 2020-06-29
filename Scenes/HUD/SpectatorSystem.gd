@@ -17,6 +17,7 @@ func get_random_camera():
 		GameManager.world.get_node(str(GameManager.players_info.keys()[random_index])).rpc("append_observer", get_tree().get_network_unique_id())
 		get_player_info()
 
+
 func listen_camera_switch():
 	if GameManager.players_info.size() > 1 and !GameManager.players_info.has(get_tree().get_network_unique_id()) and !get_tree().is_network_server():
 		
@@ -46,6 +47,7 @@ func listen_camera_switch():
 
 func get_player_info():
 	GameManager.world.spectator_system.rpc_id(1, "send_player_info", get_tree().get_network_unique_id(), GameManager.players_info.keys()[current_observing])
+
 	
 remote func send_player_info(receiver_id, player_id):
 	var info = {}
