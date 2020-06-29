@@ -28,7 +28,8 @@ remote func update_kills_info(killer, victim):
 	new_label.get_node("Label").set_text(str(killer_name) + " killed " + str(victim_name))
 	new_label.visible = true
 	
-	GameManager.world.get_node_or_null(str(get_tree().get_network_unique_id())).hud.update_players_alive_locally()
+	if GameManager.world.get_node_or_null(str(get_tree().get_network_unique_id())) != null:
+		GameManager.world.get_node_or_null(str(get_tree().get_network_unique_id())).hud.update_players_alive_locally()
 
 
 func create_labels():
