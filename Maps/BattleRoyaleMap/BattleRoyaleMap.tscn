@@ -2115,6 +2115,7 @@ position = Vector2( 2459.46, 3437.26 )
 rotation = -2.06575
 scale = Vector2( 1.51687, 1.51687 )
 z_index = 0
+object_material = 1
 
 [node name="CafeteriaRoof" parent="." instance=ExtResource( 30 )]
 position = Vector2( 11312.5, 4299.44 )

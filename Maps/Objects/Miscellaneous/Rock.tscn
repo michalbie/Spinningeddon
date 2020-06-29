@@ -14,11 +14,11 @@ object_material = 1
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="0"]
 polygon = PoolVector2Array( 24.9738, 37.845, 33.4178, 22.8335, 51.244, 7.82198, 73.7612, 0.785324, 94.8712, 2.19266, 103.315, 10.6366, 126.771, 13.4513, 168.052, 29.401, 185.878, 45.3508, 202.297, 48.1654, 216.84, 58.4858, 219.654, 71.6209, 205.112, 87.5706, 196.199, 121.816, 181.187, 141.049, 165.238, 151.37, 155.386, 172.48, 135.684, 179.047, 111.759, 180.924, 96.7476, 175.763, 87.3654, 166.381, 73.7612, 166.381, 51.244, 156.999, 34.8251, 149.493, 16.5298, 130.729, 5.74028, 110.557, 1.04919, 88.0398, 5.74028, 65.0534, 14.6534, 48.6345 )
 
-[node name="Texture" parent="." index="1"]
-texture = ExtResource( 2 )
-centered = false
-
-[node name="CollisionShape2D" parent="." index="2"]
+[node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 101.46, 89.6264 )
 rotation = 1.57079
 shape = SubResource( 1 )
+
+[node name="Texture" parent="." index="2"]
+texture = ExtResource( 2 )
+centered = false
