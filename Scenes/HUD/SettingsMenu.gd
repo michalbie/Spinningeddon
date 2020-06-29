@@ -9,7 +9,7 @@ func _process(delta):
 
 func _on_Button_pressed():
 	var player = GameManager.world.get_node(str(get_tree().get_network_unique_id()))
-	player.got_shot(player.hp, "Heart attack")
+	player.got_shot(player.hp, "Heart attack", null)
 	GameManager.end_game()
 	LobbyManager.lobby._on_ReturnButton_pressed()
 	
