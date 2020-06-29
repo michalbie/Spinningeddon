@@ -43,7 +43,9 @@ remote func play_death_sound(corpse_position, corpse_name):
 	death_position.add_child(create_death_sound())
 	death_position.position = corpse_position
 	add_child(death_position)
-	get_node_or_null(corpse_name).get_node_or_null("DeathSound").play()
+	if get_node_or_null(corpse_name) != null:
+		if get_node_or_null(corpse_name).get_node_or_null("DeathSound") != null:
+			get_node_or_null(corpse_name).get_node_or_null("DeathSound").play()
 	
 func create_death_sound():
 	var death_sound = AudioStreamPlayer2D.new()
