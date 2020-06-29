@@ -101,6 +101,7 @@ func end_game():
 	bullets_info.clear()
 	players_info.clear()
 	world.queue_free()
+	LobbyManager.lobby.reset_to_default()
 	LobbyManager.lobby.visible = true
 	get_tree().change_scene_to(LobbyManager.lobby)
 	
