@@ -2,6 +2,7 @@ extends Node2D
 
 var Bullet = preload("res://Entities/Bullet/Bullet.tscn")
 var SoldierBullet = preload("res://Entities/Bullet/SoldierBullet.tscn")
+var Healthpack = preload("res://Entities/Healthpack/Healthpack.tscn")
 var BattleRoyaleMap = preload("res://Maps/BattleRoyaleMap/BattleRoyaleMap.tscn")
 
 var GameplayInfo = preload("res://Scenes/HUD/GameplayInfo.tscn")
@@ -51,6 +52,11 @@ remotesync func delete_bullet(bullet_name):
 	if get_node(bullet_name) != null:
 		get_node(bullet_name).queue_free()
 		remove_child(get_node(bullet_name))
+		
+remotesync func delete_healthpack(healthpack_name):
+	if get_node(healthpack_name) != null:
+		get_node(healthpack_name).queue_free()
+		remove_child(get_node(healthpack_name))
 
 remotesync func kill_player(player_name, killer_name):
 	GameManager.delete_player(player_name)
@@ -60,11 +66,11 @@ remotesync func kill_player(player_name, killer_name):
 		add_child(spectator_system)
 		spectator_system.set_name("SpectatorSystem")
 		spectator_system.get_random_camera()
-		spectator_system.get_node_or_null("HUD").update_players_alive()
+		
 		
 	if get_tree().get_network_unique_id() in get_node(str(player_name)).observers_list:
 		spectator_system.get_random_camera()
-		spectator_system.get_node_or_null("HUD").update_players_alive()
+		spectator_system.get_node_or_null("HUD").update_players_alive_locally()
 
 	if get_node(str(player_name)) != null:
 		var corpse = PlayerCorpse.instance()
@@ -73,6 +79,9 @@ remotesync func kill_player(player_name, killer_name):
 		corpse.set_position(get_node(str(player_name)).position - corpse.get_rect().size / 2)
 		add_child(corpse)
 		SoundManager.rpc("play_death_sound", corpse.get_rect().position, corpse.get_name())
+		var healthpack = Healthpack.instance()
+		healthpack.set_position(get_node(str(player_name)).position)
+		add_child(healthpack)
 		get_node(str(player_name)).queue_free()
 		get_node("label_" + str(player_name)).queue_free()
 		

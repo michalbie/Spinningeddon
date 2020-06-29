@@ -66,6 +66,8 @@ func listen_inputs():
 		
 	if Input.is_action_pressed("shoot"):
 		if $AnimationPlayer.is_playing() == false and $Body.frame != 1:
+			$Blood.visible = false
+			$Blood.rotation_degrees = 0
 			if LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "HeavyMachinegunner" or LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "LightAssaulter":
 				GameManager.world.get_node(self.get_name()).rpc("play_extended_recoil_animation")
 			else:
@@ -74,6 +76,8 @@ func listen_inputs():
 		shoot = true
 		
 	if Input.is_action_just_released("shoot"):
+		$Blood.visible = false
+		$Blood.rotation_degrees = 0
 		if LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "HeavyMachinegunner" or LobbyManager.players[get_tree().get_network_unique_id()]["class"] == "LightAssaulter":
 			GameManager.world.get_node(self.get_name()).rpc("finish_extended_recoil_animation")
 
@@ -100,13 +104,11 @@ func got_shot(dmg, source, bullet_rotation):
 		GameManager.world.gameplay_info.rpc("update_kills_info", str(source), self.get_name())
 
 		if source != "Fog" and source != "Heart attack":
-			GameManager.world.get_node(str(source)).hud.rpc("update_players_alive")
 			GameManager.world.get_node(str(source)).kills += 1
 			GameManager.world.get_node(str(source)).hud.rpc_id(int(source), "update_kills", GameManager.world.get_node(str(source)).kills)
 			for id in GameManager.world.get_node(str(source)).observers_list:
 				GameManager.world.spectator_system.get_node("HUD").rpc_id(int(id), "update_kills", GameManager.world.get_node(str(source)).kills)
 		else:
-			GameManager.world.get_node(self.get_name()).hud.rpc("update_players_alive")
 			SoundManager.rpc_id(int(self.get_name()), "stop_fog_sound")
 			
 		emit_signal("player_died")

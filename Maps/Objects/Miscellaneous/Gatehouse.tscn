@@ -10,6 +10,7 @@ extents = Vector2( 24.5363, 31.8102 )
 extents = Vector2( 124.583, 123.157 )
 
 [node name="Gatehouse" instance=ExtResource( 1 )]
+z_index = 2
 collision_layer = 2048
 object_material = 2
 
