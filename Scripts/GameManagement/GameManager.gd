@@ -21,6 +21,7 @@ func _physics_process(delta):
 
 func prepare_game():
 	randomize()
+	LobbyManager.lobby.reset_to_default()
 	rpc("initialize_world")
 	rpc("initialize_players")
 	rset("in_game", true)
@@ -100,7 +101,6 @@ func end_game():
 	bullets_info.clear()
 	players_info.clear()
 	world.queue_free()
-	LobbyManager.lobby.reset_to_default()
 	LobbyManager.lobby.visible = true
 	get_tree().change_scene_to(LobbyManager.lobby)
 	
