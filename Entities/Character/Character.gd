@@ -115,7 +115,8 @@ func got_shot(dmg, source, bullet_rotation):
 		GameManager.world.rpc("kill_player", int(self.get_name()), source)
 	else:
 		hp -= dmg
-		rpc("play_blood_animation", bullet_rotation)
+		if bullet_rotation != null:
+			rpc("play_blood_animation", bullet_rotation)
 		if hud != null:
 			hud.rpc_id(int(self.get_name()), "update_hp", hp)
 			for id in observers_list:
