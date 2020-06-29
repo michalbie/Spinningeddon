@@ -74,6 +74,8 @@ remotesync func kill_player(player_name, killer_name):
 
 	if get_node(str(player_name)) != null:
 		var corpse = PlayerCorpse.instance()
+		var picked_class = LobbyManager.players[player_name]["class"]
+		corpse.texture = load("res://Entities/Character/assets/corpses/" + picked_class + ".png")
 		corpse.set_position(get_node(str(player_name)).position - corpse.get_rect().size / 2)
 		add_child(corpse)
 		SoundManager.rpc("play_death_sound", corpse.get_rect().position, corpse.get_name())
