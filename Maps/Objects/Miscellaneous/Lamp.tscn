@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Maps/Objects/share/ObjectBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Maps/assets/lamp.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 19.1386
+height = 0.750488
+
+[node name="Lamp" instance=ExtResource( 1 )]
+z_index = 4
+collision_layer = 2048
+collision_mask = 3
+object_material = 2
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2( 55.1778, 231.417 )
+shape = SubResource( 1 )
+
+[node name="Texture" parent="." index="1"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="BulletDeathAreaShape" parent="BulletDeathArea" index="0"]
+polygon = PoolVector2Array( 44.3146, 221.53, 55.119, 216.787, 65.3962, 221.003, 69.8761, 231.544, 66.1868, 243.929, 54.3284, 248.409, 43.2605, 243.402, 39.5713, 231.28 )

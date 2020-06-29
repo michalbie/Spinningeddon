@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/spingeddonHitPlayer.wav-6780c2989d7e8c0f629f0b7c257edf31.sample"
+
+[deps]
+
+source_file="res://Sounds/spingeddonHitPlayer.wav"
+dest_files=[ "res://.import/spingeddonHitPlayer.wav-6780c2989d7e8c0f629f0b7c257edf31.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

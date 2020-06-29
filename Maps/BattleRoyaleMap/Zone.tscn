@@ -1,0 +1,138 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Maps/BattleRoyaleMap/Zone.gd" type="Script" id=1]
+[ext_resource path="res://Maps/assets/mask.png" type="Texture" id=2]
+[ext_resource path="res://Maps/assets/fog.png" type="Texture" id=3]
+[ext_resource path="res://Sounds/spiningeddonFogNoise.wav" type="AudioStream" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 12800.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 6946.99, 5818.64 )
+
+[node name="Zone" type="Node2D"]
+position = Vector2( 6781.79, 5783.67 )
+z_index = 5
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SafeZone" type="Light2D" parent="."]
+light_mask = 2
+texture = ExtResource( 2 )
+texture_scale = 28.0
+mode = 3
+range_item_cull_mask = 2
+
+[node name="Fog" type="TextureRect" parent="."]
+light_mask = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -7280.0
+margin_top = -6427.0
+margin_right = 7162.0
+margin_bottom = 6031.0
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Fog2" type="TextureRect" parent="."]
+margin_left = -7872.0
+margin_top = -14936.0
+margin_right = 8100.0
+margin_bottom = -5757.0
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Fog3" type="TextureRect" parent="."]
+margin_left = -14107.0
+margin_top = -7043.0
+margin_right = -6729.0
+margin_bottom = 6974.0
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Fog4" type="TextureRect" parent="."]
+margin_left = -7554.0
+margin_top = 5448.0
+margin_right = 8729.0
+margin_bottom = 13485.0
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Fog5" type="TextureRect" parent="."]
+margin_left = 6378.0
+margin_top = -7099.0
+margin_right = 15921.0
+margin_bottom = 8075.0
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="AreaZone" type="Area2D" parent="."]
+input_pickable = false
+
+[node name="SafeArea" type="CollisionShape2D" parent="AreaZone"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AreaZone2" type="Area2D" parent="."]
+input_pickable = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="StartingMapArea" type="CollisionShape2D" parent="AreaZone2"]
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FogTween" type="Tween" parent="."]
+
+[node name="SafeAreaTween" type="Tween" parent="."]
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="FogSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource( 4 )
+volume_db = -30.0
+max_distance = 20000.0
+[connection signal="body_entered" from="AreaZone" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="AreaZone" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="AreaZone2" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="AreaZone2" to="." method="_on_Area2D_body_exited"]
