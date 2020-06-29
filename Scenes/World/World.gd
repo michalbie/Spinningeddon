@@ -54,7 +54,7 @@ remotesync func delete_bullet(bullet_name):
 		remove_child(get_node(bullet_name))
 		
 remotesync func delete_healthpack(healthpack_name):
-	if get_node(healthpack_name) != null:
+	if get_node_or_null(healthpack_name) != null:
 		get_node(healthpack_name).queue_free()
 		remove_child(get_node(healthpack_name))
 

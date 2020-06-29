@@ -17,9 +17,7 @@ _global_script_class_icons={
 
 config/name="Spinningeddon"
 run/main_scene="res://Scenes/Main.tscn"
-boot_splash/image="res://Scenes/BootScreen/assets/screen_1.png"
 config/icon="res://icon.png"
-config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
@@ -37,6 +35,10 @@ window/size/resizable=false
 window/size/fullscreen=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[global]
+
+icon=false
 
 [input]
 
