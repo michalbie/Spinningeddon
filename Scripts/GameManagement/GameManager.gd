@@ -104,6 +104,7 @@ func end_game():
 	LobbyManager.lobby.reset_to_default()
 	LobbyManager.lobby.visible = true
 	get_tree().change_scene_to(LobbyManager.lobby)
+	occupied_spawnpoints = []
 	
 func notify_lobby_about_end():
 	for player in LobbyManager.players:
